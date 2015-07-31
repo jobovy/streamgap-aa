@@ -48,6 +48,7 @@ def calc_actions(snapfile=None):
     writer= csv.writer(csvfile,delimiter=',')
     nbatch= 20
     for ii in range(nx//nbatch):
+        print "Working on batch %i out of %i ..." % (ii+1,nx//nbatch)
         tR= R[nstart+ii*nbatch:numpy.amin([nstart+(ii+1)*nbatch,nstart+nx])]
         tvR= vR[nstart+ii*nbatch:numpy.amin([nstart+(ii+1)*nbatch,nstart+nx])]
         tvT= vT[nstart+ii*nbatch:numpy.amin([nstart+(ii+1)*nbatch,nstart+nx])]
