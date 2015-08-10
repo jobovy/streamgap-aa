@@ -59,4 +59,8 @@ target/
 # pdflatex
 *.aux
 
+*.Delta_uv
+py/.ipynb_checkpoints/*
+*.mp4
+
 *~

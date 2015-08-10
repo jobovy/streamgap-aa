@@ -164,7 +164,7 @@ The particle moves with its initial frequency separation until the kick at which
 
 The matrices $\frac{\upartial \bs{\theta}}{\upartial \bs{v}}\Big|_{\bs{x}}$ and $\frac{\upartial \bs{\Omega}}{\upartial \bs{v}}\Big|_{\bs{x}}$ must be calculated numerically. However, we will demonstrate that there are several approximate analytic relations that hold well for the inspected simulation.
 
-\section{Simulation}
+\section{Simulation}\label{sect::simulation}
 We use two simulations to investigate the formation of stream gaps in actions, angles and frequencies. Here we describe the set-up of the simulations. The stream progenitor is a King profile globular cluster with $W_0=5$, a mass of $10^5 M_\odot$ and a core radius of $r_c=13\pc$. The cluster was modelled with $10^6$ particles and a smoothing length of $1\pc$.
 The galactic potential was modelled as a logarithmic halo of the form
 \begin{equation}
@@ -310,7 +310,7 @@ Analytic action kick approximation.
 \end{figure}
 
 \subsection{Stages of stream growth}
-The compression phase is when the angle kicks dominate. Up to $5\Gyr$ in both sims the parallel angle width of the gap grows like $t^{\sim0.5}$ (see Fig.~\ref{gap_size}) but after that it grows faster. On small times there is a gap in parallel angle which does not correspond to a spatial gap.
+\cite{ErkalBelokurov2015} discussed the three phases of stream gap formation in the limit that the stream progenitor is on a circular orbit. They found that on short time-scales (less than a radial period) an overdensity formed as the particles were scattered onto epicyclic orbits that brought them towards the gap centre. This was dubbed the compression phase. After a radial period the stream enters an expansion phase where the gap begins growing until the perturbed material starts to overtake unperturbed material and a caustic forms. During the expansion phase the stream gap grows linearly in time whilst during the caustic phase the growth rate slows to $t^{1/2}$. In this section we investigate and discuss how this picture relates to the formalism presented here.
 
 \begin{figure}
 % $$\includegraphics[width=\columnwidth]{gap_size_planar}$$
@@ -319,6 +319,50 @@ $$\includegraphics[width=\columnwidth]{tilted_gap_size}$$
 Gap size in angle as a function of time. Top is $J_z=0$.
 }
 \label{gap_size}
+\end{figure}
+
+In Fig.~\ref{gap_size} we plot the size of the gap in parallel angles as a function of time for the non-zero $J_z$ stream. This is defined as the difference between the parallel angles of the points where the perturbed and unperturbed densities are equal. We also show a best-fit line polynomial line ($\Delta\theta_{||}\propto t^n$) for the segment $t<5\Gyr$ as well as the time-scales for the different stages of gap growth. We note that there is a gap in parallel angle at $t=0$. This does not correspond to a spatial gap but is due to the angle kicks from the sub-halo that have shifted the stars to slightly different orbital phases. This initial angle kick appears to dominate on a time-scale of $\sim400\Myr$ after which the best-fit polynomial is a much better match. This also appears to correlate with the end of the compression phase. Therefore, it seems that the compression phase is associated with the initial angle kicks. We can understand this by considering a simple example of a stream on a radial orbit. Here the parallel angle is purely the radial angle. The shape of the angle kicks will be very similar to those in Fig.~\ref{kicks_nzero} with the angles in front of the gap given a positive kick and those behind given a negative kick. At a fixed position increasing the radial angle means we are now closer to apocentre so the apocentre has moved inwards and the particle must move more slowly. Likewise decreasing the radial angle moves apocentre further out and the particle must move faster. Therefore, the particles behind the gap move faster than those in front and an overdensity forms.
+
+We use the formulae from \cite{ErkalBelokurov2015} to calculate the time-scale on which the caustic begins to form. In this case the expansion phase is very short and so the subsequent evolution should go with the square-root of time. We see, however, that this is only approximately true up to $\sim4\Gyr$ after which the growth rate is faster than this. We will return to this point later and only mention here that it is due to the gap forming on an already growing underlying stream.
+
+Our discussion has related to the size of the gap in parallel angle. Whilst this is an appropriate space for understanding general stream morphology it is awkward to see the relationship with the observed stream properties. We briefly investigate this by projecting the model back into real-space. For this purpose we use the publicly-available torus code from \cite{McMillanBinneyDehnen2015}. We construct eight tori on the corners of an action-space box that encompasses the full perturbed distributions and interpolate the frequencies to find the actions of the perturbed particles. We then interpolate the Fourier coefficients of the tori in action-space to construct a torus of the required actions for each particle and request the $(\bs{x},\bs{v})$ corresponding to the angles of the particle. We then find a plane that minimises the perpendicular spread of the stream and compute the size of the gap in the azimuthal angle in the plane in the same way as in parallel angle space. We plot both the azimuthal gap size and the parallel angle gap size as a function of time in Fig.~\ref{real_v_angle}. As expected the azimuthal gap size oscillates but it is well enveloped by the parallel angle gap size and it appears that the average azimuthal gap size well correlates with the parallel angle gap size. We also plot the minimum and maximum density contrasts (defined as perturbed divided by unperturbed density). The azimuthal density contrast oscillates about the parallel angle density contrast. We also can clearly see the gap forms immediately in parallel angle whilst in azimuthal angle there is a small peak due to the compression phase.
+
+\begin{figure}
+$$\includegraphics[width=\columnwidth]{real_vs_angle_properties}$$
+\caption{
+Gap properties in real and angle space. In the top panel we show the gap size in the azimuthal angle of a plane fitted through the stream in solid black and the gap size in parallel angle in dashed red. In the bottom panel we show the minimum and maximum density contrast in these two spaces.
+}
+\label{real_v_angle}
+\end{figure}
+
+\section{Varying the impact properties}
+We have demonstrated that we are able to adequately model the impact of a sub-halo on a stream and the subsequent evolution. With this machinery in place we are able to rapidly simulate the effects of any sub-halo fly-by. In this section we will discuss the differences in the subsequent stream structure as a function of the sub-halo mass and the sub-halo impact location. We repeat the exercise performed in Section~\ref{section::simulation} of simulating the sub-halo fly-by on a simulated unperturbed stream and inspecting the subsequent evolution.
+
+\subsection{Varying the sub-halo mass}
+First, we investigate the properties of the stream as a function of sub-halo mass. We adopt the scaling relation between the mass and scale radius of the sub-halo Plummer sphere of
+\begin{equation}
+M\propto r_s^{2.5}.
+\end{equation}
+Keeping all other properties of the sub-halo fly-by the same we simulate the effects of a $10^7M_\odot$ and $10^{7.5}M_\odot$ sub-halo. In Figure~\ref{varying_mass} we show the gap after $t=880\Myr$, the gap size as a function of time and the minimum and maximum density contrast as a function of time. As expected the gap size is deepest and grows fastest for the highest mass sub-halo. In all cases the minimum density contrast plateaus in time.
+
+\begin{figure*}
+% $$\includegraphics[width=\columnwidth]{gap_size_planar}$$
+$$\includegraphics[width=\textwidth]{different_masses}$$
+\caption{
+Properties of the stream as a function of sub-halo mass. The thick brown line corresponds to $10^8M_\odot$, the medium red line $10^{7.5}M_\odot$ and the thin orange line $10^7M_\odot$. The left panel shows the difference between the perturbed and unperturbed simulations in parallel angle after $t=880\Myr$, the middle panel shows the gap size as a function of time and the right panel shows the minimum and maximum density contrast as a function of time.
+}
+\label{varying_mass}
+\end{figure*}
+\subsection{Varying the impact geometry}
+Now we investigate how the stream changes as a function of where along the stream the impact occurs. In addition to the inspected geometry of Section~\ref{section::simulation} we simulate an impact closer to the progenitor ($[x,y,z]=[-15.3,-9.8,9.3]\,\mathrm{kpc},[v_x,v_y,v_z]=[41.9,-183.0,152.2]\,\mathrm{km\,s}^{-1}$) and one further from the progenitor ($[x,y,z]=[-1.2,12.9,-10.8]\,\mathrm{kpc},\,[v_x,v_y,v_z]=[-239.8,-100.6,87.0]\,\mathrm{km\,s}^{-1}$). Again, we fix all other parameters of the impact to those in the original simulation, including the absolute velocity of the sub-halo. In Fig.~\ref{varying_geometry} we plot the locations of these impacts in both real-space ($ the (x,y)$ plane) and in parallel angles. The near impact is in the regime where the mean parallel frequency is approximately constant with the parallel angle whilst the far impact is in the regime where the mean frequency is decreasing linearly with the parallel angle. In this far regime the stream is well ordered in energies, whilst in the near regime the stream particles have not had sufficient time to order themselves by energy. We plot the difference between the perturbed and unperturbed simulations in parallel angle for two times. The density contrast at the large negative parallel angle for the far case is very large at late times as the number density in the unperturbed simulation at these large separations is low. A similar effect is seen at large positive parallel angle for the near case but here it should be noted that we have not included the effect of more stars entering the stream as they are stripped from the progenitor. In the lower panels we show the gap size and the minimum/maximum density contrast as a function of time. The gap size in all three cases is very similar for $t<3\Gyr$ but they diverge at larger times as the far impact gap size increases faster than the near impact. We can understand this as in the far case the gap is forming on an already growing stream as the underlying stream structure is well ordered. However, in the near case the stream is mixed so the underlying stream is growing more slowly. In all cases the minimum density plateaus to a similar value.
+
+\begin{figure}
+% $$\includegraphics[width=\columnwidth]{gap_size_planar}$$
+$$\includegraphics[width=\columnwidth]{different_strike_points}$$
+\caption{
+Properties of the stream as a function of sub-halo mass. The thick brown line corresponds to $10^8M_\odot$, the medium red line $10^{7.5}M_\odot$ and the thin orange line $10^7M_\odot$. The left panel shows the difference between the perturbed and unperturbed simulations in parallel angle after $t=880\Myr$, the middle panel shows the gap size as a function of time and the right panel shows the minimum and maximum density contrast as a function of time.
+}
+\label{varying_geometry}
 \end{figure}
 
 \section{Discussion}
