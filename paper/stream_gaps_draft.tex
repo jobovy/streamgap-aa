@@ -78,7 +78,7 @@ In this section we give expressions for the velocity changes of stream particles
 \begin{equation}
 \delta\bs{v} = \int_{-\infty}^{\infty} \d t\,\bs{a},
 \end{equation}
-where $\bs{a}$ is the acceleration due to the sub-halo. The fly-by is described by the impact parameter $b$, the velocity of the sub-halo $\bs{w}$ and the time of the impact $t=-t_g$. To simplify the following expressions we set $t_g=0$. \cite{ErkalBelokurov} gave expressions for the velocity kicks due to a Plummer sub-halo on a straight stream segment moving at a fixed relative velocity to the sub-halo. This formulation produced simple analytic results. Here we will give more general formulae for the velocity kicks.
+where $\bs{a}$ is the acceleration due to the sub-halo\footnote{Throughout this paper we use $\delta$ to denote changes in quantities for individual particles in time e.g. from the sub-halo fly-bys and $\Delta$ for differences \emph{between} particles}. The fly-by is described by the impact parameter $b$, the velocity of the sub-halo $\bs{w}$ and the time of the impact $t=-t_g$. To simplify the following expressions we set $t_g=0$. \cite{ErkalBelokurov} gave expressions for the velocity kicks due to a Plummer sub-halo on a straight stream segment moving at a fixed relative velocity to the sub-halo. This formulation produced simple analytic results. Here we will give more general formulae for the velocity kicks.
 
 We expand on the formalism of \cite{ErkalBelokurov} by explicitly considering the spatial distribution of the stream. We retain the simplification that each particle moves at a fixed relative velocity to the sub-halo during the fly-by. We define the phase-space coordinates of the stream particles as $(\bs{x}_i,\bs{v}_i)$ and the stream point of closest approach as $(\bs{x}_0,\bs{v}_0)$. The vector of closest approach is given by
 \begin{equation}
@@ -257,19 +257,24 @@ Unperturbed, perturbed and model stream for the $J_z\neq0$ progenitor. The red h
 \end{figure}
 
 \subsection{Analytic approximations}
-We now develop some understanding of the magnitude of the angle, frequency and action kicks.
+We now develop some understanding of the magnitude of the angle, frequency and action kicks by inspecting some cases where we can calculate these quantities analytically.
 
-For scale-free potentials of the form $\Phi\propto r^\alpha$ the Hamiltonian in action-space is well approximated by
+For scale-free potentials of the form $\Phi\propto r^\alpha$ \cite{WilliamsEvans2014} demonstrated that the Hamiltonian in action-space is well approximated by
 \begin{equation}
-H(\bs{J}) \propto (J_R+B(L_z+J_z/q))^\beta,
+H(\bs{J}) \propto (J_R+B L)^\beta,
 \end{equation}
-where $\beta=2\alpha/(2+\alpha)$ and $B$ is a constant. In these potentials the frequencies are solely functions of the Hamiltonian so we find that
+where $\beta=2\alpha/(2+\alpha)$, $B$ is a constant and $L$ is the angular momentum. They also suggest that in scale-free flattened axisymmetric potentials of the form $\Phi\propto (R^2+(z/q)^2)^{\alpha/2}$ the Hamiltonian is well approximated by
+\begin{equation}
+H(\bs{J}) \propto (J_R+B L_z+CJ_z)^\beta,
+\end{equation}
+where $B$ and $C$ are constants.
+In these potentials the frequencies are solely functions of the Hamiltonian so we find that
 \begin{equation}
 \frac{\delta\Omega_i^g}{\Omega_i}=\frac{\beta-1}{\beta}\frac{\delta H}{H}.
 \end{equation}
 Note in the case of the harmonic oscillator $\beta=1$ and the right-hand side vanishes as the frequencies are energy independent. The analogous approximate expression for the Hamiltonian in the scale-free logarithmic potential is
 \begin{equation}
-H(\bs{J}) = V_c^2\log(J_R+B(L_z+J_z/q)),
+H(\bs{J}) = V_c^2\log(J_R+B L_z+C J_z)),
 \end{equation}
 such that
 \begin{equation}
