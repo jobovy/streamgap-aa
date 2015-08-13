@@ -61,11 +61,11 @@
 \maketitle
 \label{firstpage}
 \begin{abstract}
-We develop a formalism for modelling the impact of dark matter sub-halos on cold thin streams. Our formalism models the formation of a gap in the stream in angle-frequency space and is able to handle general stream and impact geometry. We analyse a single simulation in angle-frequency space and demonstrate that our formalism is able to predict the gap properties at a range of times. We show how the results in angle-frequency space can be related to physical properties of the gaps.
+We develop a formalism for modelling the impact of dark matter sub-halos on cold thin streams. Our formalism models the formation of a gap in the stream in angle-frequency space and is able to handle general stream and impact geometry. We analyse a single simulation in angle-frequency space and demonstrate that our formalism is able to predict the gap properties at a range of times. We show how the results in angle-frequency space can be related to physical properties of the gaps and that previous results for more constrained simulations are recovered.
 
-We demonstrate how our results are dependent upon the mass of the sub-halo and the location of the impact along the stream. We find that gaps formed far downstream grow more rapidly than those closer to the progenitor due to the ordered nature of the stream.
+We demonstrate how our results are dependent upon the mass of the sub-halo and the location of the impact along the stream. We find that gaps formed far downstream grow more rapidly than those closer to the progenitor due to the ordered nature of the stream. Additionally, we find that the minimum gap density plateaus in time at a value that decreases with increasing sub-halo mass.
 
-We provide general expressions for the velocity perturbations due to the fly-by of a Plummer sphere.
+We provide general expressions for the velocity perturbations due to the fly-by of a Plummer and a Hernquist sphere.
 \end{abstract}
 
 \begin{keywords}
@@ -105,28 +105,52 @@ as the displacement vector between stream particle $i$ and the sub-halo at the i
 as the corresponding relative velocity. The expression for the velocity kicks for the $i$th stream particle is given by
 \begin{equation}
 \delta\bs{v}^g_i = \int_{-\infty}^{\infty} \d t\,\bs{a}(\bs{b}_i+\bs{w}_it).
-\end{equation}For general sub-halo acceleration fields this integral must be calculated numerically via a coordinate transformation to make the limits finite. However, for a Plummer sub-halo the velocity kicks may be computed analytically. The potential of a Plummer sphere is given by
+\end{equation}For general sub-halo acceleration fields this integral must be calculated numerically via a coordinate transformation to make the limits finite. However, for both a Plummer sub-halo and a Hernquist sub-halo the velocity kicks may be computed analytically. The potential of a Plummer sphere is given by
 \begin{equation}
-\Phi_{\rm P}(r) = \frac{-GM}{\sqrt{r^2+r_s^2}},
+\Phi_{\rm P}(r) = -\frac{GM}{\sqrt{r^2+r_s^2}},
 \end{equation}
-where $M$ is the mass and $r_s$ the scale radius.
-
-The velocity kicks are given by
+where $M$ is the mass and $r_s$ the scale radius. The velocity kicks are given by
 \begin{equation}
-\delta\bs{v}^{g}_{i,\mathrm{P}} = -2GM
+\delta\bs{v}^{g}_{i,\mathrm{P}} = -\frac{2GM}{|\bs{w}_i|}
 \frac{\bs{b}_i-\hat{\bs{w}}_i(\bs{b}_i\cdot\hat{\bs{w}}_i)}
-{|\bs{w}_i|
-(|\bs{b}_i|^2
--|\bs{b}_i\cdot\hat{\bs{w}}_i|^2
-+r_s^2)}.
+{(B^2+r_s^2)},
 \label{curved}
 \end{equation}
-In Fig.~\ref{curved_straight} we show a comparison between the kicks calculated using this expression and the kicks calculated assuming the stream is a straight-line segment as in \cite{ErkalBelokurov2015}. The stream is a circular orbit at $10\kpc$ with a circular velocity of $220\kms$ impacted by a Plummer sphere sub-halo of mass $10^8M_\odot$, scale radius $r_s=0.625\pc$, impact parameter $b=r_s$ and velocity $\bs{w}=(0,132,176)\kms$. The distance along the stream in the straight-line approximation is calculated as $\Delta\phi\times10\kpc$. The differences are small with the $v_z$ kicks being the largest. We also show $\bs{v}\cdot\delta\bs{v}^g$ which is very similar for the two cases. As we will see later it is this quantity which has the largest effect on the future structure of the stream. For future calculations we will use equation~\eqref{curved} to calculate all kicks.
+where
+\begin{equation}
+B^2=|\bs{b}_i|^2
+-|\bs{b}_i\cdot\hat{\bs{w}}_i|^2.
+\end{equation}
+In Fig.~\ref{curved_straight} we show a comparison between the kicks calculated using this expression and the kicks calculated assuming the stream is a straight-line segment as in \cite{ErkalBelokurov2015}. The stream is a circular orbit at $10\kpc$ with a circular velocity of $220\kms$ impacted by a Plummer sphere of velocity $\bs{w}=(0,132,176)\kms$ and impact parameter $b=r_s$. We show two kicks: one due to a sub-halo of mass $10^8M_\odot$ and scale radius $r_s=625\pc$ and one due to a sub-halo of mass $10^7M_\odot$ and scale radius $r_s=250\pc$. The distance along the stream in the straight-line approximation is calculated as $\Delta\phi\times10\kpc$. The differences are small with the $v_z$ kicks being the largest. We also show $\bs{v}\cdot\delta\bs{v}^g$ which is very similar for the two cases. As we will see later it is this quantity which has the largest effect on the future structure of the stream. For our calculations in Section~\ref{Sect::simulation} we will use equation~\eqref{curved} to calculate all kicks.
+
+The potential of a Hernquist sphere \citep{Hernquist1990} is given by
+\begin{equation}
+\Phi_{\rm H}(r) = -\frac{GM}{r+r_s},
+\end{equation}
+where $M$ is the mass and $r_s$ the scale radius. The velocity kicks are given by
+\begin{equation}
+\delta\bs{v}^{g}_{i,\mathrm{H}} = = -\frac{2GM}{|\bs{w}_i|}
+\frac{\bs{b}_i-\hat{\bs{w}}_i(\bs{b}_i\cdot\hat{\bs{w}}_i)}
+{(B^2-r_s^2)}\Big(1-\frac{2r_s}{r_s+B}X(S)\Big),
+\label{curved_hernquist}
+\end{equation}
+where
+\begin{equation}
+S=\sqrt{\frac{2B}{r_s+B}},
+\end{equation}
+and we have made use of the function $X(s)$ introduced in equation (33) and (34) of \cite{Hernquist1990} which is given by
+\begin{equation}
+X(s)=\begin{cases}
+    \frac{1}{\sqrt{1-s^2}}\mathrm{arcsech}\,s,& 0\leq s\leq 1\\
+    \frac{1}{\sqrt{s^2-1}}\mathrm{arcsec}\,s, & 1\leq s\leq \infty.
+\end{cases}
+\end{equation}
+We note the form is very similar to the Plummer kicks and, as required, the two are equal when $r_s\rightarrow0$.
 
 \begin{figure*}
 $$\includegraphics[width=\textwidth]{curved_straight_comparison}$$
 \caption{
-A comparison of the velocity kicks calculated assuming a straight stream track and using the true stream geometry. The stream track is a circular orbit of radius $10\kpc$ and circular velocity $220\kms$ and is shown in black in the left panel. The sub-halo is a Plummer sphere of mass $10^8M_\odot$ and scale radius $r_s=0.625\pc$ moving at $\bs{w}=(0,132,176)\kms$ with an impact parameter $b=r_s$. The red arrow shows the projection of the velocity vector into the plane. The second, third and fourth plots show the velocity kicks as a function of the azimuthal angle from the centre of the galaxy. The black lines show the kicks calculated using equation~\protect\eqref{curved} whilst the red dashed lines show the kicks computed assuming the stream is a straight line segment along the $y$-axis. The rightmost panel shows $\bs{v}\cdot\Delta\bs{v}$. The dotted blue lines show the angles at which the projection of the velocity vector of the sub-halo intersects the stream.
+A comparison of the velocity kicks calculated assuming a straight stream track and using the true stream geometry. The stream track is a circular orbit of radius $10\kpc$ and circular velocity $220\kms$ and is shown in black in the left panel. TWo lines are shown in the second through to fifth panel corresponding to two sub-halos, which are each a Plummer sphere moving at $\bs{w}=(0,132,176)\kms$ with an impact parameter $b=r_s$. The higher amplitude kicks correspond to the sphere of mass $10^8M_\odot$ and scale radius $r_s=625\pc$ and the lower amplitude kicks correspond to the sphere of mass $10^7M_\odot$ and scale radius $r_s=250\pc$. The red arrow shows the projection of the velocity vector into the plane. The second, third and fourth plots show the velocity kicks as a function of the azimuthal angle from the centre of the galaxy. The black lines show the kicks calculated using equation~\protect\eqref{curved} whilst the red dashed lines show the kicks computed assuming the stream is a straight line segment along the $y$-axis. The rightmost panel shows $\bs{v}\cdot\delta\bs{v}^g$. The dotted blue lines show the angles at which the projection of the velocity vector of the sub-halo intersects the stream.
 }
 \label{curved_straight}
 \end{figure*}
@@ -135,12 +159,12 @@ We also consider kicks due to truncated Navarro-Frenk-White profiles. The densit
 \begin{equation}
 \rho_{\rm NFW}(r) = \frac{M}{4\pi r_s^3}\Big(\frac{r}{r_s}\Big)^{-1}\Big(1+\frac{r}{r_s}\Big)^{-2}\mathrm{sech}\Big(\frac{r}{r_t}\Big).
 \end{equation}
-$r_t$ is the truncation radius. For non-zero $r_t$ the forces and potential must be computed numerically and clearly for $r_t\rightarrow\infty$ the form reduces to the well-known NFW profile. In Fig.~\eqref{plummer_nfw} we show the kicks computed for a Plummer sub-halo, NFW sub-halo and truncated NFW sub-halo. We also show $\bs{v}\cdot\Delta\bs{v}$ which is the quantity that controls the future structure of the stream. We have assumed the stream is a straight-line segment moving along the $y$ axis at velocity $v_y=2$. The Plummer sub-halo has $GM=2$, scale-radius $r_s=2$, impact parameter $b=\sqrt{3}$ and velocity $\bs{w}=(0.6,1.2,0)$. The NFW halo has the same mass parameter but the scale radius is chosen such that the mass contained within the Plummer scale radius is identical to the Plummer case. The truncated NFW profile has a truncation radius of $r_t=2$. The NFW profile is more spatially extended so the amplitude of the kicks are larger than the Plummer kicks at large distances from the impact. When the NFW profile is truncated the velocity kicks are very similar to the Plummer kicks.
+$r_t$ is the truncation radius. For non-zero $r_t$ the forces and potential must be computed numerically and clearly for $r_t\rightarrow\infty$ the form reduces to the well-known NFW profile. In Fig.~\eqref{plummer_nfw} we show the kicks computed for a Plummer sub-halo, a Hernquist sub-halo, a NFW sub-halo and truncated NFW sub-halo. We also show $\bs{v}\cdot\Delta\bs{v}$ which is the quantity that controls the future structure of the stream. We have assumed the stream is a straight-line segment moving along the $y$ axis at velocity $v_y=2$. The Plummer sub-halo has $GM=2$, scale-radius $r_s=2$, impact parameter $b=\sqrt{3}$ and velocity $\bs{w}=(0.6,1.2,0)$. The other three haloes have the same mass parameter as the Plummer sphere. The Hernquist and NFW haloes have scale radii chosen such that the mass contained within the Plummer scale radius is identical to the Plummer case. The truncated NFW profile has a scale radius equal to that of the Plummer sphere and has a truncation radius of $r_t=2$. The NFW profile is more spatially extended so the amplitude of the kicks are larger than the Plummer kicks at large distances from the impact. When the NFW profile is truncated the velocity kicks are very similar to the Plummer kicks. The Hernquist profile produces similar shaped kicks to the Plummer and truncated NFW but the amplitude is slightly smaller.
 
 \begin{figure*}
 $$\includegraphics[width=\textwidth]{nfw_plummer_comparison}$$
 \caption{
-A comparison of the velocity kicks from a Plummer, a NFW and a truncated NFW sub-halo. The left panel shows the density and mass profiles of the three haloes. All three haloes have the same mass parameter but the NFW scale radius is chosen such that at the Plummer scale radius ($r_s$) the same mass is enclosed by both profiles. The truncated NFW halo has a scale radius equal to that of the Plummer sphere and a truncation radius of $2r_s$. The mass profiles for the three haloes are shown in the lower left panel. The second, third and fourth panels show the velocity kicks as a function of the distance along the stream. The rightmost panel shows $\bs{v}\cdot\Delta\bs{v}$. The stream is a particle train along the $y$-axis with velocity $2$. The sub-haloes have $GM=2$, $r_{s,\mathrm{Plummer}}=2,r_{s,\mathrm{NFW}}=1.21$
+A comparison of the velocity kicks from a Plummer, a Hernquist, a NFW and a truncated NFW sub-halo. The left panel shows the density and mass profiles of the four haloes. All four haloes have the same mass parameter. The Hernquist and NFW scale radii are chosen such that at the Plummer scale radius ($r_s$) the same mass is enclosed by the profiles. The truncated NFW halo has a scale radius equal to that of the Plummer sphere and a truncation radius of $2r_s$. The mass profiles for the four haloes are shown in the lower left panel. The second, third and fourth panels show the velocity kicks as a function of the distance along the stream. The rightmost panel shows $\bs{v}\cdot\delta\bs{v}^g$. The stream is a particle train along the $y$-axis with velocity $2$. The sub-haloes have $GM=2$, $r_{s,\mathrm{Plummer}}=2,r_{s,\mathrm{NFW}}=1.21$
 , impact parameter $b=\sqrt{3}$ and velocity $\bs{w}=(0.6,1.2,0)$. The velocity kicks have approximately the same amplitude and the key difference is the velocity kicks due to the NFW halo fall off more slowly with $|y|$ as the NFW halo is more spatially extended.
 }
 \label{plummer_nfw}
@@ -210,13 +234,13 @@ Here we investigate the angle, action and frequency structure of the stream. We 
 % \label{diff_map}
 % \end{figure}
 
-\begin{figure}
-$$\includegraphics[width=\columnwidth]{tilted_diff_map}$$
+\begin{figure*}
+$$\includegraphics[width=\textwidth]{tilted_diff_map}$$
 \caption{
 Difference histograms between the unperturbed and perturbed streams: the left panel shows the distribution in angles, middle panel frequencies and right panel actions. Zero-points correspond to the gap centre (defined by eye).
 }
 \label{tilted_diff_map}
-\end{figure}
+\end{figure*}
 
 In Figure~\ref{angfreq_dist} we plot the angles and frequencies for unperturbed and perturbed trailing stream distributions. The unperturbed simulation consists of a spur due to each stripping event. The material stripped in each event forms an approximately vertical line in this space before gradually twisting clockwise as the differential frequency effects take hold. The material on the far left was stripped earliest. We see that the sub-halo produces the expected S-shape which also twists clockwise in time due to the differential frequency effects. At $t=0$ there is a clear gap in frequency but only a relatively modest gap in angle. However, the twisting produces a gap in frequencies. The twisting also causes some perturbed material to overtake the unperturbed material.
 
@@ -241,13 +265,13 @@ We begin by taking the snapshot of the unperturbed stream at the impact time and
 % \label{kicks_zero}
 % \end{figure}
 
-\begin{figure}
-$$\includegraphics[width=\columnwidth]{tilted_angfreq_kicks.png}$$
+\begin{figure*}
+$$\includegraphics[width=\textwidth]{tilted_angfreq_kicks.png}$$
 \caption{
 Angle and frequency kicks: the points are a random sample of $1000$ particles from the stream and show the kicks found from the simulations whilst the lines show those calculated under the impulse approximation.
 }
 \label{kicks_nzero}
-\end{figure}
+\end{figure*}
 
 \subsection{Model-simulation comparison}
 With the angle and frequency kicks satisfactorily calculated we proceed to take the unperturbed simulation, apply the kicks and compare with the perturbed simulation at later times.
@@ -262,13 +286,13 @@ In Fig.~\ref{model_nzero} we show the angle and frequency distributions of the u
 % \label{model_zero}
 % \end{figure}
 
-\begin{figure}
-$$\includegraphics[width=\columnwidth]{tilted_model_perturbed}$$
+\begin{figure*}
+$$\includegraphics[width=\textwidth]{tilted_model_perturbed}$$
 \caption{
 Unperturbed, perturbed and model stream: the red histograms show the unperturbed stream at the current time, the green show the perturbed stream and the blue show the unperturbed stream kicked in angle and frequency space and evolved to the current time.
 }
 \label{model_nzero}
-\end{figure}
+\end{figure*}
 
 \begin{figure}
 $$\includegraphics[width=\columnwidth]{ang_later_times}$$
@@ -293,7 +317,7 @@ In these potentials the frequencies are solely functions of the Hamiltonian so w
 \begin{equation}
 \frac{\delta\Omega_i^g}{\Omega_i}=\frac{\beta-1}{\beta}\frac{\delta H}{H}.
 \end{equation}
-Note in the case of the harmonic oscillator $\beta=1$ and the right-hand side vanishes as the frequencies are energy independent. The analogous approximate expression for the Hamiltonian in the scale-free logarithmic potential is
+Note in the case of the harmonic oscillator $\beta=1$ and the right-hand side vanishes as the frequencies are energy independent. This equation can also be derived when considering the change in the energy and frequency of a circular orbit. The analogous approximate expression for the Hamiltonian in the scale-free logarithmic potential is
 \begin{equation}
 H(\bs{J}) = V_c^2\log(J_R+B L_z+C J_z)),
 \end{equation}
@@ -326,7 +350,7 @@ Finally, we turn to the angle coordinates. From our investigations there don't a
 \begin{equation}
 \delta\theta^g_i\approx \frac{\delta\Omega^g_i x_i}{v_i}
 \end{equation}
-where $x_i$ and $v_i$ are the position coordinate relative to the minimum and the velocity coordinate of the $i^{\mathrm{th}}$ coordinate. We see that when we are near a turning point ($v_i\approx0$) the angle kicks are largest and near the midpoints ($x_i\approx0$) the angle kicks are small. As expected the magnitude of the angle kicks are phase-dependent. These approximate expressions only recover the angle kicks from the simulation within a factor of $\sim2$.
+where $x_i$ and $v_i$ are the position coordinate relative to the minimum and the velocity coordinate of the $i^{\mathrm{th}}$ coordinate\footnote{There is an additional term due to the change in velocity which we have neglected assuming the velocity of the oscillations about a circular orbit are significantly smaller than the circular velocity.}. We see that when we are near a turning point ($v_i\approx0$) the angle kicks are largest and near the midpoints ($x_i\approx0$) the angle kicks are small. As expected the magnitude of the angle kicks are phase-dependent. These approximate expressions only recover the angle kicks from the simulation within a factor of $\sim2$.
 
 % \begin{figure}
 % $$\includegraphics[width=\columnwidth]{analytic_action}$$
@@ -335,13 +359,13 @@ where $x_i$ and $v_i$ are the position coordinate relative to the minimum and th
 % }
 % \label{aa_z}
 % \end{figure}
-\begin{figure}
-$$\includegraphics[width=\columnwidth]{tilted_analytic_action}$$
+\begin{figure*}
+$$\includegraphics[width=\textwidth]{tilted_analytic_action}$$
 \caption{
 Analytic action kick approximation. In the top panels the red shows the approximate analytic expressions from equation~\protect\eqref{dJ_an} and the black is computed from the simulations. In the bottom panels we overlay the action kick distributions on the difference plots from Fig.~\protect\ref{tilted_diff_map}. Clearly the analytic approximation explains the correlations observed in the simulation.
 }
 \label{aa_nz}
-\end{figure}
+\end{figure*}
 
 \subsection{Stages of stream growth}
 \cite{ErkalBelokurov2015} discussed the three phases of stream gap formation in the limit that the stream progenitor is on a circular orbit. They found that on short time-scales (less than a radial period) an overdensity formed as the particles were scattered onto epicyclic orbits that brought them towards the gap centre. This was dubbed the compression phase. After a radial period the stream enters an expansion phase where the gap begins growing until the perturbed material starts to overtake unperturbed material and a caustic forms. During the expansion phase the stream gap grows linearly in time whilst during the caustic phase the growth rate slows to $t^{1/2}$. In this section we investigate and discuss how this picture relates to the formalism presented here.
@@ -355,11 +379,36 @@ Gap size in parallel angle as a function of time. The black line shows the gap m
 \label{gap_size}
 \end{figure}
 
-In Fig.~\ref{gap_size} we plot the size of the gap in parallel angles as a function of time for the simulated stream. This is defined as the difference between the parallel angles of the points where the perturbed and unperturbed densities are equal. We also show a best-fit power-law line ($\Delta\theta_{||}\propto t^{0.58}$) for the segment $t<5\Gyr$ as well as the time-scales for the different stages of gap growth. We note that there is a gap in parallel angle at $t=0$. This does not correspond to a spatial gap but is due to the angle kicks from the sub-halo that have shifted the stars to slightly different orbital phases. This initial angle kick appears to dominate on a time-scale of $\sim400\Myr$ after which the best-fit power-law is a much better match. This also appears to correlate with the end of the compression phase. Therefore, it seems that the compression phase is associated with the initial angle kicks. We can understand this by considering a simple example of a stream on a radial orbit. Here the parallel angle is purely the radial angle. The shape of the angle kicks will be very similar to those in Fig.~\ref{kicks_nzero} with the angles in front of the gap given a positive kick and those behind given a negative kick. At a fixed position increasing the radial angle means we are now closer to apocentre so the apocentre has moved inwards and the particle must move more slowly. Likewise decreasing the radial angle moves apocentre further out and the particle must move faster. Therefore, the particles behind the gap move faster than those in front and an overdensity forms.
+In Fig.~\ref{gap_size} we plot the size of the gap in parallel angles as a function of time for the simulated stream. This is defined as the difference between the parallel angles of the points where the perturbed and unperturbed densities are equal. We also show a best-fit power-law line ($\Delta\theta_{||}\propto t^{0.58}$) for the segment $t<5\Gyr$ as well as the time-scales for the different stages of gap growth. The compression phase lasts for a single radial period. The time-scale on which the caustic becomes important is computed from equation (26) of \cite{ErkalBelokurov2015}. We note that in this example it only lasts for $\sim200\Myr$ but lowering the sub-halo mass to $10^7M_\odot$ increases the length of the expansion phase to $\sim600\Myr$. We note that there is a gap in parallel angle at $t=0$. This does not correspond to a spatial gap but is due to the angle kicks from the sub-halo that have shifted the stars to slightly different orbital phases. It is intriguing that the size of the initial gap in parallel angles is significantly larger than the peak of the angle kicks shown in Fig.~\ref{kicks_nzero}. However, one must consider the collective effects of a series of particles being kicked in order to compute the gap size. For instance, if the unperturbed parallel angle distribution $p(\theta'_{||})$ were a uniform distribution the perturbed distribution $p(\theta_{||})$ would be given by
+\begin{equation}
+p(\theta_{||})=\int \d\theta'_{||}\,p(\theta'_{||})\delta(\theta_{||}-\theta'_{||}-\delta\theta^g_{||}(\theta'_{||}))\propto(1+\frac{\partial\delta\theta^g_{||}}{\partial\theta_{||}})^{-1}.
+\end{equation}
+Therefore, the peaks in the perturbed distribution will be at the places where the second derivative
+\[
+\frac{\partial^2\delta\theta^g_{||}}{\partial\theta^{\prime2}_{||}}
+\]
+vanishes. In Fig.~\ref{secondderiv} we show the second derivative computed for our example as well as the quantity
+\begin{equation}
+(1+\frac{\partial\delta\theta^g_{||}}{\partial\theta_{||}})^{-1}-1.
+\label{deriv}
+\end{equation}
+\begin{figure}
+$$\includegraphics[width=\columnwidth]{d2dthetadtheta2}$$
+\caption{
+Derivatives of the parallel angle kicks: the solid blue line shows the second derivative of the kicks whilst the dotted red line shows the function of the first derivative that gives the density contrast for an initially uniform distribution in parallel angle space. The solid red line shows the scaled density contrast from the simulation. The black lines show the zero line and the approximation location of the peak density contrast.
+}
+\label{secondderiv}
+\end{figure}
+
+The second derivative is zero around $\delta\theta_{||}\approx0.16$ and equation~\eqref{deriv} crosses zero around $\delta\theta_{||}\approx0.1$. These correspond well to the observed amplitude of the gap size. We also show the density contrast computed from the simulations which correlates well with equation~\eqref{deriv}. Therefore, we conclude that there is not a one-to-one correspondence between the amplitude of the angle kicks and the initial parallel angle gap size and the latter can be significantly greater than the former.
+
+The initial angle kick appears to dominate on a time-scale of $\sim400\Myr$ after which the best-fit power-law is a much better match. This also appears to correlate with the end of the compression phase. Therefore, it seems that the compression phase is associated with the initial angle kicks. We can understand this by considering a simple example of a stream on a radial orbit. Here the parallel angle is purely the radial angle. The shape of the angle kicks will be very similar to those in Fig.~\ref{kicks_nzero} with the angles in front of the gap given a positive kick and those behind given a negative kick. At a fixed position increasing the radial angle means we are now closer to apocentre so the apocentre has moved inwards and the particle must move more slowly. Likewise decreasing the radial angle moves apocentre further out and the particle must move faster. Therefore, the particles behind the gap move faster than those in front and an overdensity forms.
 
 We use the formulae from \cite{ErkalBelokurov2015} to calculate the time-scale on which the caustic begins to form. In this case the expansion phase is very short and so the subsequent evolution should go with the square-root of time. We see, however, that this is only approximately true up to $\sim4\Gyr$ (the best-fitting power law is $t^{0.58}$) after which the growth rate is faster than this. We will return to this point later and only mention here that it is due to the gap forming on an already growing underlying stream.
 
-Our discussion has related to the size of the gap in parallel angle. Whilst this is an appropriate space for understanding general stream morphology it is awkward to see the relationship with the observed stream properties. We briefly investigate this by projecting the model back into real-space. For this purpose we use the publicly-available torus code from McMillan, Binney \& Dehnen (2015, in prep.). We construct eight tori on the corners of an action-space box that encompasses the full perturbed distributions and interpolate the frequencies to find the actions of the perturbed particles. We then interpolate the Fourier coefficients of the tori in action-space to construct a torus of the required actions for each particle and request the $(\bs{x},\bs{v})$ corresponding to the angles of the particle. We then find a plane that minimises the perpendicular spread of the stream and compute the size of the gap in the azimuthal angle in the plane in the same way as in parallel angle space. We plot both the azimuthal gap size and the parallel angle gap size as a function of time in Fig.~\ref{real_v_angle}. As expected the azimuthal gap size oscillates but it is well enveloped by the parallel angle gap size and it appears that the average azimuthal gap size well correlates with the parallel angle gap size. We also plot the minimum and maximum density contrasts (defined as perturbed divided by unperturbed density). The azimuthal density contrast oscillates about the parallel angle density contrast. We also can clearly see the gap forms immediately in parallel angle whilst in azimuthal angle there is a small peak due to the compression phase.
+Our discussion has related to the size of the gap in parallel angle. Whilst this is an appropriate space for understanding general stream morphology it is awkward to see the relationship with the observed stream properties. We briefly investigate this by projecting the model back into real-space. For this purpose we use the publicly-available torus code from McMillan, Binney \& Dehnen (2015, in prep.). We construct eight tori on the corners of an action-space box that encompasses the full perturbed distributions and interpolate the frequencies to find the actions of the perturbed particles. We then interpolate the Fourier coefficients of the tori in action-space to construct a torus of the required actions for each particle and request the $(\bs{x},\bs{v})$ corresponding to the angles of the particle. We then find a plane that minimises the perpendicular spread of the stream and compute the size of the gap in the azimuthal angle in the plane in the same way as in parallel angle space. We plot both the azimuthal gap size and the parallel angle gap size as a function of time in Fig.~\ref{real_v_angle}. As expected the azimuthal gap size oscillates but it is well enveloped by the parallel angle gap size and it appears that the average azimuthal gap size correlates well with the parallel angle gap size. We note that the amplitude of the oscillations of the azimuthal gap size can be estimated by considering conservation of angular momentum. If two particles in the stream had identical angular momentum their azimuthal separation $\Delta\phi\sim r^{-2}$ such that the amplitude of the oscillations is $\sim(r_\mathrm{max}/r_\mathrm{min})^2$. For our simulation means the azimuthal separation fluctuates by a factor $\sim 4$, which agrees well with Fig.~\ref{real_v_angle}. We also can clearly see the gap forms immediately in parallel angle whilst in azimuthal angle there is a small peak due to the compression phase.
+
+We also plot the minimum and maximum density contrasts (defined as perturbed divided by unperturbed density). The azimuthal density contrast oscillates about the parallel angle density contrast, and both plateau at late times ($t>4\Gyr$). \cite{ErkalBelokurov2015} showed that the minimum density contrast falls as $1/t$ and the maximum grows as $t$, which are well reproduced by our simulation.
 
 \begin{figure}
 $$\includegraphics[width=\columnwidth]{real_vs_angle_properties}$$
@@ -377,7 +426,7 @@ First, we investigate the properties of the stream as a function of sub-halo mas
 \begin{equation}
 M\propto r_s^{2.5}.
 \end{equation}
-Keeping all other properties of the sub-halo fly-by the same we simulate the effects of a $10^7M_\odot$ and $10^{7.5}M_\odot$ sub-halo. In Figure~\ref{varying_mass} we show the gap after $t=880\Myr$, the gap size as a function of time and the minimum and maximum density contrast as a function of time. As expected the gap size is deepest and grows fastest for the highest mass sub-halo. In all cases the minimum density contrast plateaus in time.
+Keeping all other properties of the sub-halo fly-by the same we simulate the effects of a $10^7M_\odot$ and $10^{7.5}M_\odot$ sub-halo. In Figure~\ref{varying_mass} we show the gap after $t=880\Myr$, the gap size as a function of time and the minimum and maximum density contrast as a function of time. As expected the gap size is deepest and grows fastest for the highest mass sub-halo. In all cases the minimum density contrast plateaus in time and the value that the density contrast plateaus to decreases with mass. It appears that empirically $\rho_\mathrm{min}/\rho_0\sim(M/r_s)^{-1}\sim M^{-0.6}$ such that there is a factor $4$ difference in depth between the $10^8M_\odot$ and $10^7M_\odot$ cases.
 
 \begin{figure*}
 % $$\includegraphics[width=\columnwidth]{gap_size_planar}$$
@@ -395,7 +444,7 @@ Now we investigate how the stream changes as a function of where along the strea
 % $$\includegraphics[width=\columnwidth]{gap_size_planar}$$
 $$\includegraphics[width=\columnwidth]{different_strike_points}$$
 \caption{
-Properties of the stream as a function of sub-halo mass. The thick brown line corresponds to $10^8M_\odot$, the medium red line $10^{7.5}M_\odot$ and the thin orange line $10^7M_\odot$. The left panel shows the difference between the perturbed and unperturbed simulations in parallel angle after $t=880\Myr$, the middle panel shows the gap size as a function of time and the right panel shows the minimum and maximum density contrast as a function of time.
+Properties of the stream as a function of the location of the impact point. The top left panel shows the stream in the $(x,y)$ plane along with three dots showing the different impact points. The top right panel shows the location of these strikes in parallel angle as well as the distribution of the stream in parallel frequencies and angles. The middle two panels show the relative density contrast $\rho_\mathrm{perturbed}/\rho_\mathrm{unperturbed}-1$ in parallel angle space for two separate times. The bottom two panels show the gap size in parallel angle and the minimum and maximum density contrast as a function of time.
 }
 \label{varying_geometry}
 \end{figure}
@@ -419,6 +468,7 @@ We closed by showing how the structure of the gap varies as a function of the ma
 
 The formalism presented promises to be crucial for constraining the properties of a sub-halo fly-by on a cold stream.
 
+The framework presented here is appropriate for when an interaction between the stream and a sub-halo is short compared to the orbital time of the stream such that the impulse approximation is appropriate. Instead of a full perturbative analysis we were able to simply consider instantaneous changes to the stream properties. However, it is potentially a small starting step to developing a scheme to handle more general perturbations to streams. The assumption of a smooth analytic galaxy model is probably inappropriate, particularly over the timescales on which streams evolve. \cite{Bonaca2014} presented a study of analysing streams from the Via Lactea simulation under assumptions on the smoothness of the halo and found that XXX. Additionally, recent results suggest that the mass of the LMC is much larger than previously believed. However, a counter to this is that many of the observed streams are very simple cold structures suggesting that the approximation of a smooth halo for the Milky Way is valid. Nonetheless it may be inevitable that one has to include perturbations on top of a smooth model to fit the known streams in the Galaxy and the angle-action framework is ideal for such an endeavour. These variables were originally introduced to handle perturbative solutions to the equations of the motion in the Solar system so seem highly appropriate for handling perturbations on Galactic scales.
 
 \section*{Acknowledgements}
 JLS acknowledges the support of the Science and Technology Facilities
