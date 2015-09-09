@@ -365,14 +365,28 @@ We would like to find analogous expressions for the actions and angles. We appro
 \end{equation}
 where $\delta L = \bs{L}\cdot\delta\bs{L}^g/|\bs{L}|$ the change in the angular momentum. The change in $J_R$ comes from the spherical approximation and the change in $J_z$ from the assumption that it is a harmonic oscillator in the $z$ direction. We show these analytic approximations in Fig.~\ref{aa_nz} along with the kick distributions overlaid on the difference plots of Fig.~\ref{tilted_diff_map}. The analytic approximations recover the magnitude of the kicks within a factor of $\sim1.5$ but are not nearly as impressive as the frequency kick analytic expressions. These approximations work better for streams confined to the meridional plane. However, we see from the lower panels of Fig.~\ref{aa_nz} that the correlations between the action kicks are well recovered and explain the observed structure in the action difference plots. Note that our unperturbed stream model lives in angle-frequency space such that the action kicks are unimportant for our purposes.
 
-Finally, we turn to the angle coordinates. From our investigations there don't appear to be any particularly neat or understandable analytic expressions we can derive for these quantities. However, from inspecting the harmonic oscillator (which is also appropriate for small oscillations about a circular orbit and perpendicular to the plane) we find that
+Finally, we turn to the angle coordinates. From our investigations there don't appear to be any particularly neat or understandable analytic expressions we can derive for these quantities. However, here we inspect the harmonic oscillator (which is also appropriate for small oscillations about a circular orbit and perpendicular to the plane). The angle coordinate $\theta_i$ is given by
 \begin{equation}
-\delta\theta^g_i\approx \frac{\delta\Omega^g_i x_i}{v_i}
+\tan\theta_i = \frac{\Omega_i x_i}{v_i},
 \end{equation}
-where $x_i$ and $v_i$ are the position coordinate relative to the minimum and the velocity coordinate of the $i^{\mathrm{th}}$ coordinate\footnote{There is an additional term due to the change in velocity which we have neglected assuming the velocity of the oscillations about a circular orbit are significantly smaller than the circular velocity.}. We see that when we are near a turning point ($v_i\approx0$) the angle kicks are largest and near the midpoints ($x_i\approx0$) the angle kicks are small. As expected the magnitude of the angle kicks are phase-dependent. These approximate expressions only recover the angle kicks from the simulation within a factor of $\sim2$. Unless the kick occurs near a turning point, the angle kicks are unimportant because the frequency kicks quickly dominate. The angle kicks become unimportant on a timescale of
+where $x_i$ is the position coordinate relative to the minimum, $v_i$ is the velocity coordinate. For the angle kicks we find that
 \begin{equation}
-t_c = \frac{\partial\delta\theta^g_{||}}{\partial\delta\Omega^g_{||}}.
+\delta\theta^g_i\approx \frac{\tan\theta_i}{1+\tan^2\theta_i}\Big(\frac{\delta\Omega^g_i}{\Omega_i}-\frac{\delta v_i}{v_i}\Big),
 \end{equation}
+For a true harmonic oscillator the change in frequency is identically zero such that this expression can be reduced to
+\begin{equation}
+\delta\theta^g_i\approx -\frac{\delta v_i}{\sqrt{E}}\sin\theta_i = -\frac{1}{2}\frac{\delta v_i}{v_i}\sin 2\theta_i,
+\end{equation}
+where $E$ is the energy of the oscillation. We see that near a turning point ($v_i\approx0$) the angle kicks are largest and of order $\delta v_i/\sqrt{E}$ and near the midpoints ($x_i\approx0$) the angle kicks are approximately zero. As expected the magnitude of the angle kicks are phase-dependent. Using equation~\eqref{dOm_an} we see that
+\begin{equation}
+\frac{\delta\theta_i^g}{\delta\Omega_i^g}\approx\Omega_i^{-1}\Big(\frac{V_c}{|\bs{v}_i|}\Big)^2\sin 2\theta_i.
+\end{equation}
+The final two terms are of order unity such that these rather loose arguments convince us that this ratio is approximately the period of the oscillation in dimension $i$. Therefore, we have ascertained that the angle kicks are dominated by the frequency kicks after approximately one period.
+
+% These approximate expressions only recover the angle kicks from the simulation within a factor of $\sim2$. Unless the kick occurs near a turning point, the angle kicks are unimportant because the frequency kicks quickly dominate. The angle kicks become unimportant on a timescale of
+% \begin{equation}
+% t_c = \frac{\partial\delta\theta^g_{||}}{\partial\delta\Omega^g_{||}}.
+% \end{equation}
 
 % \begin{figure}
 % $$\includegraphics[width=\columnwidth]{analytic_action}$$
