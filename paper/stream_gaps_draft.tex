@@ -137,7 +137,7 @@ The potential is the flattened logarithmic halo of the form
 \Phi_\mathrm{L}(R,z) = \frac{V_c^2}{2}\log\Big(R^2+\frac{z^2}{q^2}\Big),
 \label{potential}
 \end{equation}
-with $V_c = 220\kms$ and $q = 0.9$, and the stream here is modelled simply as a circular orbit at $10\kpc$ with a circular velocity of $220\kms$ impacted by a Plummer sphere of velocity $\bs{w}=(0,132,176)\kms$ and impact parameter $b=r_s$. We show two kicks: one due to a subhalo of mass $10^8M_\odot$ and scale radius $r_s=625\pc$ and one due to a subhalo of mass $10^7M_\odot$ and scale radius $r_s=250\pc$. The distance along the stream in the straight-line approximation is calculated as $\Delta\phi\times10\kpc$. The differences are small. Two very noticeable differences are the $\delta v^g_x$ kicks computed using the full orbital path of the stream particles is significantly larger than for the other three cases. Additionally the $\delta v^g_z$ kicks for the full stream and subhalo integration are smaller at large distances from the closest approach. We also show $\bs{v}\cdot\delta\bs{v}^g$ which is very similar for the four cases. As we will see later it is this quantity which has the largest effect on the future structure of the stream. For our calculations in Section~\ref{Sect::simulation} we will use equation~\eqref{curved} to calculate all kicks.
+with $V_c = 220\kms$ and $q = 0.9$, and the stream here is modelled simply as a circular orbit at $10\kpc$ with a circular velocity of $220\kms$ impacted by a Plummer sphere of velocity $\bs{w}=(0,132,176)\kms$ and impact parameter $b=r_s$. We show two kicks: one due to a subhalo of mass $10^8M_\odot$ and scale radius $r_s=625\pc$ and one due to a subhalo of mass $10^7M_\odot$ and scale radius $r_s=250\pc$. The distance along the stream in the straight-line approximation is calculated as $\Delta\phi\times10\kpc$. The differences are small. Two very noticeable differences are the $\delta v^g_x$ kicks computed using the full orbital path of the stream particles is significantly larger than for the other three cases. This is because the stream particles curve towards the sub-halo track and so experience an increase perturbation. This picture is confirmed by moving the sub-halo fly-by to outside the stream track which produces an under-estimate for $|\delta v^g_x|$. Additionally the $\delta v^g_z$ kicks for the full stream and subhalo integration are smaller at large distances from the closest approach. We also show $\bs{v}\cdot\delta\bs{v}^g$ which is very similar for the four cases. As we will see later it is this quantity which has the largest effect on the future structure of the stream. For our calculations in Section~\ref{Sect::simulation} we will use equation~\eqref{curved} to calculate all kicks.
 
 The potential of a Hernquist sphere \citep{Hernquist1990} is given by
 \begin{equation}
@@ -379,9 +379,9 @@ For a true harmonic oscillator the change in frequency is identically zero such 
 \end{equation}
 where $E$ is the energy of the oscillation. We see that near a turning point ($v_i\approx0$) the angle kicks are largest and of order $\delta v_i/\sqrt{E}$ and near the midpoints ($x_i\approx0$) the angle kicks are approximately zero. As expected the magnitude of the angle kicks are phase-dependent. Using equation~\eqref{dOm_an} we see that
 \begin{equation}
-\frac{\delta\theta_i^g}{\delta\Omega_i^g}\approx\Omega_i^{-1}\Big(\frac{V_c}{|\bs{v}_i|}\Big)^2\sin 2\theta_i.
+\frac{\delta\theta_i^g}{\delta\Omega_i^g}\approx\Omega_i^{-1}\Big(\frac{V_c}{|\bs{v}_i|}\Big)^2\sin 2\theta_i,
 \end{equation}
-The final two terms are of order unity such that these rather loose arguments convince us that this ratio is approximately the period of the oscillation in dimension $i$. Therefore, we have ascertained that the angle kicks are dominated by the frequency kicks after approximately one period.
+where we have neglected geometric factors. The final two terms are of order unity such that these rather loose arguments convince us that this ratio is approximately the period of the oscillation in dimension $i$. From inspection of Fig.~\ref{kicks_nzero} we see that the ratio of the angle to frequency kicks is of order $0.1\Gyr$ which corresponds approximately to $1/\Omega$ as $\Omega_i\approx10\Gyr^{-1}$. From inspection of the numerical results it appears $|\delta\theta^g_i|\approx\delta\Omega^g_i/\Omega_i$ within factors of $3$ for $|\Delta\theta_{||}|<1\rad$. Therefore, we have ascertained that the angle kicks are dominated by the frequency kicks after approximately one period.
 
 % These approximate expressions only recover the angle kicks from the simulation within a factor of $\sim2$. Unless the kick occurs near a turning point, the angle kicks are unimportant because the frequency kicks quickly dominate. The angle kicks become unimportant on a timescale of
 % \begin{equation}
@@ -495,12 +495,10 @@ Properties of the stream as a function of the location of the impact point. The 
 \label{varying_geometry}
 \end{figure}
 
-\section{Discussion}\label{Sect::Discussion}
-THIS CAN BE PULLED INTO THE END OF THE CONCLUSIONS
-
-\begin{enumerate}
-\item What doesn't our model encompass?
-\end{enumerate}
+\section{A full generative perturbed stream model}
+We now produce a full model of the perturbed stream.
+\subsection{Modifications to model}
+Description of changes needed to match the unperturbed stream density.
 
 \section{Conclusions}\label{Sect::Conclusions}
 We have presented a framework for modelling the formation of gaps due to the perturbation of a dark matter halo on a cold thin stream formed from progenitors on eccentric orbits. The formalism uses the simple description of dynamics provided by the action, angle and frequency coordinates. Stream particles obey simple equations of motion in this space which can be altered to incorporate the effects of a dark matter subhalo fly-by. An unperturbed stream is stretched along a single direction, described by the parallel angle coordinate, in which a gap forms when the stream is impacted by a subhalo.
