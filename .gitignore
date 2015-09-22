@@ -56,4 +56,12 @@ docs/_build/
 # PyBuilder
 target/
 
+# pdflatex
+*.aux
+
+*.Delta_uv
+py/.ipynb_checkpoints/*
+*.mp4
+*.bbl
+*.blg
 *~
