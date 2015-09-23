@@ -199,7 +199,7 @@ where $t$ is the time and $\btheta(0)$ is the angle at $t=0$. In axisymmetric po
 \cite{HelmiWhite1999} and \cite{Tremaine1999} both discussed the evolution of a stream as a small action clump in angle-actions, which was further built on by the work of \cite{EyreBinney2011}. \cite{SandersBinney2013b} presented the idea that the angle-frequency distribution could be used as a probe of the galactic potential. These ideas were extended by both \cite{Bovy2014} and \cite{Sanders2014} who developed generative models for streams in angle-frequency space. This framework is ideal for the introduction of velocity perturbations due to a subhalo.
 
 Each particle in a stream obeys the equation
-\begin{equation}
+\begin{equation}\label{linearevol}
 \Delta\bs{\theta} = \btheta-\btheta_0 = (\boldsymbol{\Omega}-\boldsymbol{\Omega}_0)t_s +\Delta\bs{\theta}_\mathrm{init}= \Delta\bs{\Omega}_\mathrm{init}t_s+\Delta\bs{\theta}_\mathrm{init},
 \end{equation}
 where the subscript $0$ denotes the coordinates of the progenitor, $\Delta$ denotes separation between the progenitor and a stream particle and $\mathrm{init}$ denotes the separation between progenitor and particle at release and $t_s$ is the time since the particle was stripped.
@@ -207,7 +207,7 @@ where the subscript $0$ denotes the coordinates of the progenitor, $\Delta$ deno
 A long thin stream is characterised by a vector $\bs{n}$ along which the particles lie in both angle and frequency space. Under the assumption of an isotropic action distribution this vector is the principal eigenvector of the Hessian matrix $D_{ij}=\partial^2 H/\partial J_i\partial J_j$. Note that if the frequencies are functions solely of the Hamiltonian (as in the Kepler case) $\bs{n}$ is aligned with the stream particle frequency vectors and the stream is well approximately by an orbit. We will return to this point later. \cite{Bovy2014} and \cite{Sanders2014} introduced a model for each tail of the stream (leading or trailing) in angle-frequency space that was an elongated Gaussian in the frequency offset from the progenitor and a isotropic Gaussian in initial angle offset from the progenitor. By estimating some stripping rate $p(t)$ the angle-frequency distribution could be calculated at all times. Through the introduction of a linear transformation from position-velocity space to angle-frequency space in the neighbourhood of the stream, \cite{Bovy2014} demonstrated that the stream track in configuration space can be computed quickly and the model could be rapidly sampled at any time.
 
 The angle-frequency model of a stream can be simply extended to include the effects of a gap. Under the assumption that the stream particles do not move during the fly-by we can calculate the change to the angles and frequencies for small velocity kicks as
-\begin{equation}
+\begin{equation}\label{eq:kickfreqangle}
 \begin{split}
 \delta \boldsymbol{\Omega}^g &\approx \frac{\upartial \boldsymbol{\Omega}}{\upartial \bs{v}}\Big|_{\bs{x}}\cdot \delta\bs{v},\\
 \delta \bs{\theta}^g &\approx \frac{\upartial \bs{\theta}}{\upartial \bs{v}}\Big|_{\bs{x}}\cdot \delta\bs{v}.
@@ -216,7 +216,7 @@ The angle-frequency model of a stream can be simply extended to include the effe
 This is a good approximation as the transformation between $(\bs{x},\bs{v})$ and $(\boldsymbol{\Omega},\bs{\theta})$ is close to linear for the small velocity kicks from subhaloes. However, the assumption made here is not exactly the same as the impulse approximation of the previous section. Here we have assumed the particle is fixed in the galactic frame whereas the impulse approximation assumes the particle is fixed a frame moving at constant velocity $\bs{v}$ with respect to the galactic frame.
 
 The stream stretches along the direction $\bs{n}$ and in each tail the frequency distribution is very narrow such that, at a fixed time, the location of the particles in the stream are well approximated by a single angle coordinate $\theta_{||}=\btheta\cdot\bs{n}$. We assume that the kicks are functions of this single variable. If the kick occurred a time $t_g$ ago the angles and frequencies of a stream particle are given by
-\begin{equation}
+\begin{equation}\label{linearkickevol}
 \begin{split}
 \Delta\bs{\theta} &= \Delta\bs{\theta}_{\rm init}+\Delta\boldsymbol{\Omega}_{\rm init}(t_s-t_g)+\delta\bs{\theta}^g+(\Delta\boldsymbol{\Omega}_{\rm init}+\delta\boldsymbol{\Omega}^g)t_g \\&= \Delta\bs{\theta}_{\rm init}+\Delta\boldsymbol{\Omega}_{\rm init}t_s+\delta\bs{\theta}^g+\delta\boldsymbol{\Omega}^g t_g,\\
 \Delta\boldsymbol{\Omega} &= \Delta\boldsymbol{\Omega}_{\rm init}+\delta\boldsymbol{\Omega}^g.
@@ -499,38 +499,74 @@ Properties of the stream as a function of the location of the impact point. The 
 
 \begin{figure}
 $$\includegraphics[width=\columnwidth]{config_density.png}$$
-\caption{
-}
+\caption{Density in a mock stream generated from the generative model described in the text (red) compared to that in the simulation (black) near the gap. The density of the unperturbed simulation is displayed in gray. The density in the simulation is well matched in the generative model.}
 \label{config_density}
 \end{figure}
 
 \begin{figure*}
-$$\includegraphics[width=\textwidth]{config_position.png}$$\\
-$$\includegraphics[width=\textwidth]{config_velocity.png}$$
-\caption{
-}
+$$\includegraphics[width=0.8\textwidth]{config_position.png}$$\\
+$$\includegraphics[width=0.8\textwidth]{config_velocity.png}$$
+\caption{Comparison of the simulated stream (black) and the mock stream from the generative model (red) in configuration space. The bottom of each panel compares the difference in the phase--space position of each particle due to the subhalo perturbaion in the simulation and the mock stream. The overall structure of the stream and in particular the phase--space offsets due to the subhalo perturbation are successfully modelled in the mock stream.}
 \label{config_phasespace}
 \end{figure*}
 
-Up until now we have used a simulation as our unperturbed stream model to which we have applied the kicks. We now produce a full model of the perturbed stream. We use the model presented in both \cite{Bovy2014} and \cite{Sanders2014}. This model is a fully generative model that uses the expected stream structure in angle-frequency space and projects these distributions into the space of observables. In angle-frequency space the model is expressed as
-\begin{equation}
-p_\mathrm{st}(\boldsymbol{\Omega},\btheta) = \int\d\,t_s p_\mathrm{st}(\Delta\boldsymbol{\Omega}_\mathrm{init}) p_\mathrm{st}(\Delta\btheta_\mathrm{init}=\Delta\btheta-\Delta\boldsymbol{\Omega}_\mathrm{init}t_s)p(t_s).
-\end{equation}
-$p_\mathrm{st}(\Delta\boldsymbol{\Omega}_\mathrm{init})$ is a bimodal distribution as there are peaks at positive and negative $\Delta\boldsymbol{\Omega}_\mathrm{init}$ corresponding to the leading and trailing tails. Here we focus on modelling the trailing tail so only consider negative $\Delta\boldsymbol{\Omega}_\mathrm{init}$. Therefore, $p_\mathrm{st}(\Delta\boldsymbol{\Omega}_\mathrm{init})$ is chosen to be an anisotropic Gaussian distribution with axes that align with the eigenvalues of the Hessian matrix $D_{ij}=\partial^2H/\partial J_i\partial J_j$ (IS THIS RIGHT JO?), and $p_\mathrm{st}(\Delta\btheta_\mathrm{init})$ is a simple isotropic Gaussian. The stripping rate $p(t_s)$ was taken as a uniform distribution up to some maximum time $t_\mathrm{max}$ in \cite{Bovy2014} as then the integral over stripping times could be performed analytically. We sample a stripping time, an initial frequency separation and an initial angle separation from the model. With these chosen, the current angles and frequencies are known and hence the observables can be computed. To compute the transformation from angles and frequencies to Galactocentric Cartesian coordinates we interpolate the linear transformation computed for a series of points along the stream track as described in \cite{Bovy2014}.
-
-We set the parameters of the model by scaling those obtained in \cite{Bovy2014} for a similar, but lower mass, stream. As shown in \cite{SandersBinney2013a} for instance the properties of the stream in angles and frequencies scales with the mass of the progenitor, $M$, as $M^{1/3}$.
-
-\subsection{Modifications to model}
-We found that the simple model described above did not completely describe the simulation such that several modifications seemed necessary. Firstly, the stream distribution in $\Omega_{||}$ was not well described by a Gaussian, but instead seemed better fitted by two Gaussians. Inspection of the stream distribution in $\Delta\Omega_{||}$ and $\Delta\theta_{||}$ showed the stream consisted of material stripped in two separate ways: $\sim72\percent$ of the material is stripped around pericentric passage and this material forms a broad peak in $\Delta\Omega_{||}$ that is separated from the progenitor by $\mu_\mathrm{peri}=0.31\Gyr^{-1}$ with a width of $\sigma_\mathrm{peri}=0.05\Gyr^{-1}$. The other $\sim28\percent$ material that is more continuously stripped, or that evaporates, from the progenitor. This material forms a narrower peak in $\Delta\Omega_{||}$ that is less separated from the progenitor at $\mu_\mathrm{evap}=0.25\Gyr^{-1}$ with a width of $\sigma_\mathrm{evap}=0.023\Gyr^{-1}$.
-
-Additionally, inspecting the distribution of $\Delta\theta_{||}/\Delta\Omega_{||}\approx t_s$ showed that the stripping time (averaged over a time longer than an orbital period of the progenitor) is not uniform in time, but instead decreases slowly over time, such that a particle is more likely to have been stripped long ago. We modelled this by making $p(t_s)\propto t_s$ for both the periodic stripping and for the more steady evaporation. In conclusion, the distribution of parallel frequency separation and stripping time looks like
+Up until now we have used a simulation as our unperturbed stream model to which we have applied the kicks. We now produce a full model of the perturbed stream that starts from a model for the unperturbed stream. For the latter, we use the model presented in both \cite{Bovy2014} and \cite{Sanders2014}. This model is a fully generative model that models the expected stream structure in angle--frequency space and projects this structure into the space of observables. In angle--frequency space a model is expressed in full generality as
 \begin{equation}
 \begin{split}
-p(\Delta\Omega_{||},t_s) \propto &(1-w)t_s\mathcal{N}(\Delta\Omega_{||}|\mu_\mathrm{peri},\sigma_\mathrm{peri})\\\times&\sum_n^{\mathrm{int}([t_\mathrm{max}-t_R]/T_R)}\mathcal{N}(t_s|nT_R+t_R,\sigma_t)\\+&wt_s\mathcal{N}(\Delta\Omega_{||}|\mu_\mathrm{evap},\sigma_\mathrm{evap}),
+p(&\boldsymbol{\Omega},\btheta,t_s) =\\
+ & p\big(\Delta\btheta_\mathrm{init}=\Delta\btheta-\Delta\boldsymbol{\Omega}t_s\big)|\boldsymbol{\Omega}_\mathrm{init},t_s)\,p(\Delta\boldsymbol{\Omega}_\mathrm{init}=\Delta\boldsymbol{\Omega}|t_s)\,p(t_s)\,.
 \end{split}
 \end{equation}
-where $\mathcal{N}(X|\mu,\sigma)$ is a Gaussian distribution with mean $\mu$ and width $\sigma$. $w=0.28$ is the weight, $T_R$ is the radial period, $t_R$ is the time since last pericentric passage and $\sigma_t=10\Myr$ is a small spread in stripping times about pericentric passage.
+(see equation \eqref{linearevol}). The specific model investigated by \cite{Bovy2014} and \cite{Sanders2014} simplified this to
+\begin{equation}
+p(\boldsymbol{\Omega},\btheta,t_s) = p(\Delta\boldsymbol{\Omega}_\mathrm{init})\, p(\Delta\btheta_\mathrm{init})\,p(t_s)\,,
+\end{equation}
+by assuming that the distribution of frequency offsets $\boldsymbol{\Omega}_\mathrm{init}$ and angle offsets $\btheta_\mathrm{init}$ is independent of stripping time $t_s$. In Section~\ref{Sect::modelmods} we discuss how this is \emph{npt} a good assumption for the simulated stream considered in this paper and how we modify the model to account for this. However, as discussed by \cite{Bovy2014}, the simple model above is still useful, as it allows the location of the stream in frequency--angle and configuration space to be efficiently calculated, both at the present time and at the time of impact.
 
+In the model of \cite{Bovy2014} and \cite{Sanders2014}, $p(\Delta\boldsymbol{\Omega}_\mathrm{init})$ is a bimodal distribution, because there are peaks at positive and negative $\Delta\boldsymbol{\Omega}_\mathrm{init}$ corresponding to the leading and trailing tails. Here we focus on modelling the trailing tail so we only consider negative $\Delta\boldsymbol{\Omega}_\mathrm{init}$. The distribution $p(\Delta\boldsymbol{\Omega}_\mathrm{init})$ is chosen to be as in \cite{Bovy2014}. This distribution is approximately Gaussian with axes that approximately align with the eigenvalues of the Hessian matrix $D_{ij}=\partial^2H/\partial J_i\partial J_j$. The angle distribution $p(\Delta\btheta_\mathrm{init})$ is a simple isotropic Gaussian. In the simplest model, the stripping rate $p(t_s)$ is taken as a uniform distribution up to some maximum time $t_d$---the disruption time---in \cite{Bovy2014}. For the uniform stripping rate, the location of the mean stream track in frequency--angle space can be computed analytically. To compute the transformation from angles and frequencies to Galactocentric Cartesian coordinates we interpolate the linear transformation computed for a series of points along the stream track as described in \cite{Bovy2014}.
+
+The model for the perturbed stream can be obtained from the model of the unperturbed stream by computing the kicks at the time of impact and applying these as in equation~\eqref{linearkickevol}. To compute the kicks we approximate the stream as being one dimensional along $\theta_{||}$ with a point of closest approach $\theta_{||,c}$, which is a model parameter. We use the same method as discussed in Section~4.2 of \cite{Bovy14} to compute the mean stream track and the derivatives $\frac{\upartial \boldsymbol{\Omega}}{\upartial \bs{v}}$ and $\frac{\upartial \bs{\theta}}{\upartial \bs{v}}$ along the track. Then we compute the velocity perturbation $\delta\bs{v}(\theta_{||}$ due to the subhalo along the track and propagate it to the kicks in $\delta \boldsymbol{\Omega}^g$ and $\delta \bs{\theta}^g$ as in equation~\eqref{eq:kickfreqangle}. These frequency and angle kicks then fully specify the subsequent evolution of the stream (see equation~\eqref{linearkickevol}.
+
+From this model we can then generate mock streams by sampling a stripping time, an initial frequency separation and an initial angle separation from the unperturbed model and perturbing them based on their $\theta_{||}-\theta_{||,c}$ at the time of impact. With these chosen, the current angles and frequencies are known and hence the observables can be computed. 
+
+We set the velocity-dispersion parameter of the model by scaling that obtained in \cite{Bovy2014} for a similar, but lower mass, stream. As shown in \cite{SandersBinney2013a} for instance the properties of the stream in angles and frequencies scales with the mass of the progenitor, $M$, as $M^{1/3}$.
+
+\subsection{Modifications to model}\label{Sect::modelmods}
+We found that the simple model described above did not completely describe the simulation (in particular the density along the stream near the gap) such that several modifications seemed necessary. Firstly, the stream distribution in $\Omega_{||}$ was not well described by a Gaussian, but instead seemed better fitted by two Gaussians. Inspection of the stream distribution in $\Delta\Omega_{||}$ and $\Delta\theta_{||}$ showed the stream consisted of material stripped in two separate ways: $\sim72\percent$ of the material is stripped around pericentric passage and this material forms a broad peak in $\Delta\Omega_{||}$ that is separated from the progenitor by $\mu_\mathrm{peri}=0.31\Gyr^{-1}$ with a width of $\sigma_\mathrm{peri}=0.05\Gyr^{-1}$. The other $\sim28\percent$ material that is more continuously stripped, or that evaporates, from the progenitor. This material forms a narrower peak in $\Delta\Omega_{||}$ that is less separated from the progenitor at $\mu_\mathrm{evap}=0.25\Gyr^{-1}$ with a width of $\sigma_\mathrm{evap}=0.023\Gyr^{-1}$. 
+
+Additionally, inspecting the distribution of $\Delta\theta_{||}/\Delta\Omega_{||}\approx t_s$ showed that the stripping time (averaged over a time longer than an orbital period of the progenitor) is not uniform in time, but instead decreases slowly over time, such that a particle is more likely to have been stripped long ago. We modelled this by making $p(t_s)\propto t_s$ for both the periodic stripping and for the more steady evaporation. In conclusion, compared to the simple model above, the distribution $p(\Delta\Omega_{||},t_s)$ of $\Delta\boldsymbol{\Omega}_\mathrm{init}$ cannot be separated from that of $t_s$ in this model and the distribution of parallel frequency separation and stripping time looks like
+\begin{equation}
+\begin{split}
+p(\Delta\Omega_{||},t_s) \propto &(1-w)t_s\mathcal{N}(\Delta\Omega_{||}|\mu_\mathrm{peri},\sigma_\mathrm{peri})\\\times&\sum_n^{\mathrm{int}([t_d-t_R]/T_R)}\delta(t_s-nT_R-t_R)\\+&wt_s\mathcal{N}(\Delta\Omega_{||}|\mu_\mathrm{evap},\sigma_\mathrm{evap}),
+\end{split}
+\end{equation}
+where $\mathcal{N}(X|\mu,\sigma)$ is a Gaussian distribution with mean $\mu$ and width $\sigma$. $w=0.28$ is the weight, $T_R$ is the radial period, $t_R$ is the time since last pericentric passage and $\delta(t_s-nT_R-t_R)$ is a delta function expressing stripping at each pericenter passage.
+
+We use this modified model to generate mock stream particles. To compute the impact kicks in this model as a function of $\theta_{||}$, we use the stream track at the time of impact computed in the simple model with the uniform distribution of stripping times discussed in the previous section. This is because the mean track cannot be computed easily for the non-uniform $p(t_s)$ distribution, but can be estimated using the uniform $p(t_s)$, as $p(t_s)$ mainly affects the density along the stream, but not its average location.
+
+\subsection{Comparison to the simulation}
+
+We generate 100,000 mock stream particles from the generative model
+for the $M=10^8\,M_\odot$ impact. The density along the stream in the
+simulation and of the mock stream is displayed in
+Figure~\ref{config_density}. The gray, filled histogram shows the
+stream density in the unperturbed simulation for comparison. It is
+clear that the simple generative model provides an excellent match to
+the density in and near the gap in the simulation.
+
+The simulated stream in configuration space near the gap is compared
+to the mock stream in Figure~\ref{config_phasespace}. The mock stream
+very closely follows the simulated stream. The bottom of each panel
+shows the difference between the phase--space coordinates in the
+perturbed and unperturbed simulation (black) and in the perturbed and
+unperturbed mock stream (red). These are computed by comparing the
+present coordinates of the same simulated/mock particles evolved with
+and without perturbation. That is, the perturbed and unperturbed
+simulation start from the same exact initial conditions and we do the
+same for the mock stream. It is clear from these bottom panels in
+Figure~\ref{config_phasespace} that the perturbation due to the
+subhalo impact is very well described by the generative model
+described in this section.
 
 \section{Conclusions}\label{Sect::Conclusions}
 We have presented a framework for modelling the formation of gaps due to the perturbation of a dark matter halo on a cold thin stream formed from progenitors on eccentric orbits. The formalism uses the simple description of dynamics provided by the action, angle and frequency coordinates. Stream particles obey simple equations of motion in this space which can be altered to incorporate the effects of a dark matter subhalo fly-by. An unperturbed stream is stretched along a single direction, described by the parallel angle coordinate, in which a gap forms when the stream is impacted by a subhalo.
