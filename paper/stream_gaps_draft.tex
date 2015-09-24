@@ -487,7 +487,7 @@ Up until now we have used a simulation as our unperturbed stream model to which 
 \begin{equation}
 \begin{split}
 p(&\boldsymbol{\Omega},\btheta,t_s) =\\
- & p\big(\Delta\btheta_\mathrm{init}=\Delta\btheta-\Delta\boldsymbol{\Omega}t_s\big)|\boldsymbol{\Omega}_\mathrm{init},t_s)\,p(\Delta\boldsymbol{\Omega}_\mathrm{init}=\Delta\boldsymbol{\Omega}|t_s)\,p(t_s)\,.
+ & p\big(\Delta\btheta_\mathrm{init}=\Delta\btheta-\Delta\boldsymbol{\Omega}t_s|\boldsymbol{\Omega}_\mathrm{init},t_s)\,p(\Delta\boldsymbol{\Omega}_\mathrm{init}=\Delta\boldsymbol{\Omega}|t_s)\,p(t_s)\,.
 \end{split}
 \end{equation}
 (see equation \eqref{linearevol}). The specific model investigated by \cite{Bovy2014} and \cite{Sanders2014} simplified this to
@@ -556,7 +556,7 @@ $$\includegraphics[width=\columnwidth]{config_density.png}$$
 \begin{figure*}
 $$\includegraphics[width=0.8\textwidth]{config_position.png}$$\\
 $$\includegraphics[width=0.8\textwidth]{config_velocity.png}$$
-\caption{Comparison of the simulated stream (black) and the mock stream from the generative model (red) in configuration space. The bottom of each panel compares the difference in the phase--space position of each particle due to the subhalo perturbaion in the simulation and the mock stream. The overall structure of the stream and in particular the phase--space offsets due to the subhalo perturbation are successfully modelled in the mock stream.}
+\caption{Comparison of the simulated stream (black) and the mock stream from the generative model (red) in configuration space. The blue line shows the unperturbed stream track. The bottom of each panel compares the difference in the phase--space position of each particle due to the subhalo perturbation in the simulation and the mock stream. The overall structure of the stream and in particular the phase--space offsets due to the subhalo perturbation are successfully modelled in the mock stream.}
 \label{config_phasespace}
 \end{figure*}
 
