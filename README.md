@@ -1,5 +1,4 @@
 # streamgap-aa
-***
 
 Modeling stream gaps in action-angle coordinates.
 
@@ -7,16 +6,19 @@ This repository contains the code associated with the paper Sanders, Bovy \& Erk
 
 There are three useful notebooks:
 
-## StreamGapExample.ipynb
-***
+## 1. [StreamGapExample.ipynb](py/StreamGapExample.ipynb)
+
 This notebook is split into 3 sections.
 
 1. We test the analytic computation of the velocity kicks for both Plummer and Hernquist profiles.
 2. We generate Fig. 2 of SBE15 which compares the kicks from different subhalo profiles.
 3. We generate Fig. 1 of SBE15 which computes the kicks for a curved stream track with increasing levels of complexity
 
+## 2. [GapsAngleFreqJz!=0.ipynb](py/GapsAngleFreqJz!=0.ipynb)
+
+## 3. [galpyModelnonzeroJz.ipynb](py/galpyModelnonzeroJz.ipynb)
+
 ## AUTHORS
-***
 
 Jo Bovy - bovy at ias dot edu
 
