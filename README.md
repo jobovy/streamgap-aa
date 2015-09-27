@@ -2,7 +2,7 @@
 
 Modeling stream gaps in action-angle coordinates.
 
-This repository contains the code associated with the paper Sanders, Bovy \& Erkal (2015, SBE15). The paper source code is in [paper/](paper/) and ipython notebooks used to generate the plots in the paper can be found in [py/](py/).
+This repository contains the code associated with the paper Sanders, Bovy \& Erkal (2015, SBE15). The paper source code is in [paper/](paper/) and ipython notebooks used to generate the plots in the paper can be found in [py/](py/). This code is provided for illustration purposes only; full use of the code requires simulation data that is not included here.
 
 There are three useful notebooks. We explain what each contains below:
 
@@ -23,11 +23,11 @@ There are three useful notebooks. We explain what each contains below:
 
 ## 3. [galpyModelnonzeroJz.ipynb](py/galpyModelnonzeroJz.ipynb)
 1. We generate an unperturbed stream model using the angle-frequency formalism from Bovy (2014) and Sanders (2014) and modify it slightly to match the simulation (Fig. 16 SBE15)
-2. We compute the angle and frequency kicks along the unperturbed stream track, perturb the stream model and compare to the simulation (Fig. 17 and 18 SBE15).
+2. We compute the angle and frequency kicks along the unperturbed stream track, perturb the stream model and compare to the simulation (Fig. 17 and 18 SBE15). This uses the modified stripping distribution from Sec. 6.1 in the paper, which is implemented in [custom_stripping_df.py](py/custom_stripping_df.py).
 
 ## AUTHORS
 
-Jo Bovy - bovy at ias dot edu
+Jo Bovy - bovy at astro dot utoronto dot edu
 
 Denis Erkal - derkal at ast dot cam dot ac dot uk
 
