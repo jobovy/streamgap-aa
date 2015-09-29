@@ -60,6 +60,7 @@ target/
 
 # pdflatex
 *.aux
+*.out
 
 *.Delta_uv
 py/.ipynb_checkpoints/*

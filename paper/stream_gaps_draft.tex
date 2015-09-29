@@ -55,6 +55,14 @@
 \newcommand{\vy}{\bs{y}}\newcommand{\vv}{\bs{v}}
 \newcommand{\vD}{\bs{D}}
 
+\usepackage{color}
+\voffset=-0.6in
+\hoffset=0.2in
+\definecolor{darkred}{rgb}{0.55, 0.0, 0.0}
+\definecolor{darkblue}{rgb}{0.0, 0.0, 0.55}
+\usepackage[colorlinks=true,linkcolor=darkred,citecolor=darkblue]{hyperref}
+
+
 \title{Dynamics of stream-subhalo interactions}
 \author[J. L. Sanders, J. Bovy and D. Erkal]{Jason L. Sanders$^1$\thanks{E-mail: jls@ast.cam.ac.uk}, Jo Bovy$^2$ and Denis Erkal$^1$\\
 $^1$Institute of Astronomy, Madingley Road, Cambridge, CB3 0HA\\
@@ -313,42 +321,7 @@ Analytic frequency kick approximation. The lines show the analytic relationship 
 \label{analytic_freq}
 \end{figure}
 
-We would like to find analogous expressions for the actions and angles. We approximate the changes in the actions as
-\begin{equation}
-\begin{split}
-\delta J^g_R &\approx \frac{\delta H^g - \Omega_\phi\delta L^g}{\Omega_R},\\
-\delta J^g_\phi &\approx (\bs{r}\times\delta\bs{v}^g)_z,\\
-\delta J^g_z &\approx \frac{v_z \delta v^g_z}{\Omega_z},
-\end{split}
-\label{dJ_an}
-\end{equation}
-where $\delta L = \bs{L}\cdot\delta\bs{L}^g/|\bs{L}|$ the change in the angular momentum. The change in $J_R$ comes from the spherical approximation and the change in $J_z$ from the assumption that it is a harmonic oscillator in the $z$ direction. We show these analytic approximations in Fig.~\ref{aa_nz} along with the kick distributions overlaid on the difference plots of Fig.~\ref{tilted_diff_map}. The analytic approximations recover the magnitude of the kicks within a factor of $\sim1.5$ but are not nearly as impressive as the frequency kick analytic expressions. These approximations work better for streams confined to the meridional plane. However, we see from the lower panels of Fig.~\ref{aa_nz} that the correlations between the action kicks are well recovered and explain the observed structure in the action difference plots. Note that our unperturbed stream model is a function of the angles and frequencies such that the action kicks are unimportant for modelling purposes.
-
-Finally, we turn to the angle coordinates. From our investigations there do not appear to be any particularly neat or understandable analytic expressions we can derive for these quantities. What follows are some loose arguments to get a handle on the amplitude of the angle kicks relative to the frequency kicks. We inspect the harmonic oscillator (which is also appropriate for small oscillations about a circular orbit and perpendicular to the plane). The angle coordinate $\theta_i$ is given by
-\begin{equation}
-\tan\theta_i = \frac{\Omega_i x_i}{v_i},
-\end{equation}
-where $x_i$ is the position coordinate relative to the minimum, $v_i$ is the velocity coordinate. For the angle kicks we find that
-\begin{equation}
-\delta\theta^g_i\approx \frac{\tan\theta_i}{1+\tan^2\theta_i}\Big(\frac{\delta\Omega^g_i}{\Omega_i}-\frac{\delta v_i}{v_i}\Big),
-\end{equation}
-For a true harmonic oscillator the change in frequency is identically zero such that this expression can be reduced to
-\begin{equation}
-\delta\theta^g_i\approx -\frac{\delta v_i}{\sqrt{E}}\sin\theta_i = -\frac{1}{2}\frac{\delta v_i}{v_i}\sin 2\theta_i,
-\end{equation}
-where $E$ is the energy of the oscillation. We see that near a turning point ($v_i\approx0$) the angle kicks are largest and of order $\delta v_i/\sqrt{E}$ and near the midpoints ($x_i\approx0$) the angle kicks are approximately zero. As expected the magnitude of the angle kicks are phase-dependent. Using equation~\eqref{dOm_an} we see that
-\begin{equation}
-\frac{\delta\theta_i^g}{\delta\Omega_i^g}\approx\Omega_i^{-1}\Big(\frac{V_c}{|\bs{v}_i|}\Big)^2\sin 2\theta_i,
-\end{equation}
-where we have neglected geometric factors. The final two terms are of order unity such that these rather loose arguments convince us that this ratio is approximately the period of the oscillation in dimension $i$. From inspection of Fig.~\ref{kicks_nzero} we see that the ratio of the angle to frequency kicks is of order $0.1\Gyr$ which corresponds approximately to $1/\Omega$ as $\Omega_i\approx10\Gyr^{-1}$. From inspection of the numerical results it appears $|\delta\theta^g_i|\approx\delta\Omega^g_i/\Omega_i$ within factors of $3$ for $|\Delta\theta_{||}|<1\rad$. Therefore, we have ascertained that the angle kicks are dominated by the frequency kicks after approximately one period.
-
-\begin{figure*}
-$$\includegraphics[width=\textwidth]{{{plots/fig10_tilted_analytic_action}}}$$
-\caption{
-Analytic action kick approximation. In the \textbf{top panels} the red shows the approximate analytic expressions from equation~\protect\eqref{dJ_an} and the black is computed from the simulations. In the \textbf{bottom panels} we overlay the action kick distributions on the difference plots from Fig.~\protect\ref{tilted_diff_map}. Clearly the analytic approximation explains the correlations observed in the simulation.
-}
-\label{aa_nz}
-\end{figure*}
+In Appendix~\ref{Appendix::Analytic} we present some approximate analytic results for the action and angle kicks due to a subhalo fly-by, and argue that the angle kicks are dominated by the frequency kicks after approximately one period.
 
 \subsection{Stages of stream growth}
 \cite{ErkalBelokurov2015} discussed the three phases of stream gap formation in the limit that the stream itself is on a circular orbit. They found that on short time-scales (less than a radial period) an overdensity formed as the particles were scattered onto epicyclic orbits that brought them towards the gap centre. This was dubbed the compression phase. After approximately a radial period the stream enters an expansion phase where the gap begins growing until the perturbed material starts to overtake unperturbed material and caustics form. During the expansion phase the stream gap grows linearly in time whilst during the caustic phase the growth rate slows to $t^{1/2}$. In this section we investigate and discuss how this picture relates to the formalism presented here.
@@ -424,11 +397,7 @@ M\propto r_s^{2.5},
 \end{equation}
 which roughly matches the scaling between mass and scale radius in Via Lactea II \citep{Diemand2008}. Keeping all other properties of the subhalo fly-by the same we simulate the effects of a $10^7M_\odot$ and $10^{7.5}M_\odot$ subhalo. In Figure~\ref{varying_mass} we show the gap profile after $t=880\Myr$, the gap size as a function of time and the minimum and maximum density contrast as a function of time. As expected the gap size is deepest and grows fastest for the highest mass subhalo. In all cases the minimum density contrast plateaus in time and the value that the density contrast plateaus to decreases with increasing mass. The ratio between the asymptotic values of the density contrast for the $10^8M_\odot$ and the $10^7M_\odot$ case is observed to be $\sim4$.
 
-\cite{ErkalBelokurov2015} showed that, for stream particles on a circular orbit, the central density contrast falls to zero like $1/t$ with the constant of proportionality scaling as $M/r_s^2$. However, here we observe that the density contrast plateaus in time. Inspired by the results of \cite{ErkalBelokurov2015} it appears the minimum density contrast plateau value for our particular simulation goes like $\sim (1+A M)^{-1}$, where $A$ is a constant. However, we are unable to validate this result, but here we will describe expected qualitative behaviour.
-
-The discrepancy between our simulation and the picture of \cite{ErkalBelokurov2015} seems to be due to two crucial differences. First, the stream has a non-zero velocity dispersion and each stripping event produces stream particles with a range of energies. This means very energetic upstream particles can pass through the stream and fill in a downstream gap. However, provided the energy distribution of released stream particles does not change significantly in time, there will always be some perturbed particles that are equally energetic to the most energetic upstream particles. This means the perturbed particles will not be reached by the unperturbed particles and the gap will skew in time. Second, the unperturbed stream density plays an important role. If there are many particles upstream from the gap then the density contrast will be rapidly washed out. The stripping rate in the simulation we are examining decreases with time (see Section~\ref{Sect::FULL}) so the filling-in effect is less severe.
-
-We performed several experiment with approximate analytic models and numerical models to investigate the impact of the above two effects. All models appear to exhibit a plateau in the central gap density contrast as $t\rightarrow\infty$ but for some models (low mass subhalo or high stream velocity dispersion, $\sigma_v$) the density contrast exhibits a minimum before plateauing at a higher density contrast. It seems that the exact behaviour is controlled by the ratio $|\delta \boldsymbol{v}^g|/\sigma_v$. Although the central gap density exhibits this behaviour, due to the above described effects the gap skews in time such that the central density contrast does not correspond to the minimum density contrast. In the inspected models this minimum density contrast does not exhibit a minimum but instead steadily decays to a plateau value that does not seem to depend upon the stripping rate distribution very sensitively.
+\cite{ErkalBelokurov2015} showed that, for stream particles on a circular orbit, the central density contrast falls to zero like $1/t$ with the constant of proportionality scaling as $M/r_s^2$. However, here we observe that the density contrast plateaus in time. The discrepancy between our simulation and the picture of \cite{ErkalBelokurov2015} seems to be due to two crucial differences. First, the stream has a non-zero velocity dispersion and each stripping event produces stream particles with a range of energies. This means very energetic upstream particles can pass through the stream and fill in a downstream gap. Inspection of Fig.~\ref{angfreq_dist} shows that if the parallel frequency kicks are greater than the spread in frequencies of the stream a clear gap will form and will not be significantly filled in by upstream particles. This is essentially a condition on the velocity kicks being greater than the velocity dispersion of the stream. Second, the unperturbed stream density plays an important role. If there are many particles upstream from the gap then the density contrast will be rapidly washed out. The stripping rate in the simulation we are examining decreases with time (see Section~\ref{Sect::FULL}) so the filling-in effect is less severe.
 
 \begin{figure*}
 $$\includegraphics[width=\textwidth]{{{plots/fig14_different_masses}}}$$
@@ -540,7 +509,7 @@ We closed by presenting a fully generative model of a perturbed stream in galact
 
 Throughout the paper we have used a single simulation of a $10^8M_\odot$ subhalo impact. We have also analysed the same simulation with a $10^7M\odot$ subhalo impact and as expected the amplitude of the effects observed in this paper are decreased but qualitatively the picture is very similar.
 
-The results presented here made use of the \texttt{galpy} package \citep{galpy}: the various methods for computing the velocity kicks outlined in Section~\ref{Sect::Formalism} and the methods for producing a full perturbed stream model as detailed in Section~\ref{Sect::FULL} are all implemented in the package.
+The results presented here made use of the \texttt{galpy} package \citep{galpy}: the various methods for computing the velocity kicks outlined in Section~\ref{Sect::Formalism} and the methods for producing a full perturbed stream model as detailed in Section~\ref{Sect::FULL} are all implemented in the package. Additionally, the code used to generate all the figures in this paper is available in a \texttt{github} repository at \href{https://github.com/jobovy/streamgap-aa}{https://github.com/jobovy/streamgap-aa}.
 
 \subsection{Comments \& Outlook}
 
@@ -590,6 +559,46 @@ X(s)=\begin{cases}
 \end{cases}
 \end{equation}
 We note the form is very similar to the Plummer kicks and, as required, the two are equal when $r_s\rightarrow0$.
+
+\section{Analytic approximation for action and angle kicks}\label{Appendix::Analytic}
+In Section~\ref{Sect::analytic} we found a very accurate analytic approximation for the frequency kicks for scale-free potentials. In this appendix we attempt to find analogous expressions for the actions and angles.
+
+We approximate the changes in the actions as
+\begin{equation}
+\begin{split}
+\delta J^g_R &\approx \frac{\delta H^g - \Omega_\phi\delta L^g}{\Omega_R},\\
+\delta J^g_\phi &\approx (\bs{r}\times\delta\bs{v}^g)_z,\\
+\delta J^g_z &\approx \frac{v_z \delta v^g_z}{\Omega_z},
+\end{split}
+\label{dJ_an}
+\end{equation}
+where $\delta L = \bs{L}\cdot\delta\bs{L}^g/|\bs{L}|$ the change in the angular momentum. The change in $J_R$ comes from the spherical approximation and the change in $J_z$ from the assumption that it is a harmonic oscillator in the $z$ direction. We show these analytic approximations in Fig.~\ref{aa_nz} along with the kick distributions overlaid on the difference plots of Fig.~\ref{tilted_diff_map}. The analytic approximations recover the magnitude of the kicks within a factor of $\sim1.5$ but are not nearly as impressive as the frequency kick analytic expressions. These approximations work better for streams confined to the meridional plane. However, we see from the lower panels of Fig.~\ref{aa_nz} that the correlations between the action kicks are well recovered and explain the observed structure in the action difference plots. Note that our unperturbed stream model is a function of the angles and frequencies such that the action kicks are unimportant for modelling purposes.
+
+Finally, we turn to the angle coordinates. From our investigations there do not appear to be any particularly neat or understandable analytic expressions we can derive for these quantities. What follows are some loose arguments to get a handle on the amplitude of the angle kicks relative to the frequency kicks. We inspect the harmonic oscillator (which is also appropriate for small oscillations about a circular orbit and perpendicular to the plane). The angle coordinate $\theta_i$ is given by
+\begin{equation}
+\tan\theta_i = \frac{\Omega_i x_i}{v_i},
+\end{equation}
+where $x_i$ is the position coordinate relative to the minimum, $v_i$ is the velocity coordinate. For the angle kicks we find that
+\begin{equation}
+\delta\theta^g_i\approx \frac{\tan\theta_i}{1+\tan^2\theta_i}\Big(\frac{\delta\Omega^g_i}{\Omega_i}-\frac{\delta v_i}{v_i}\Big),
+\end{equation}
+For a true harmonic oscillator the change in frequency is identically zero such that this expression can be reduced to
+\begin{equation}
+\delta\theta^g_i\approx -\frac{\delta v_i}{\sqrt{E}}\sin\theta_i = -\frac{1}{2}\frac{\delta v_i}{v_i}\sin 2\theta_i,
+\end{equation}
+where $E$ is the energy of the oscillation. We see that near a turning point ($v_i\approx0$) the angle kicks are largest and of order $\delta v_i/\sqrt{E}$ and near the midpoints ($x_i\approx0$) the angle kicks are approximately zero. As expected the magnitude of the angle kicks are phase-dependent. Using equation~\eqref{dOm_an} we see that
+\begin{equation}
+\frac{\delta\theta_i^g}{\delta\Omega_i^g}\approx\Omega_i^{-1}\Big(\frac{V_c}{|\bs{v}_i|}\Big)^2\sin 2\theta_i,
+\end{equation}
+where we have neglected geometric factors. The final two terms are of order unity such that these rather loose arguments convince us that this ratio is approximately the period of the oscillation in dimension $i$. From inspection of Fig.~\ref{kicks_nzero} we see that the ratio of the angle to frequency kicks is of order $0.1\Gyr$ which corresponds approximately to $1/\Omega$ as $\Omega_i\approx10\Gyr^{-1}$. From inspection of the numerical results it appears $|\delta\theta^g_i|\approx\delta\Omega^g_i/\Omega_i$ within factors of $3$ for $|\Delta\theta_{||}|<1\rad$. Therefore, we have ascertained that the angle kicks are dominated by the frequency kicks after approximately one period.
+
+\begin{figure*}
+$$\includegraphics[width=\textwidth]{{{plots/fig10_tilted_analytic_action}}}$$
+\caption{
+Analytic action kick approximation. In the \textbf{top panels} the red shows the approximate analytic expressions from equation~\protect\eqref{dJ_an} and the black is computed from the simulations. In the \textbf{bottom panels} we overlay the action kick distributions on the difference plots from Fig.~\protect\ref{tilted_diff_map}. Clearly the analytic approximation explains the correlations observed in the simulation.
+}
+\label{aa_nz}
+\end{figure*}
 
 
 \label{lastpage}
