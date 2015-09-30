@@ -60,8 +60,9 @@ def custom_sample_aAt_gap(sdf,n):
     dangle_at_impact= angle-numpy.tile(sdf._progenitor_angle.T,(n,1)).T\
         -(Om-numpy.tile(sdf._progenitor_Omega.T,(n,1)).T)*sdf._timpact
     dangle_par_at_impact= numpy.dot(dangle_at_impact.T,
-                                    sdf._dsigomeanProgDirection)
-        # Calculate and apply kicks (points not yet released have zero kick)
+                                    sdf._dsigomeanProgDirection)\
+                                    *sdf._gap_sigMeanSign
+    # Calculate and apply kicks (points not yet released have zero kick)
     dOr= sdf._kick_interpdOr(dangle_par_at_impact)
     dOp= sdf._kick_interpdOp(dangle_par_at_impact)
     dOz= sdf._kick_interpdOz(dangle_par_at_impact)
