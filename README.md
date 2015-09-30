@@ -17,9 +17,9 @@ There are three useful notebooks. We explain what each contains below:
 1. We inspect a snapshot of the perturbed and unperturbed stream at 880Myr after the impact and calculate the actions, angles and frequencies (Fig. 3, 4, 5 SBE15).
 2. We compute a stream track using the unperturbed simulation at the impact time, calculate the linear maps between angle and frequency kicks and the velocity kicks, and compare with the angle and frequency kicks from the simulation (Fig. 6, 7, 8 SBE15).
 3. We compare our predictions for the perturbed stream at future times t=3Gyr and t=5Gyr (Fig. 9 SBE15)
-3. WE compute some approximate analytic results for the action, angle and frequency kicks (Fig 9, 10 SBE15).
-4. We compute the gap size in parallel angle as a function of time, and compare with the true gap size (Fig. 11, 13 SBE15).
-5. We investigate the impact of different mass subhaloes (Fig. 14 SBE15) and different impact points (Fig. 15 SBE15)
+3. We compute some approximate analytic results for the action, angle and frequency kicks (Fig 9, B1 SBE15).
+4. We compute the gap size in parallel angle as a function of time, and compare with the true gap size (Fig. 10, 12 SBE15).
+5. We investigate the impact of different mass subhaloes (Fig. 13 SBE15) and different impact points (Fig. 14 SBE15)
 
 ## 3. [galpyModelnonzeroJz.ipynb](py/galpyModelnonzeroJz.ipynb)
 1. We generate an unperturbed stream model using the angle-frequency formalism from Bovy (2014) and Sanders (2014) and modify it slightly to match the simulation (Fig. 16 SBE15)
