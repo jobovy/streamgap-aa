@@ -73,7 +73,7 @@ $^2$Department of Astronomy and Astrophysics, University of Toronto, 50 St. Geor
 \maketitle
 \label{firstpage}
 \begin{abstract}
-We develop a formalism for modelling the impact of dark matter subhaloes on cold thin streams. Our formalism models the formation of a gap in the stream in angle-frequency space and is able to handle general stream and impact geometry. We analyse an N-body simulation of a cold stream formed from a progenitor on an eccentric orbit in an axisymmetric potential, which is perturbed by a direct impact from a $10^8 M_\odot$ subhalo, and produce a complete generative model of the perturbed stream that matches the simulation well at a range of times. We show how the results in angle-frequency space can be related to physical properties of the gaps and that previous results for more constrained simulations are recovered. We demonstrate how our results are dependent upon the mass of the subhalo and the location of the impact along the stream. We find that gaps formed far downstream grow more rapidly than those closer to the progenitor due to the more ordered nature of the stream members far from the progenitor. Additionally, we find that the minimum gap density plateaus in time at a value that decreases with increasing subhalo mass. We also provide general analytic expressions for the velocity perturbations due to the fly-by of a Plummer and a Hernquist sphere.
+We develop a formalism for modelling the impact of dark matter subhaloes on cold thin streams. Our formalism models the formation of a gap in the stream in angle-frequency space and is able to handle general stream and impact geometry. We analyse an N-body simulation of a cold stream formed from a progenitor on an eccentric orbit in an axisymmetric potential, which is perturbed by a direct impact from a $10^8 M_\odot$ subhalo, and produce a complete generative model of the perturbed stream that matches the simulation well at a range of times. We show how the results in angle-frequency space can be related to physical properties of the gaps and that previous results for more constrained simulations are recovered. We demonstrate how our results are dependent upon the mass of the subhalo and the location of the impact along the stream. We find that gaps formed far downstream grow more rapidly than those closer to the progenitor due to the more ordered nature of the stream members far from the progenitor. Additionally, we find that the minimum gap density plateaus in time at a value that decreases with increasing subhalo mass.
 \end{abstract}
 
 \begin{keywords}
@@ -84,7 +84,7 @@ Galaxy: structure -- Galaxy: kinematics and dynamics -- Galaxy: halo -- cosmolog
 
 One of the key predictions of the currently favoured $\Lambda$CDM cosmology is hierarchical structure formation. Early in the Universe dark matter overdensities formed, began accumulating baryons, and conglomerated into ever larger dark matter haloes. The result of this process is that at the current time there are many smaller dark matter haloes that are orbiting within a large dark matter halo such as that of the Milky Way. Current simulations \citep[e.g.][]{Diemand2008,Springel2008} predict that there is a spectrum of these subhaloes.
 
-From an observational point-of-view the nature of dark matter has remained aloof as direct detection has proved fruitless. The other crucial line of attack is probing the gravitational effects of dark matter on both visible matter and photons on astrophysical scales. The large-scale smooth dark matter halo is being mapped out with dynamical models of both the assumed phase-mixed components of the Galaxy e.g. the disc \citep{BovyRix2013, Piffl2014}, and those components of the Galaxy that are yet to fully phase mix, e.g. tidal streams \citep[e.g.][]{Koposov2010}. Tidal streams are filaments of material stripped from satellites of a host galaxy and are naturally a result of the hierarchical structure formation picture. Some streams (e.g. GD-1, Palomar 5) are observed to be very kinematically cold such that, in addition to being probes of the large-scale dark matter structure, they are very sensitive probes of interactions with the dark matter subhaloes. Interactions between streams and dark matter haloes produce gaps in the streams that grow over time. A conclusive detection of one such a gap induced by a low-mass subhalo would be very powerful confirmation of $\Lambda$CDM cosmology, whilst the ultimate goal might be to measure the dark-matter halo mass spectrum from a whole series of observed gaps.
+From an observational point-of-view the nature of dark matter has remained aloof as direct detection has proved fruitless. The other crucial line of attack is probing the gravitational effects of dark matter on both visible matter and photons on astrophysical scales. The large-scale smooth dark matter halo is being mapped out with dynamical models of both the assumed phase-mixed components of the Galaxy e.g. the disc \citep[e.g.][]{BovyRix2013, Piffl2014}, and those components of the Galaxy that are yet to fully phase mix, e.g. tidal streams \citep[e.g.][]{Koposov2010,Gibbons2014,Kuepper2015,Bowden2015}. Tidal streams are filaments of material stripped from satellites of a host galaxy and are naturally a result of the hierarchical structure formation picture. Some streams (e.g. GD-1, Palomar 5) are observed to be very kinematically cold such that, in addition to being probes of the large-scale dark matter structure, they are very sensitive probes of interactions with the dark matter subhaloes. Interactions between streams and dark matter haloes produce gaps in the streams that grow over time. A conclusive detection of one such a gap induced by a low-mass subhalo would be very powerful confirmation of $\Lambda$CDM cosmology, whilst the ultimate goal might be to measure the dark-matter halo mass spectrum from a whole series of observed gaps.
 
 To achieve this ambitious goal we need a concerted modelling effort to understand the structure of a gap in a stream. The goal is doubly ambitious due to the difficulties that modelling unperturbed streams has presented. The modelling of streams has received considerable attention in the literature and there have been many proposed methodologies for measuring the Galactic potential using streams. However, there have been relatively few successful applications to the data \citep[e.g.][]{Koposov2010,LawMajewski2010,Gibbons2014,Kuepper2015,Bowden2015} and we have not yet reached a point where modelling a stream is simple. One very powerful method is to construct models of streams in angle-frequency space as proposed by \cite{Bovy2014} and \cite{Sanders2014}. This space simplifies the stream dynamics \citep{HelmiWhite1999,Tremaine1999} and allows rapid generation of general stream models.
 
@@ -92,9 +92,9 @@ In recent years there has been much progress made in understanding the structure
 
 In this paper we will build on the angle-frequency stream formalism and argue that it provides a clear basis on which to incorporate perturbations due to subhalo fly-bys. We show that many of the insights from circular orbits can be extended to general, eccentric orbits. We work from the point-of-view that we know the underlying unperturbed stream model well and we are trying to characterise substructure in the stream.
 
-We will show how one can compute the kicks in velocity, angles and frequencies for general subhaloes and general impact geometries. We provide analytic forms for the computation of the kicks in velocity for both Plummer and Hernquist subhaloes. With the aid of a simulation of a cold stream on an eccentric orbit in a flattened axisymmetric logarithmic potential we demonstrate how a perturbed stream model can be generated and we inspect the resultant distributions in action, angle and frequency space. We show that a gap forms in angle, frequency and action space and that the gap size in the parallel angle space (the angle along the stream) grows like the spatial gap size. We simulate a series of halo fly-bys of differing masses and geometry. We find in all cases the minimum density in the gap plateaus in time and that the gap size grows fastest for fly-bys far from the stream progenitor where the particles are well ordered by energy. Finally, we show that we are able to produce a fully generative model of a perturbed stream that matches the simulation well in galactocentric coordinates.
+We will show how one can compute the kicks in velocity, angles and frequencies for general subhaloes and general impact geometries. With the aid of a simulation of a cold stream on an eccentric orbit in a flattened axisymmetric logarithmic potential we demonstrate how a perturbed stream model can be generated and we inspect the resultant distributions in action, angle and frequency space. We show that a gap forms in angle, frequency and action space and that the gap size in the parallel angle space (the angle along the stream) grows like the spatial gap size. We simulate a series of halo fly-bys of differing masses and geometry. We find in all cases the minimum density in the gap plateaus in time and that the gap size grows fastest for fly-bys far from the stream progenitor where the particles are well ordered by energy. Finally, we show that we are able to produce a fully generative model of a perturbed stream that matches the simulation well in galactocentric coordinates.
 
-The paper is arranged as followed. We begin in Section~\ref{Sect::Formalism} with the framework for computing the velocity perturbations of a stream due to a general subhalo fly-by. We compute the velocity perturbations using methods of increasing complexity, and show the difference between velocity kicks computed for a range of subhalo profiles. We give analytic expressions for the velocity perturbation due to a Plummer profile and in Appendix~\ref{App::Hernquist} we give analytic expressions for the velocity perturbation due to a Hernquist profile. In Section~\ref{Sec::Formalism_angfreq} we translate these velocity perturbations into angle and frequency perturbations and present the formalism for perturbing an angle-frequency stream model. In Section~\ref{Sect::Simulation} we detail an N-body simulation of a $10^8M_\odot$ dark matter impact on a cold stream formed from a progenitor on an eccentric orbit. We project the simulation into action, angle and frequency coordinates and by applying the framework of Section~\ref{Sect::Formalism} we perturb an unperturbed simulation snapshot and compare to the perturbed simulation snapshot. We show the angle and frequency kicks for a subhalo fly-by and develop an analytic approximation that well reproduces the frequency kicks. To close the section we compute the gap size in angle space as a function of time and by projecting the models back into real space show how the gap size in angle space correlates with the spatial gap in the stream.  In Section~\ref{Sect::Variation} we consider fly-bys of varying subhalo masses and varying impact geometry. In Section~\ref{Sect::FULL} we demonstrate how a fully generative perturbed stream model can be created and show the model density as well as the configuration space distributions well match the simulation. We present improvements to the unperturbed stream model that are necessary to reproduce the underlying stream density. We discuss the applicability of our formalism and present our conclusions in Section~\ref{Sect::Conclusions}.
+The paper is arranged as followed. We begin in Section~\ref{Sect::Formalism} with the framework for computing the velocity perturbations of a stream due to a general subhalo fly-by. We compute the velocity perturbations using methods of increasing complexity, and show the difference between velocity kicks computed for a range of subhalo profiles. In Section~\ref{Sec::Formalism_angfreq} we translate these velocity perturbations into angle and frequency perturbations and present the formalism for perturbing an angle-frequency stream model. In Section~\ref{Sect::Simulation} we detail an N-body simulation of a $10^8M_\odot$ dark matter impact on a cold stream formed from a progenitor on an eccentric orbit. We project the simulation into action, angle and frequency coordinates and by applying the framework of Section~\ref{Sect::Formalism} we perturb an unperturbed simulation snapshot and compare to the perturbed simulation snapshot. We show the angle and frequency kicks for a subhalo fly-by and develop an analytic approximation that well reproduces the frequency kicks. To close the section we compute the gap size in angle space as a function of time and by projecting the models back into real space show how the gap size in angle space correlates with the spatial gap in the stream.  In Section~\ref{Sect::Variation} we consider fly-bys of varying subhalo masses and varying impact geometry. In Section~\ref{Sect::FULL} we demonstrate how a fully generative perturbed stream model can be created and show the model density as well as the configuration space distributions well match the simulation. We present improvements to the unperturbed stream model that are necessary to reproduce the underlying stream density. We discuss the applicability of our formalism and present our conclusions in Section~\ref{Sect::Conclusions}.
 
 \section{Velocity Perturbations}\label{Sect::Formalism}
 In this section we give expressions for the velocity changes of stream particles under the influence of a subhalo fly-by. Following \cite{YoonJohnstonHogg}, \cite{Carlberg2013} and \cite{ErkalBelokurov2015} we work under the impulse approximation i.e. the integrated acceleration is assumed to act instantaneously at some impact time such that the velocity of the stream particles changes instantly. The change in velocity is given by
@@ -121,7 +121,7 @@ as the corresponding relative velocity. The expression for the velocity kicks fo
 \delta\bs{v}^g_i &= \int_{-\infty}^{\infty} \d t\,\bs{a}(\bs{x}_i(t)),\\
 \bs{x}_i(t)&=\bs{b}_i+\bs{w}_i\,t.
 \end{split}
-\end{equation}For general subhalo acceleration fields this integral must be calculated numerically via a coordinate transformation to make the limits finite. However, for both a Plummer subhalo and a Hernquist subhalo the velocity kicks may be computed analytically. The potential of a Plummer sphere is given by
+\end{equation}For general subhalo acceleration fields this integral must be calculated numerically via a coordinate transformation to make the limits finite. However, for a Plummer subhalo the velocity kicks may be computed analytically. The potential of a Plummer sphere is given by
 \begin{equation}
 \Phi_{\rm P}(r) = -\frac{GM}{\sqrt{r^2+r_s^2}},
 \end{equation}
@@ -155,7 +155,7 @@ A comparison of the velocity kicks calculated with varying levels of complexity.
 \label{curved_straight}
 \end{figure*}
 
-We also consider kicks due to Hernquist profiles (as with the Plummer profile the kicks can be computed analytically as shown in Appendix~\ref{App::Hernquist} ) and truncated Navarro-Frenk-White (NFW) profiles. The density profile for the truncated NFW halo is given by
+We also consider kicks due to Hernquist profiles \citep{Hernquist} and truncated Navarro-Frenk-White \citep[NFW,][]{NFW1996} profiles. The density profile for the truncated NFW halo is given by
 \begin{equation}
 \rho_{\rm NFW}(r) = \frac{M}{4\pi r_s^3}\Big(\frac{r}{r_s}\Big)^{-1}\Big(1+\frac{r}{r_s}\Big)^{-2}\mathrm{sech}\Big(\frac{r}{r_t}\Big).
 \end{equation}
@@ -378,7 +378,7 @@ We also plot the minimum and maximum density contrasts (defined as perturbed div
 (1+\frac{\partial\delta\Omega^g_{||}}{\partial\theta_{||}}t)^{-1}-1.
 \label{densitycontrast}
 \end{equation}
-This expression is much like those derived by \cite{ErkalBelokurov2015} in the circular-orbit limit. For a uniform unperturbed angle distribution the minimum density contrast occurs at $\Delta\theta_{||}=0$ and so falls as $1/(1+Ct)$ where $C$ is a constant. The maximum density occurs when the bracket diverges such that the caustic behaviour of \cite{ErkalBelokurov2015} is recovered. We note that in reality the minimum density contrast in Fig.~\ref{real_v_angle} falls more slowly than $1/t$ at large times and actually reaches a constant. This is due to the spread of frequencies/energies in the stream. Similarly the spread in energies in the stream gives rise to the finite peak observed in the density contrast.
+This expression is much like those derived by \cite{ErkalBelokurov2015} in the circular-orbit limit. For a uniform unperturbed angle distribution the minimum density contrast occurs at $\Delta\theta_{||}=0$ and so falls as $1/(1+Ct)$ where $C$ is a constant. The maximum density occurs when $|1+(\partial\delta\Omega^g_{||}/\partial\theta_{||})t|$ is minimised. At early times this expression is non-zero for all $\Delta\theta_{||}$ whilst at later times the expression is zero at some $\Delta\theta_{||}$ such that the caustic behaviour of \cite{ErkalBelokurov2015} is recovered. We note that in reality the minimum density contrast in Fig.~\ref{real_v_angle} falls more slowly than $1/t$ at large times and actually reaches a constant. This is due to the spread of frequencies/energies in the stream. Similarly the spread in energies in the stream gives rise to the finite peak observed in the density contrast.
 
 \begin{figure}
 $$\includegraphics[width=\columnwidth]{{{plots/fig12_real_vs_angle_properties}}}$$
@@ -530,39 +530,12 @@ Council. JB thanks the Natural Sciences and Engineering Research
 Council of Canada for financial support of this project. DE acknowledges the finical support from the ERC. The research leading to these
 results has received funding from the European Research Council under
 the European Union's Seventh Framework Programme (FP/2007-2013)/ERC
-Grant Agreement no. 308024. We also thank
-N. Wyn Evans for calculating the velocity perturbations due to a
-Hernquist profile in the impulse approximation.
+Grant Agreement no. 308024.
 
 \bibliography{bibliography}
 \bibliographystyle{mn2e}
 
 \appendix
-\section{Velocity kicks from a Hernquist sphere}\label{App::Hernquist}
-In this appendix we provide formulae to compute the velocity kicks due to a Hernquist profile in the impulse approximation. The notation used is identical to that given in Section~\ref{Sect::Formalism}.
-The potential of a Hernquist sphere \citep{Hernquist1990} is given by
-\begin{equation}
-\Phi_{\rm H}(r) = -\frac{GM}{r+r_s},
-\end{equation}
-where $M$ is the mass and $r_s$ the scale radius. The velocity kicks are given by
-\begin{equation}
-\delta\bs{v}^{g}_{i,\mathrm{H}} = -\frac{2GM}{|\bs{w}_i|}
-\frac{\bs{b}_i-\hat{\bs{w}}_i(\bs{b}_i\cdot\hat{\bs{w}}_i)}
-{(B^2-r_s^2)}\Big(1-\frac{2r_s}{r_s+B}X(S)\Big),
-\label{curved_hernquist}
-\end{equation}
-where
-\begin{equation}
-S=\sqrt{\frac{2B}{r_s+B}},
-\end{equation}
-and we have made use of the function $X(s)$ introduced in equation (33) and (34) of \cite{Hernquist1990} which is given by
-\begin{equation}
-X(s)=\begin{cases}
-    \frac{1}{\sqrt{1-s^2}}\mathrm{arcsech}\,s,& 0\leq s\leq 1\\
-    \frac{1}{\sqrt{s^2-1}}\mathrm{arcsec}\,s, & 1\leq s\leq \infty.
-\end{cases}
-\end{equation}
-We note the form is very similar to the Plummer kicks and, as required, the two are equal when $r_s\rightarrow0$.
 
 \section{Analytic approximation for action and angle kicks}\label{Appendix::Analytic}
 In Section~\ref{Sect::analytic} we found a very accurate analytic approximation for the frequency kicks for scale-free potentials. In this appendix we attempt to find analogous expressions for the actions and angles.
@@ -597,7 +570,7 @@ where $E$ is the energy of the oscillation. We see that near a turning point ($v
 where we have neglected geometric factors. The final two terms are of order unity such that these rather loose arguments convince us that this ratio is approximately the period of the oscillation in dimension $i$. From inspection of Fig.~\ref{kicks_nzero} we see that the ratio of the angle to frequency kicks is of order $0.1\Gyr$ which corresponds approximately to $1/\Omega$ as $\Omega_i\approx10\Gyr^{-1}$. From inspection of the numerical results it appears $|\delta\theta^g_i|\approx\delta\Omega^g_i/\Omega_i$ within factors of $3$ for $|\Delta\theta_{||}|<1\rad$. Therefore, we have ascertained that the angle kicks are dominated by the frequency kicks after approximately one period.
 
 \begin{figure*}
-$$\includegraphics[width=\textwidth]{{{plots/figB1_tilted_analytic_action}}}$$
+$$\includegraphics[width=\textwidth]{{{plots/figA1_tilted_analytic_action}}}$$
 \caption{
 Analytic action kick approximation. In the \textbf{top panels} the red shows the approximate analytic expressions from equation~\protect\eqref{dJ_an} and the black is computed from the simulations. In the \textbf{bottom panels} we overlay the action kick distributions on the difference plots from Fig.~\protect\ref{tilted_diff_map}. Clearly the analytic approximation explains the correlations observed in the simulation.
 }
