@@ -466,7 +466,7 @@ Additionally, inspecting the distribution of $\Delta\theta_{||}/\Delta\Omega_{||
 p(\Delta\Omega_{||},t_s) \propto &(1-w)t_s\mathcal{N}(\Delta\Omega_{||}|\mu_\mathrm{peri},\sigma_\mathrm{peri})\\\times&\sum_n^{\mathrm{int}([t_d-t_R]/T_R)}\delta(t_s-nT_R-t_R)\\+&wt_s\mathcal{N}(\Delta\Omega_{||}|\mu_\mathrm{evap},\sigma_\mathrm{evap}),
 \end{split}
 \end{equation}
-where $\mathcal{N}(X|\mu,\sigma)$ is a Gaussian distribution with mean $\mu$ and width $\sigma$. The parameter $w=0.28$ is the weight, $T_R$ is the radial period, $t_R$ is the time since last pericentric passage and $\delta(t_s-nT_R-t_R)$ is a delta function expressing stripping at each pericenter passage. Fig.~\ref{UnpertNEW} shows the improvements made to the model such that it matches the simulation well.
+where $\mathcal{N}(X|\mu,\sigma)$ is a Gaussian distribution with mean $\mu$ and width $\sigma$. The parameter $w=0.28$ is the weight, $T_R$ is the radial period, $t_R$ is the time since last pericentric passage and $\delta(t_s-nT_R-t_R)$ is a delta function expressing stripping at each pericentre passage. Fig.~\ref{UnpertNEW} shows the improvements made to the model such that it matches the simulation well.
 
 \begin{figure}
 $$\includegraphics[width=\columnwidth]{{{plots/fig15_new_unperturbed_model}}}$$\\
@@ -481,7 +481,7 @@ We use this modified model to generate mock stream particles. To compute the imp
 We generate 100,000 mock stream particles from the generative model
 for the $M=10^8\,M_\odot$ impact. The density along the stream in the
 simulation and of the mock stream is displayed in
-Figure~\ref{config_density}. The gray, filled histogram shows the
+Figure~\ref{config_density}. The grey, filled histogram shows the
 stream density in the unperturbed simulation for comparison. It is
 clear that the simple generative model provides an excellent match to
 the density in and near the gap in the simulation.
@@ -502,7 +502,7 @@ described in this section.
 
 \begin{figure}
 $$\includegraphics[width=\columnwidth]{{{plots/fig16_config_density}}}$$
-\caption{Density in a mock stream generated from the generative model described in the text (red) compared to that in the simulation (black) near the gap. The density of the unperturbed simulation is displayed in gray. The density in the simulation is well matched in the generative model.}
+\caption{Density in a mock stream generated from the generative model described in the text (red) compared to that in the simulation (black) near the gap. The density of the unperturbed simulation is displayed in grey. The density in the simulation is well matched in the generative model.}
 \label{config_density}
 \end{figure}
 
@@ -528,7 +528,7 @@ Throughout the paper we have used a single simulation of a $10^8M_\odot$ subhalo
 
 \subsection{Comments \& Outlook}
 
-The formalism presented promises to be crucial for constraining the properties of a subhalo fly-by on a cold stream. It is anticipated that one would find potential gap candidates in star counts as has been demonstrated by \citet{CarlbergPal52012} and \citet{CarlbergGD12013} and then one would follow up with more detailed observations of the kinematic structure of the gap. \cite{ErkalBelokurov2015b} discussed what range of subhalo properties one could potentially constrain with a current and future observation quality. They found that the shape of the gap encodes the subhalo properties and showed that with ongoing surveys like the Dark Energy Survey and \textit{Gaia}, it will be possible to characterize dark subhaloes down to $10^7M_\odot$. This analysis was limited to streams on near-circular orbits but it is anticipated that many of the insights apply to more general stream geometries. We may yield stronger constraints using stream progenitors on eccentric orbits but this remains to be seen from future analysis. It is clear that the framework presented here allows all of the parameters of a subhalo impact to be varied efficiently for any stream, because all of the computationally-expensive steps can be pre-computed once the smooth stream model is known.
+The formalism presented promises to be crucial for constraining the properties of a subhalo fly-by on a cold stream. It is anticipated that one would find potential gap candidates in star counts as has been demonstrated by \citet{CarlbergPal52012} and \citet{CarlbergGD12013} and then one would follow up with more detailed observations of the kinematic structure of the gap. \cite{ErkalBelokurov2015b} discussed what range of subhalo properties one could potentially constrain with a current and future observation quality. They found that the shape of the gap encodes the subhalo properties and showed that with ongoing surveys like the Dark Energy Survey and \textit{Gaia}, it will be possible to characterise dark subhaloes down to $10^7M_\odot$. This analysis was limited to streams on near-circular orbits but it is anticipated that many of the insights apply to more general stream geometries. We may yield stronger constraints using stream progenitors on eccentric orbits but this remains to be seen from future analysis. It is clear that the framework presented here allows all of the parameters of a subhalo impact to be varied efficiently for any stream, because all of the computationally-expensive steps can be pre-computed once the smooth stream model is known.
 
 Whilst an underdensity in a stream is indicative of a subhalo fly-by, subhalo interactions are not the only cause of structure in a stream. \cite{Kuepper2010} have shown that overdensities naturally form in an eccentric stream due to epicyclic oscillations. This effect is seen most clearly near the progenitor and can be fully incorporated in the angle-frequency models. However, importantly, the epicyclic overdensities form a qualitatively different shape to gap overdensities (see Fig.~\ref{angfreq_dist}). Additionally, the rate at which the stream stars are stripped from the progenitor affects the density structure in the stream. Pericentric passage stripping events naturally produce substructure in the stream nearest the progenitor where the particles have yet to order in energy. In the models presented in \cite{Bovy2014} and \cite{Sanders2014} the stripping rate was assumed constant and here we have extended this approach to account for a variable stripping rate. In our simulation the subhalo struck the stream far from the progenitor where, even with a variable stripping rate, the unperturbed density was very smooth. However, for impacts close to the progenitor it may become more difficult to disentangle the effects of variable stripping with a subhalo impact. Fortunately for a long stream that has gone through many stripping events the stripping rate may be quantifiable due to its anticipated periodicity, but for shorter streams there may be considerable degeneracy. Finally, we comment that substructure in streams can be due to incorrect modelling of the background or variable extinction but these are not issues with the stream modelling so do not concern us here.
 
