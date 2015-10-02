@@ -534,6 +534,8 @@ In this paper we have analysed the effect of a single subhalo fly-by. \cite{Yoon
 
 The framework presented here is appropriate for when an interaction between the stream and a subhalo is short compared to the orbital time of the stream such that the impulse approximation is appropriate. Instead of a full perturbative analysis we were able to simply consider instantaneous changes to the stream properties. However, it is potentially a small starting step to developing a scheme to handle more general perturbations to streams. The assumption of a smooth analytic galaxy model is probably inappropriate, particularly over the timescales on which streams evolve. \cite{Bonaca2014} presented a study of analysing streams from the Via Lactea simulation under assumptions on the smoothness of the halo and estimated that biases of order $50\percent$ in the Milky Way mass could arise by falsely modelling the dark halo with a smooth analytic potential. Additionally, recent results suggest that the mass of the Large Magellanic Cloud is much larger than previously believed \citep{Kallivayalil2013, Penarrubia2015}. However, a counter to this is that many of the observed streams are very simple cold structures suggesting that the approximation of a smooth halo for the Milky Way is valid. Nonetheless it may be inevitable that one has to include perturbations on top of a smooth model to fit the known streams in the Galaxy and the angle-action framework is ideal for such an endeavour. These variables were originally introduced to handle perturbative solutions to the equations of the motion in the Solar system so seem highly appropriate for handling perturbations on Galactic scales.
 
+The results presented here made use of the \texttt{galpy} package \citep{galpy}: the various methods for computing the velocity kicks outlined in Section~\ref{Sect::Formalism} and the methods for producing a full perturbed stream model as detailed in Section~\ref{Sect::FULL} are all implemented in the package. Additionally, the code used to generate all the figures in this paper is available in a \texttt{github} repository at \href{https://github.com/jobovy/streamgap-aa}{https://github.com/jobovy/streamgap-aa}.
+
 In coming years the quality and quantity of data will provide us with detailed observations of many tidal streams. We anticipate that all of these streams have had a turbulent past full of impacts from dark subhaloes. Our grand goal is to reveal the history of each stream and extract the mass spectrum of dark matter subhaloes in the Milky Way. The formalism we have presented promises to be the most suitable tool for the job.
 
 \section*{Acknowledgments}
@@ -543,8 +545,6 @@ Council of Canada for financial support of this project. DE acknowledges the fin
 results has received funding from the European Research Council under
 the European Union's Seventh Framework Programme (FP/2007-2013)/ERC
 Grant Agreement no. 308024. We thank Raymond Carlberg for useful comments on a draft.
-
-The results presented here made use of the \texttt{galpy} package \citep{galpy}: the various methods for computing the velocity kicks outlined in Section~\ref{Sect::Formalism} and the methods for producing a full perturbed stream model as detailed in Section~\ref{Sect::FULL} are all implemented in the package. Additionally, the code used to generate all the figures in this paper is available in a \texttt{github} repository at \href{https://github.com/jobovy/streamgap-aa}{https://github.com/jobovy/streamgap-aa}.
 
 \bibliography{bibliography}
 \bibliographystyle{mn2e}
