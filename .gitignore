@@ -68,3 +68,6 @@ py/.ipynb_checkpoints/*
 *.bbl
 *.blg
 *~
+
+submission/*
+submission.tar.gz
