@@ -19,7 +19,7 @@
 \def\meh{{\rm [M/H]}}
 \def\zd{z_d}
 \def\dex{\,{\rm dex}}
-\def\d{{\rm d}}
+\def\d{\mathrm{d}}
 \def\rc{R_{\rm c}}
 \def\rd{R_{\rm d}}
 \def\rs{R_\sigma}
@@ -89,7 +89,7 @@ From an observational point-of-view the nature of dark matter has remained aloof
 
 To achieve this ambitious goal we need a concerted modelling effort to understand the structure of a gap in a stream. The goal is doubly ambitious due to the difficulties that modelling unperturbed streams has presented. The modelling of streams has received considerable attention in the literature and there have been many proposed methodologies for measuring the Galactic potential using streams. However, there have been relatively few successful applications to the data \citep[e.g.][]{Koposov2010,LawMajewski2010,Gibbons2014,Kuepper2015,Bowden2015} and we have not yet reached a point where modelling a stream is simple. One very powerful method is to construct models of streams in angle-frequency space as proposed by \cite{Bovy2014} and \cite{Sanders2014}. This space simplifies the stream dynamics \citep{HelmiWhite1999,Tremaine1999} and allows rapid generation of general stream models.
 
-In recent years there has been much progress made in understanding the structure of stream gaps through the analysis of numerical simulations \citep{SiegalGaskins2008,Carlberg2009,YoonJohnstonHogg,Carlberg2012} as well as through analytic approaches \citep{Carlberg2013,ErkalBelokurov2015,ErkalBelokurov2015b}. \cite{ErkalBelokurov2015} extended the treatment introduced in \cite{Carlberg2013} and developed a simple picture of how gaps form in streams on circular orbits due to changes in the orbital frequency induced by a subhalo's passage. The analytic results of that work were then used in \citet{ErkalBelokurov2015b} to demonstrate that subhalo properties can be reliably inferred from observations of streams with realistic observational errors. While this simple picture of gap formation has provided useful insight, it relies on the ease with which nearly circular orbits can be handled and cannot be easily extended to realistic streams which are on eccentric orbits.
+In recent years there has been much progress made in understanding the structure of stream gaps through the analysis of numerical simulations \citep{Johnston2002,Ibata2002,SiegalGaskins2008,Carlberg2009,YoonJohnstonHogg,Carlberg2012} as well as through analytic approaches \citep{Carlberg2013,ErkalBelokurov2015,ErkalBelokurov2015b}. \cite{ErkalBelokurov2015} extended the treatment introduced in \cite{Carlberg2013} and developed a simple picture of how gaps form in streams on circular orbits due to changes in the orbital frequency induced by a subhalo's passage. The analytic results of that work were then used in \citet{ErkalBelokurov2015b} to demonstrate that subhalo properties can be reliably inferred from observations of streams with realistic observational errors. While this simple picture of gap formation has provided useful insight, it relies on the ease with which nearly circular orbits can be handled and cannot be easily extended to realistic streams which are on eccentric orbits.
 
 Motivated by these analytic results, we will build on the angle-frequency stream formalism and argue that it provides a clear basis on which to incorporate perturbations due to subhalo fly-bys. We show that many of the insights from circular orbits in \cite{ErkalBelokurov2015} can be extended to general, eccentric orbits. We work from the point-of-view that we know the underlying unperturbed stream model well and we are trying to characterise substructure in the stream.
 
@@ -100,7 +100,7 @@ The paper is arranged as followed. We begin in Section~\ref{Sect::Formalism} wit
 \section{Velocity Perturbations}\label{Sect::Formalism}
 In this section we give expressions for the velocity changes of stream particles under the influence of a subhalo fly-by. Following \cite{YoonJohnstonHogg}, \cite{Carlberg2013} and \cite{ErkalBelokurov2015} we work under the impulse approximation i.e. the integrated acceleration is assumed to act instantaneously at some impact time such that the velocity of the stream particles changes instantly. The change in velocity is given by
 \begin{equation}
-\delta\bs{v}^g = \int_{-\infty}^{\infty} \d t\,\bs{a}(\bs{x}(t)),
+\delta\bs{v}^g = \int_{-\infty}^{\infty} \mathrm{d} t\,\bs{a}(\bs{x}(t)),
 \end{equation}
 where $\bs{a}$ is the acceleration resulting from the force exerted by the subhalo which depends on the location $\bs{x}$ of the particle at time $t$\footnote{Throughout this paper we use $\delta$ to denote changes in quantities for individual particles in time e.g. from the subhalo fly-bys, and $\Delta$ for differences \emph{between} particles.}. The fly-by is described by the impact parameter $b$, the velocity of the subhalo $\bs{w}$ and the time of the impact $t=-t_g$. To simplify the expressions in this section, we set $t_g=0$. \cite{ErkalBelokurov2015} gave expressions for the velocity kicks due to a Plummer subhalo on a straight stream segment moving at a fixed relative velocity to the subhalo. If we consider the example of GD-1 and take the model of \cite{Koposov2010} we find that the observed segment of the stream has a radius of curvature of $\sim24\kpc$. We will see that for a $10^8M_\odot$ Plummer subhalo with scale radius $r_s=625\pc$ the kicks are important on scales of $\sim10r_s\approx6\kpc$ such that the radius of curvature is comparable to the region over which the kick is important. Similarly, the typical distance a stream particle moves during the interaction is $\sim10|\bs{v}|r_s/|\bs{w}-\bs{v}|\approx10r_s/\sqrt{2}\approx4\kpc$ (where $\bs{w}$ is the velocity of the subhalo) such that the curvature of the motion of an individual particle is also important over the interaction. Here we will give more general formulae for the velocity kicks that account for the curved extent of the stream.
 
@@ -120,7 +120,7 @@ as the displacement vector between stream particle $i$ and the subhalo at the im
 as the corresponding relative velocity. The expression for the velocity kicks for the $i$th stream particle is given by
 \begin{equation}
 \begin{split}
-\delta\bs{v}^g_i &= \int_{-\infty}^{\infty} \d t\,\bs{a}(\bs{x}_i(t)),\\
+\delta\bs{v}^g_i &= \int_{-\infty}^{\infty} \mathrm{d} t\,\bs{a}(\bs{x}_i(t)),\\
 \bs{x}_i(t)&=\bs{b}_i+\bs{w}_i\,t.
 \end{split}
 \end{equation}For general subhalo acceleration fields this integral must be calculated numerically via a coordinate transformation to make the limits finite. However, for a Plummer subhalo the velocity kicks may be computed analytically. The potential of a Plummer sphere is given by
