@@ -1,7 +1,7 @@
 \documentclass[useAMS,usenatbib,fleqn,a4paper]{mn2e}
 %DIF LATEXDIFF DIFFERENCE FILE
-%DIF DEL ../../../../streamgap-aa/submission/stream_gaps_draft.tex   Mon Oct 12 20:55:11 2015
-%DIF ADD ../stream_gaps_draft.tex                                    Fri Dec 11 13:34:27 2015
+%DIF DEL ../../../streamgap-aa/submission/stream_gaps_draft.tex   Mon Oct 12 20:55:11 2015
+%DIF ADD stream_gaps_draft.tex                                    Fri Dec 11 18:47:47 2015
 \usepackage{times}
 \usepackage{amsmath}
 \usepackage{amssymb}
@@ -124,7 +124,7 @@ predict that there is a }\DIFdelend \DIFaddbegin \DIFadd{dark-matter-only simula
 \citep[e.g.][]{Diemand2008,Springel2008} }%DIFAUXCMD
 make predictions for the slope of the mass }\DIFaddend spectrum of these subhaloes\DIFdelbegin \DIFdel{.
 }\DIFdelend \DIFaddbegin \DIFadd{, although the exact structure of the subhalo mass spectrum in $\Lambda$CDM is still an ongoing area of research \mbox{%DIFAUXCMD
-\citep{Giocoli2010,Gao2011}}%DIFAUXCMD
+\citep[e.g.][]{Giocoli2010,Gao2011}}%DIFAUXCMD
 . Warm dark matter models predict quite different subhalo mass spectra \mbox{%DIFAUXCMD
 \citep{Lovell2014} }%DIFAUXCMD
 such that the presence and number of these low mass subhalos is a crucial test for the $\Lambda$CDM cosmology.
@@ -166,7 +166,7 @@ we know that }\DIFaddend the typical distance a stream particle moves during the
 \DIFaddbegin 
 
 \begin{figure}
-$$\DIFaddFL{\includegraphics[width=\columnwidth]{{{plots/fig0_geometry}}}}$$
+$$\DIFaddFL{\includegraphics[width=\columnwidth]{{{plots/fig1_geometry}}}}$$
 \caption{\DIFaddFL{Stream-subhalo interaction geometry at the point of closest approach: the right panel is a zoom-in of the region inside the grey dashed square in the left panel. The stream track is a circular orbit of radius $10\kpc$ and circular velocity $220\kms$ shown by the grey line. The red vector $\bs{w}$ shows the projection of the sub-halo velocity. The black position vectors $\bs{x}_0$ and $\bs{x}_i$ show the positions of the stream closest to the subhalo and an arbitrary stream point respectively. The black velocity vectors $\bs{v}_0$ and $\bs{v}_i$ give the velocities of these two stream points. The blue vectors $\bs{b}_0$ and $\bs{b}_i$ are the closest-approach displacement vector and the displacement vector between the subhalo and the arbitrary stream point respectively.
 }}
 \label{geometry_lb}
@@ -233,15 +233,18 @@ The differences between the different methods are small. One very noticeable dif
 \cite{YoonJohnstonHogg}}%DIFAUXCMD
 . For many potentials the orbital frequencies are strongly dependent on the energy and only weakly dependent on the other integrals of motion \mbox{%DIFAUXCMD
 \citep{BinneyTremaine}}%DIFAUXCMD
-. Therefore }\DIFaddend it is this quantity which has the largest effect on the future structure of the stream.
-\DIFdelbegin \DIFdel{For }\DIFdelend \DIFaddbegin 
+. Therefore }\DIFaddend it is this quantity which has the largest effect on the future structure of the stream.  \DIFdelbegin \DIFdel{For }\DIFdelend \DIFaddbegin \DIFadd{Additionally, \mbox{%DIFAUXCMD
+\cite{ErkalBelokurov2015} }%DIFAUXCMD
+argued that for the near-circular orbit case the azimuthal velocity kicks and hence $\bs{v}\cdot\delta\bs{v}^g\approx v_\phi\delta v_\phi^g$ produced the most significant effects on the gap evolution.
+}
 
 \DIFadd{In conclusion we find that all the difference between the velocity kicks using different methods is very small, particularly for the $10^7M_\odot$ impact, and probably much smaller than the precision with which line-of-sight velocities will be measured for a number of years. Therefore, we conclude that the straight-line approximation is sufficient. However, the curved approximation has the same computational cost, whilst capturing an additional physical effect, so for }\DIFaddend our calculations in Section~\ref{Sect::Simulation} we will use equation~\eqref{curved} to calculate all kicks. \DIFaddbegin \DIFadd{We note however that we have not explored different impact and stream geometries but rather inspected what we see as a representative case so there may be special cases where the more computationally expensive methods are required.
 }\DIFaddend 
 
 
 \begin{figure*}
-$$\includegraphics[width=\textwidth]{{{plots/fig1_curved_straight_comparison}}}$$
+$$\DIFdelbeginFL %DIFDELCMD < \includegraphics[width=\textwidth]{{{plots/fig1_curved_straight_comparison}}}%%%
+\DIFdelendFL \DIFaddbeginFL \includegraphics[width=\textwidth]{{{plots/fig2_curved_straight_comparison}}}\DIFaddendFL $$
 \caption{
 A comparison of the velocity kicks calculated with varying levels of complexity \DIFdelbeginFL \DIFdelFL{. }\textbf{\DIFdelFL{Panel (a)}}%DIFAUXCMD
 \DIFdelFL{: The stream track is a circular orbit of radius $10\kpc$ and circular velocity $220\kms$ and is shown in black in }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{for }\DIFaddendFL the \DIFdelbeginFL \DIFdelFL{left panel. Two lines are shown in the second through to fifth panel corresponding to two subhaloes, which are each }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{interaction between }\DIFaddendFL a Plummer sphere \DIFdelbeginFL \DIFdelFL{moving at $\bs{w}=(0,132,176)\kms$ with an impact parameter $b=625\pc$. The red arrow in the left panel shows the projection of the velocity vector into the plane. The higher amplitude kicks correspond to the sphere of mass $10^8M_\odot$ }\DIFdelendFL and \DIFdelbeginFL \DIFdelFL{scale radius $r_s=625\pc$ and the lower amplitude kicks correspond to the sphere of mass $10^7M_\odot$ and scale radius $r_s=250\pc$. }\textbf{\DIFdelFL{Panels (b), (c) \& (d)}}%DIFAUXCMD
@@ -255,7 +258,7 @@ A comparison of the velocity kicks calculated with varying levels of complexity 
 \DIFaddbegin 
 
 \begin{figure*}
-$$\DIFaddFL{\includegraphics[width=\textwidth]{{{plots/fig2_nfw_plummer_comparison}}}}$$
+$$\DIFaddFL{\includegraphics[width=\textwidth]{{{plots/fig3_nfw_plummer_comparison}}}}$$
 \caption{
 \DIFaddFL{A comparison of the velocity kicks from a Plummer (black solid), a Hernquist (green long-dashed), a NFW (red medium-dashed) and a truncated NFW subhalo (blue short-dashed). }\textbf{\DIFaddFL{Panel (a)}}\DIFaddFL{: The left panel shows the density (top) and mass (bottom) profiles of the four haloes. The three finite mass haloes have the same total mass and the NFW profile has the same mass parameter. The Hernquist, NFW and truncated NFW scale radii are chosen such that at the Plummer scale radius ($r_s$) the same mass is enclosed by the profiles. The truncated NFW halo has a truncation radius equal to twice its scale radius. }\textbf{\DIFaddFL{Panels (b), (c) \& (d)}}\DIFaddFL{: The second, third and fourth panels show the velocity kicks as a function of the distance along the stream.  }\textbf{\DIFaddFL{Panel (e)}}\DIFaddFL{: The rightmost panel shows $\bs{v}\cdot\delta\bs{v}^g$. The stream is a particle train along the $y$-axis with velocity $v_y$. The subhaloes have $4GM=r_s v_y^2$, $r_{s,\mathrm{Hernquist}}=1.36r_s$, $r_{s,\mathrm{NFW}}=1.21r_s$, $r_{s,\mathrm{NFW trunc}}=1.76r_s$, impact parameter $b=\sqrt{3}/2r_s$ and velocity $\bs{w}=(0.3,0.6,0)v_y$. In the second through fifth panel we show in long-dashed purple the kicks from a point-mass (or Kepler potential) with mass equal to the enclosed mass of the Plummer halo at the scale radius.
 }}
@@ -358,7 +361,7 @@ The matrices $\frac{\upartial \bs{\theta}}{\upartial \bs{v}}\Big|_{\bs{x}}$ and 
 \section{Simulation}\label{Sect::Simulation}
 
 \DIFaddbegin \begin{figure}
-$$\DIFaddFL{\includegraphics[width=\columnwidth]{{{plots/fig3_tilted_gap_morphology}}}}$$
+$$\DIFaddFL{\includegraphics[width=\columnwidth]{{{plots/fig4_tilted_gap_morphology}}}}$$
 \caption{
 \DIFaddFL{Real-space distribution of stream and gap zoom-in for the $10^8M_\odot$ subhalo fly-by $880\Myr$ after impact.
 }}
@@ -392,7 +395,7 @@ $$\DIFaddFL{\includegraphics[width=\columnwidth]{{{plots/fig3_tilted_gap_morphol
 
 
 \begin{figure*}
-$$\DIFaddFL{\includegraphics[width=\textwidth]{{{plots/fig4_tilted_diff_map}}}}$$
+$$\DIFaddFL{\includegraphics[width=\textwidth]{{{plots/fig5_tilted_diff_map}}}}$$
 \caption{
 \DIFaddFL{Difference histograms between the unperturbed and perturbed streams at $t=0.88\Gyr$ after impact: the }\textbf{\DIFaddFL{top row}} \DIFaddFL{shows the distribution in angles and }\textbf{\DIFaddFL{bottom row}} \DIFaddFL{the frequencies. The right panels show the distributions in the parallel-perpendicular space where `parallel' is the distance along the stream direction and `perpendicular' is the Euclidean distance from the stream direction vector. Zero-points correspond to the gap centre as described in Sec.~}\protect\DIFaddFL{\ref{Sec::ActAngFreq}. The bin size for the angles is $0.03\rad$ ($0.0012\rad$ for the perpendicular direction) and $0.015\Gyr^{-1}$ for the frequencies ($7.5\times10^{-4}\Gyr^{-1}$ for the perpendicular direction).
 }}
@@ -444,7 +447,8 @@ Here we investigate the angle \DIFdelbegin \DIFdel{, action }\DIFdelend and freq
 \DIFdelend In Figure~\ref{angfreq_dist} we plot the angles and frequencies for the unperturbed and perturbed trailing stream distributions. The unperturbed simulation consists of a spur \DIFaddbegin \DIFadd{(marked in blue in Figure~\ref{angfreq_dist}) }\DIFaddend due to each stripping event. The material stripped in each event forms an approximately vertical line in this space before gradually twisting clockwise as the differential frequency effects take hold. The material on the far left was stripped earliest. We see that the subhalo produces the expected S-shape which also twists clockwise in time due to the differential frequency effects. At \DIFaddbegin \DIFadd{the impact time (}\DIFaddend $t=0$\DIFaddbegin \DIFadd{) }\DIFaddend there is a clear gap in frequency but only a relatively modest gap in angle. However, the twisting \DIFaddbegin \DIFadd{naturally }\DIFaddend produces a larger gap in the angles. The twisting also causes some perturbed material to overtake the unperturbed material \DIFaddbegin \DIFadd{(highlighted by the blue box in Figure~\ref{angfreq_dist})}\DIFaddend .
 
 \begin{figure}
-$$\includegraphics[width=\columnwidth]{{{plots/fig5_ang_freq_dists}}}$$
+$$\DIFdelbeginFL %DIFDELCMD < \includegraphics[width=\columnwidth]{{{plots/fig5_ang_freq_dists}}}%%%
+\DIFdelendFL \DIFaddbeginFL \includegraphics[width=\columnwidth]{{{plots/fig6_ang_freq_dists}}}\DIFaddendFL $$
 \caption{
 Frequency-angle distributions for unperturbed (black) and perturbed (red) trailing tail at three different times \DIFaddbeginFL \DIFaddFL{after the subhalo impact}\DIFaddendFL . \DIFdelbeginFL \DIFdelFL{Each row shows a }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{The three rows show the frequency and angle distributions with respect to the centre of the gap at three }\DIFaddendFL different \DIFdelbeginFL \DIFdelFL{time }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{times which are }\DIFaddendFL written in the right column. The three columns from left to right show the radial angle against radial frequency, the azimuthal angle against azimuthal frequency and vertical angle against vertical frequency.
 %DIF >  The bottom row shows the normalized 1D angle distributions at the three times with the dotted line corresponding to the $0\Gyr$ case, the dashed corresponding to $0.88\Gyr$ and the solid line corresponding to $5\Gyr$.
@@ -461,7 +465,7 @@ We begin by taking the snapshot of the unperturbed stream at the impact time and
 
 \DIFaddend The fact the velocity kicks match well demonstrates that the assumptions made to derive the formulae in Section~\ref{Sect::Formalism} are valid whilst the use of the impulse approximation and the linear approximation from equation~\eqref{eq:kickfreqangle} is validated by the match of the frequency kicks. Interestingly the amplitude of the velocity kicks found from the numerical calculation overpredicts that in the simulation far from the impact centre. This corresponds to the difference observed in Fig.~\ref{curved_straight} between computing the kicks using the full stream track and subhalo orbit (`full', green dashed line) and assuming the relative velocity between each stream particle and subhalo is fixed during the fly-by (`curved', black).
 
-The angle kicks are perhaps a less satisfying match than the velocity and frequency kicks. This may be due to the assumption of the impulse approximation or the neglected stream dispersion. We performed several checks of the accuracy of the angle computation: we measured the fluctuations in the \DIFdelbegin \DIFdel{angle calculation for a single orbitabout }\DIFdelend \DIFaddbegin \DIFadd{angles about a straight line using a series of samples from a $300\Gyr$ segment of the progenitor's orbit. If computed exactly the angles should lie along }\DIFaddend a straight line \DIFdelbegin \DIFdel{in angle space and }\DIFdelend \DIFaddbegin \DIFadd{so deviations about this are due to numerical error. We }\DIFaddend also compared a snapshot evolved in angle-frequency space \DIFaddbegin \DIFadd{(i.e. using equation~}\eqref{angleactdef}\DIFadd{) }\DIFaddend with a later simulation snapshot \DIFaddbegin \DIFadd{projected into angle-frequency space}\DIFaddend . These tests show that the angles are computed to an accuracy of \DIFdelbegin \DIFdel{$\sim10^{-3}\rad$ }\DIFdelend \DIFaddbegin \DIFadd{$\sim5\times10^{-4}\rad$ }\DIFaddend such that the discrepancy observed here cannot be due to errors in the computation.
+The angle kicks are perhaps a less satisfying match than the velocity and frequency kicks. This may be due to the assumption of the impulse approximation or the neglected stream dispersion. We performed several checks of the accuracy of the angle computation: we measured the fluctuations in the \DIFdelbegin \DIFdel{angle calculation for a single orbitabout }\DIFdelend \DIFaddbegin \DIFadd{angles about a straight line using a series of samples from a $300\Gyr$ segment of the progenitor's orbit. If computed exactly, the angles should lie along }\DIFaddend a straight line \DIFdelbegin \DIFdel{in angle space and }\DIFdelend \DIFaddbegin \DIFadd{so deviations about this are due to numerical error. We }\DIFaddend also compared a snapshot evolved in angle-frequency space \DIFaddbegin \DIFadd{(i.e. using equation~}\eqref{angleactdef}\DIFadd{) }\DIFaddend with a later simulation snapshot \DIFaddbegin \DIFadd{projected into angle-frequency space}\DIFaddend . These tests show that the angles are computed to an accuracy of \DIFdelbegin \DIFdel{$\sim10^{-3}\rad$ }\DIFdelend \DIFaddbegin \DIFadd{$\sim5\times10^{-4}\rad$ }\DIFaddend such that the discrepancy observed here cannot be due to errors in the computation.
 
 \DIFdelbegin %DIFDELCMD < \begin{figure*}
 %DIFDELCMD < %%%
@@ -490,25 +494,28 @@ In Fig.~\ref{model_severaltimes} we plot the unperturbed and perturbed stream in
 
 
 \begin{figure*}
-\DIFaddbeginFL $$\DIFaddFL{\includegraphics[width=\textwidth]{{{plots/fig6_tilted_angfreq_kicks}}}}$$
+$$\DIFdelbeginFL %DIFDELCMD < \includegraphics[width=\textwidth]{{{plots/fig7_tilted_model_perturbed}}}%%%
+\DIFdelendFL \DIFaddbeginFL \includegraphics[width=\textwidth]{{{plots/fig7_tilted_angfreq_kicks}}}\DIFaddendFL $$
 \caption{
-\DIFaddFL{Angle and frequency kicks: the coloured points are a random sample of $1000$ particles from the stream and show the kicks found from the simulations whilst the black lines show those calculated under the impulse approximation. The functional form for the kicks in both the angles and frequencies are very similar to that in velocities. Also, the angle and frequency kicks computed from the simulation match the numerical results well.
-}}
-\label{kicks_nzero}
+\DIFdelbeginFL \DIFdelFL{Frequency distributions for the perturbed }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{Angle }\DIFaddendFL and \DIFdelbeginFL \DIFdelFL{unperturbed stream model. The red histograms show }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{frequency kicks: }\DIFaddendFL the \DIFdelbeginFL \DIFdelFL{unperturbed stream, }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{coloured points are a random sample of $1000$ particles from }\DIFaddendFL the \DIFdelbeginFL \DIFdelFL{green show the perturbed }\DIFdelendFL stream and \DIFaddbeginFL \DIFaddFL{show }\DIFaddendFL the \DIFdelbeginFL \DIFdelFL{blue }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{kicks found from the simulations whilst the black lines }\DIFaddendFL show \DIFaddbeginFL \DIFaddFL{those calculated under }\DIFaddendFL the \DIFdelbeginFL \DIFdelFL{unperturbed stream kicked }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{impulse approximation. The functional form for the kicks }\DIFaddendFL in \DIFaddbeginFL \DIFaddFL{both the angles and }\DIFaddendFL frequencies \DIFdelbeginFL \DIFdelFL{using equations~}%DIFDELCMD < \protect\eqref{eq:kickfreqangle}%%%
+\DIFdelendFL \DIFaddbeginFL \DIFaddFL{are very similar to that in velocities}\DIFaddendFL . \DIFaddbeginFL \DIFaddFL{Also, the angle and frequency kicks computed from the simulation match the numerical results well.
+}\DIFaddendFL }
+\DIFaddbeginFL \label{kicks_nzero}
 \end{figure*}
 
 \begin{figure*}
-\DIFaddendFL $$\includegraphics[width=\textwidth]{{{plots/fig7_tilted_model_perturbed}}}$$
+$$\DIFaddFL{\includegraphics[width=\textwidth]{{{plots/fig8_tilted_model_perturbed}}}}$$
 \caption{
-Frequency distributions for the perturbed and unperturbed stream model. The red histograms show the unperturbed stream, the green show the perturbed stream and the blue show the unperturbed stream kicked in frequencies using equations~\protect\eqref{eq:kickfreqangle}. \DIFaddbeginFL \DIFaddFL{The left three panels show the distributions in the orbital frequencies with respect to the gap centre. The fourth panel shows the frequency distribution along the stream direction $\hat{\boldsymbol{n}}$ whilst the fifth panel shows the distribution perpendicular to this.
-}\DIFaddendFL }
-\label{model_nzero}
+\DIFaddFL{Frequency distributions for the perturbed and unperturbed stream model. The red histograms show the unperturbed stream, the green show the perturbed stream and the blue show the unperturbed stream kicked in frequencies using equations~}\protect\eqref{eq:kickfreqangle}\DIFaddFL{. The left three panels show the distributions in the orbital frequencies with respect to the gap centre. The fourth panel shows the frequency distribution along the stream direction $\hat{\boldsymbol{n}}$ whilst the fifth panel shows the distribution perpendicular to this.
+}}
+\DIFaddendFL \label{model_nzero}
 \end{figure*}
 
 \DIFdelbegin %DIFDELCMD < \begin{figure}
 %DIFDELCMD < %%%
 \DIFdelendFL \DIFaddbeginFL \begin{figure}[h]
-\DIFaddendFL $$\includegraphics[width=\columnwidth]{{{plots/fig8_ang_later_times}}}$$
+\DIFaddendFL $$\DIFdelbeginFL %DIFDELCMD < \includegraphics[width=\columnwidth]{{{plots/fig8_ang_later_times}}}%%%
+\DIFdelendFL \DIFaddbeginFL \includegraphics[width=\columnwidth]{{{plots/fig9_ang_later_times}}}\DIFaddendFL $$
 \caption{
 Unperturbed, perturbed and model stream angle distributions: the red histograms show the unperturbed stream, the green show the perturbed stream and the blue show the unperturbed stream kicked in angle and frequency space and evolved. The purple lines show the difference between the perturbed and unperturbed streams offset by some arbitrary amount. The four rows show $0,0.88,3$ and $5\Gyr$ after impact.
 }
@@ -544,7 +551,8 @@ such that
 \end{equation}
 In the case of a subhalo flyby $\delta H^g=\bs{v}\cdot\delta\bs{v}^g$. We plot this approximation for the simulated stream in Fig.~\ref{analytic_freq}. The match is very good which suggests that the approximate Hamiltonian of equation~\eqref{eqn::approxH} is a very close approximation of the true Hamiltonian for the region of action space we are exploring here.
 \begin{figure}
-$$\includegraphics[width=\columnwidth]{{{plots/fig9_analytic_freq}}}$$
+$$\DIFdelbeginFL %DIFDELCMD < \includegraphics[width=\columnwidth]{{{plots/fig9_analytic_freq}}}%%%
+\DIFdelendFL \DIFaddbeginFL \includegraphics[width=\columnwidth]{{{plots/fig10_analytic_freq}}}\DIFaddendFL $$
 \caption{
 Analytic frequency kick approximation. The lines show the analytic relationship for the flattened logarithmic potential from equation~\protect\eqref{dOm_an} and the dots show the numerical calculation.
 }
@@ -579,14 +587,15 @@ showed that gaps only begin to form in the stream after $\sim$ one radial period
 \cite{ErkalBelokurov2015} discussed the three phases of stream gap formation in the limit that the stream itself is on a circular orbit. They found that on short time-scales (less than a radial period) an overdensity formed as the particles were scattered onto epicyclic orbits that brought them towards the gap centre. This was dubbed the compression phase. After approximately a radial period the stream enters an expansion phase where the gap begins growing until the more strongly perturbed material starts to overtake the more weakly perturbed material and caustics form. During the expansion phase the stream gap grows linearly in time whilst during the caustic phase the growth rate slows to $t^{1/2}$. In this section we investigate and discuss how this picture relates to the formalism presented here.
 
 \begin{figure}
-$$\includegraphics[width=\columnwidth]{{{plots/fig10_tilted_gap_size}}}$$
+$$\DIFdelbeginFL %DIFDELCMD < \includegraphics[width=\columnwidth]{{{plots/fig10_tilted_gap_size}}}%%%
+\DIFdelendFL \DIFaddbeginFL \includegraphics[width=\columnwidth]{{{plots/fig11_tilted_gap_size}}}\DIFaddendFL $$
 \caption{
 Gap size in parallel angle as a function of time. The \DIFaddbeginFL \DIFaddFL{zero-point in time is the subhalo impact time. The }\DIFaddendFL black line shows the gap measured from the simulation and the dashed red line shows the best fitting power-law line for $t<5\Gyr$. We also mark on the three phases of the gap growth from \protect\cite{ErkalBelokurov2015}.
 }
 \label{gap_size}
 \end{figure}
 
-In Fig.~\ref{gap_size} we plot the size of the gap in parallel angle as a function of time for the simulated stream. This is defined as the difference between the parallel angles of the points where the perturbed and unperturbed densities are equal. We produce a smooth difference histogram using \DIFaddbegin \DIFadd{a Gaussian }\DIFaddend kernel density estimation with a bandwidth of $\Gamma = 0.04\rad\Gyr^{-1}t+0.01\rad$ for $t<1\Gyr$ and $0.05\rad$ otherwise and then fit a spline to the resulting distribution\DIFdelbegin \DIFdel{(we use this smoothing kernel for all future results on the gap size and minimum /maximum densities in the stream with an additional factor in the bandwidth of $0.5\log_{10}(M/10^6M_\odot)$)}\DIFdelend \DIFaddbegin \DIFadd{. With this choice of kernel results there are $\sim1000$ particles within one kernel standard deviation at the gap minimum and $\sim5000$ at the maxima}\DIFaddend . We also show a best-fit power-law line ($\Delta\theta_{||}\propto t^{0.58}$) for the segment $t<5\Gyr$ as well as the time-scales for the different stages of gap growth. The compression phase lasts for approximately a radial period. The time-scale on which the caustic becomes important is computed from equation (26) of \cite{ErkalBelokurov2015}. In this example the expansion phase only lasts for $\sim200\Myr$ but lowering the subhalo mass to $10^7M_\odot$ increases its length to $\sim600\Myr$. We note that there is a gap in parallel angle at \DIFaddbegin \DIFadd{the impact time (}\DIFaddend $t=0$\DIFaddbegin \DIFadd{)}\DIFaddend . This does not correspond to a spatial gap but is due to the angle kicks from the subhalo that have shifted the stars to slightly different orbital phases.
+In Fig.~\ref{gap_size} we plot the size of the gap in parallel angle as a function of time for the simulated stream. This is defined as the difference between the parallel angles of the points where the perturbed and unperturbed densities are equal. We produce a smooth difference histogram using \DIFaddbegin \DIFadd{a Gaussian }\DIFaddend kernel density estimation with a bandwidth of $\Gamma = 0.04\rad\Gyr^{-1}t+0.01\rad$ for $t<1\Gyr$ and $0.05\rad$ otherwise and then fit a spline to the resulting distribution\DIFdelbegin \DIFdel{(we use this smoothing kernelfor all future results on the gap size and minimum /maximum densities in the stream with an additional factor in the bandwidth of $0.5\log_{10}(M/10^6M_\odot)$)}\DIFdelend \DIFaddbegin \DIFadd{. With this choice of kernel, there are $\sim1000$ particles within one kernel standard deviation at the gap minimum and $\sim5000$ at the maxima}\DIFaddend . We also show a best-fit power-law line ($\Delta\theta_{||}\propto t^{0.58}$) for the segment $t<5\Gyr$ as well as the time-scales for the different stages of gap growth. The compression phase lasts for approximately a radial period. The time-scale on which the caustic becomes important is computed from equation (26) of \cite{ErkalBelokurov2015}. In this example the expansion phase only lasts for $\sim200\Myr$ but lowering the subhalo mass to $10^7M_\odot$ increases its length to $\sim600\Myr$. We note that there is a gap in parallel angle at \DIFaddbegin \DIFadd{the impact time (}\DIFaddend $t=0$\DIFaddbegin \DIFadd{)}\DIFaddend . This does not correspond to a spatial gap but is due to the angle kicks from the subhalo that have shifted the stars to slightly different orbital phases.
 
 The initial angle kick appears to dominate on a time-scale of $\sim400\Myr$ after which the best-fit power-law is a much better match. This also appears to correlate with the end of the compression phase. Therefore, it seems that the compression phase is associated with the initial angle kicks. We can understand this by considering a simple example of a stream on a radial orbit. Here the parallel angle is purely the radial angle. The shape of the angle kicks will be qualitatively similar to those in Fig.~\ref{kicks_nzero} with the particles in front of the gap given a positive kick and those behind given a negative kick. At a fixed position increasing the radial angle means we are now closer to apocentre so the apocentre has moved inwards and the particle must move more slowly. Likewise decreasing the radial angle moves apocentre further out and the particle must move faster. Therefore, the particles behind the gap move faster than those in front and an overdensity forms.
 
@@ -611,7 +620,8 @@ In Fig.~\ref{secondderiv} we show the second derivative computed for our example
 \end{equation}
 
 \begin{figure}
-$$\includegraphics[width=\columnwidth]{{{plots/fig11_d2dthetadtheta2}}}$$
+$$\DIFdelbeginFL %DIFDELCMD < \includegraphics[width=\columnwidth]{{{plots/fig11_d2dthetadtheta2}}}%%%
+\DIFdelendFL \DIFaddbeginFL \includegraphics[width=\columnwidth]{{{plots/fig12_d2dthetadtheta2}}}\DIFaddendFL $$
 \caption{
 Derivatives of the parallel angle kicks: the \DIFdelbeginFL \DIFdelFL{solid blue line }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{top panel }\DIFaddendFL shows the \DIFdelbeginFL \DIFdelFL{second derivative of the kicks whilst the dotted red line shows the }\DIFdelendFL expression from equation~\eqref{deriv} \DIFdelbeginFL \DIFdelFL{. The solid }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{in dashed }\DIFaddendFL red \DIFdelbeginFL \DIFdelFL{line shows }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{alongside }\DIFaddendFL the \DIFdelbeginFL \DIFdelFL{scaled }\DIFdelendFL density contrast \DIFdelbeginFL \DIFdelFL{from }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{(}\DIFaddendFL the \DIFdelbeginFL \DIFdelFL{simulation}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{perturbed density in parallel angle space divided by the unperturbed density minus $1$) in solid red}\DIFaddendFL . The \DIFdelbeginFL \DIFdelFL{black }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{grey }\DIFaddendFL lines show the zero line and the approximate location of the peak density contrast. \DIFaddbeginFL \DIFaddFL{The bottom panel shows the second derivative of the parallel angle kicks with respect to the parallel angle.
 }\DIFaddendFL }
@@ -626,7 +636,7 @@ The second derivative is zero around \DIFdelbegin \DIFdel{$\delta\theta_{||}\app
 \subsection{Physical and parallel angle gap size}\label{Sect::GapSize}
 
 \DIFaddbegin \begin{figure}
-$$\DIFaddFL{\includegraphics[width=\columnwidth]{{{plots/fig12_real_vs_angle_properties}}}}$$
+$$\DIFaddFL{\includegraphics[width=\columnwidth]{{{plots/fig13_real_vs_angle_properties}}}}$$
 \caption{
 \DIFaddFL{Gap properties in real and angle space as a function of time. The zero-point of time is the subhalo impact time. In the }\textbf{\DIFaddFL{top panel}} \DIFaddFL{we show the gap size in the azimuthal angle of a plane fitted through the stream in solid black and the gap size in parallel angle in dashed red. In the }\textbf{\DIFaddFL{bottom panel}} \DIFaddFL{we show the minimum and maximum density contrast in these two spaces.
 }}
@@ -652,7 +662,7 @@ We also plot the minimum and maximum density contrasts (defined as perturbed div
 \label{densitycontrast}
 \end{equation}
 This expression is much like those derived by \cite{ErkalBelokurov2015} in the circular-orbit limit. For a uniform unperturbed angle distribution the minimum density contrast occurs at $\Delta\theta_{||}=0$ and so falls as $1/(1+Ct)$ where $C$ is a constant. The maximum density occurs when $|1+(\partial\delta\Omega^g_{||}/\partial\theta_{||})t|$ is minimised. At early times this expression is non-zero for all $\Delta\theta_{||}$ whilst at later times the expression is zero at some $\Delta\theta_{||}$ such that equation~\eqref{densitycontrast} diverges and the caustic behaviour of \cite{ErkalBelokurov2015} is recovered. We note that in reality the minimum density contrast in Fig.~\ref{real_v_angle} falls more slowly than $1/t$ at large times and actually reaches a constant.
-\DIFdelbegin \DIFdel{This is due to the spread of frequencies/energiesin the stream. Similarly the spread in energies in the stream gives rise to the finite peak observed in the density contrast.
+\DIFdelbegin \DIFdel{This is due to the spread of frequencies/energies in the stream. Similarly the spread in energies in the stream gives rise to the finite peak observed in the density contrast.
 }\DIFdelend 
 
 \DIFdelbegin %DIFDELCMD < \begin{figure}
@@ -671,7 +681,11 @@ This expression is much like those derived by \cite{ErkalBelokurov2015} in the c
 %DIFDELCMD < %%%
 \DIFdelend \DIFaddbegin \DIFadd{The discrepancy between our simulation and the picture of \mbox{%DIFAUXCMD
 \cite{ErkalBelokurov2015} }%DIFAUXCMD
-seems to be due to two crucial differences. First, the stream has a non-zero velocity dispersion and each stripping event produces stream particles with a range of energies. This means very energetic upstream (i.e. closer to the progenitor) particles can pass through the stream and fill in a downstream gap. Inspection of Fig.~\ref{angfreq_dist} shows that if the parallel frequency kicks are greater than the spread in frequencies of the stream a clear gap will form and will not be significantly filled in by upstream particles. This is essentially a condition on the velocity kicks being greater than the velocity dispersion of the stream. Second, the unperturbed stream density plays an important role. If there are many particles upstream from the gap then the density contrast will be rapidly washed out. The stripping rate in the simulation we are examining decreases with time (see Section~\ref{Sect::FULL}) so the filling-in effect is less severe in our example than it potentially could be.
+seems to be due to our stream having a non-zero velocity dispersion. This means each stripping event produces stream particles with a range of energies and upstream (i.e. closer to the progenitor) particles with large energy differences from the progenitor can pass through the stream and fill in a downstream (i.e. further from the progenitor) gap. Inspection of Fig.~\ref{angfreq_dist} shows that if the parallel frequency kicks are greater than the spread in frequencies of the stream a clear gap will form and will not be significantly filled in by upstream particles. This is essentially a condition on the velocity kicks being greater than the velocity dispersion of the stream. In this picture, the unperturbed stream density also plays an important role as if there are many particles upstream from the gap then the density contrast will be rapidly washed out. The stripping rate in the simulation we are examining decreases with time (see Section~\ref{Sect::FULL}) so the filling-in effect is less severe in our example than it potentially could be. The models of \mbox{%DIFAUXCMD
+\cite{ErkalBelokurov2015} }%DIFAUXCMD
+and \mbox{%DIFAUXCMD
+\cite{ErkalBelokurov2015b} }%DIFAUXCMD
+allow for a non-uniform unperturbed density distribution but with no stream velocity dispersion the stars in their model cannot pass through the stream to affect a gap.
 }\DIFaddend 
 
 
@@ -693,7 +707,8 @@ M\propto r_s^{2.5}\DIFdelbegin \DIFdel{,
 seems to be due to two crucial differences. First, the stream has a non-zero velocity dispersion and each stripping event produces stream particles with a range of energies. This means very energetic upstream particles can pass through the stream }\DIFdelend and\DIFdelbegin \DIFdel{fill in a downstream gap. Inspection of Fig.~\ref{angfreq_dist} shows that if the parallel frequency kicks are greater than the spread in frequencies of the stream a clear gap will form and will not be significantly filled in by upstream particles. This is essentially a condition on the velocity kicks being greater than the velocity dispersion of the stream. Second, the unperturbed stream density plays an important role. If there are many particles upstream from the gap then the density contrast will be rapidly washed out. The stripping rate in the simulation we are examining decreases with time (see Section~\ref{Sect::FULL}) so the filling-in effect is less severe in our example than it potentially could be}\DIFdelend \DIFaddbegin \DIFadd{, as discussed in the previous section, is due to a combination of the stream density and the stream energy distribution. The time at which the density contrast reaches its plateau value decreases with decreasing mass}\DIFaddend .
 
 \begin{figure*}
-$$\includegraphics[width=\textwidth]{{{plots/fig13_different_masses}}}$$
+$$\DIFdelbeginFL %DIFDELCMD < \includegraphics[width=\textwidth]{{{plots/fig13_different_masses}}}%%%
+\DIFdelendFL \DIFaddbeginFL \includegraphics[width=\textwidth]{{{plots/fig14_different_masses}}}\DIFaddendFL $$
 \caption{
 Properties of the stream as a function of subhalo mass. The thick brown line corresponds to $10^8M_\odot$, the medium red line $10^{7.5}M_\odot$ and the thin orange line $10^7M_\odot$. The left panel shows the difference between the perturbed and unperturbed simulations in parallel angle \DIFaddbeginFL \DIFaddFL{$880\Myr$ }\DIFaddendFL after \DIFdelbeginFL \DIFdelFL{$t=880\Myr$}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{impact}\DIFaddendFL , the middle panel shows the gap size as a function of time and the right panel shows the minimum and maximum density contrast as a function of time.
 }
@@ -704,7 +719,8 @@ Properties of the stream as a function of subhalo mass. The thick brown line cor
 Now we investigate how the stream changes as a function of where along the stream the impact occurs. In addition to the inspected geometry of Section~\ref{Sect::Simulation} we simulate two other impacts at varying distance from the progenitor as shown in the top left panel of Figure~\ref{varying_geometry}. The impact close to the progenitor occurs at ($[x,y,z]=[-15.3,-9.8,9.3]\,\mathrm{kpc},[v_x,v_y,v_z]=[41.9,-183.0,152.2]\,\mathrm{km\,s}^{-1}$) and the one further from the progenitor at ($[x,y,z]=[-1.2,12.9,-10.8]\,\mathrm{kpc},\,[v_x,v_y,v_z]=[-239.8,-100.6,87.0]\,\mathrm{km\,s}^{-1}$). Again, we fix all other parameters of the impact to those in the original simulation, including the absolute velocity of the subhalo (note that fixing the relative velocity between the subhalo and impact point in the stream does not change the conclusions drawn here). The near impact is in the regime where the mean parallel frequency is approximately constant with the parallel angle whilst the far impact is in the regime where the mean frequency is increasing linearly with the parallel angle. In this far regime the stream is well ordered in energies, whilst in the near regime the stream particles have not had sufficient time to order themselves by energy. We plot the difference between the perturbed and unperturbed simulations in parallel angle for two times. The density contrast at large negative parallel angle for the \emph{far} case is very large at late times as the number density in the unperturbed simulation at these large separations is low. A similar effect is seen at large positive parallel angle for the \emph{near} case but here it should be noted that we have not included the effect of more stars entering the stream as they are stripped from the progenitor. In the lower panels we show the gap size and the minimum/maximum density contrast as a function of time. The gap size in all three cases is very similar for $t<3\Gyr$ but they diverge at larger times as the far impact gap size increases faster than the near impact. We can understand this as in the far case the gap is forming on an already growing stream as the underlying stream structure is well ordered. However, in the near case the stream is mixed so the underlying stream is growing more slowly. In all cases the minimum density plateaus to a similar value. Note that we have shown two lines for the maximum density contrast for the two peaks on either side of the gap. In both the far and near cases one of the peaks diverges rapidly and correlates with the observations in the middle panels.
 
 \begin{figure}
-$$\includegraphics[width=\columnwidth]{{{plots/fig14_different_strike_points}}}$$
+$$\DIFdelbeginFL %DIFDELCMD < \includegraphics[width=\columnwidth]{{{plots/fig14_different_strike_points}}}%%%
+\DIFdelendFL \DIFaddbeginFL \includegraphics[width=\columnwidth]{{{plots/fig15_different_strike_points}}}\DIFaddendFL $$
 \caption{
 Properties of the stream as a function of the location of the impact point. \textbf{Top row}: The top left panel shows the stream in the $(x,y)$ plane along with three dots showing the different impact points \DIFaddbeginFL \DIFaddFL{at the impact time}\DIFaddendFL . The top right panel shows the location of these strikes in parallel angle as well as the distribution of the stream in parallel frequencies and angles. \textbf{Middle row}: The middle two panels show the relative density contrast $\mathrm{d}N/\mathrm{d}\theta_{||} = \rho_\mathrm{perturbed}/\rho_\mathrm{unperturbed}-1$ in parallel angle space for two separate times \DIFaddbeginFL \DIFaddFL{($880\Myr$ and $5\Gyr$ after impact)}\DIFaddendFL . \textbf{Bottom row}: The bottom two panels show the gap size in parallel angle and the minimum and maximum density contrast as a function of time with the dashed lines showing the divergent peak at low unperturbed density.
 }
@@ -768,7 +784,8 @@ where $\mathcal{N}(X|\mu,\sigma)$ is a Gaussian distribution with mean $\mu$ and
 }\DIFaddend 
 
 \begin{figure}
-$$\includegraphics[width=\columnwidth]{{{plots/fig15_new_unperturbed_model}}}$$\\
+$$\DIFdelbeginFL %DIFDELCMD < \includegraphics[width=\columnwidth]{{{plots/fig15_new_unperturbed_model}}}%%%
+\DIFdelendFL \DIFaddbeginFL \includegraphics[width=\columnwidth]{{{plots/fig16_new_unperturbed_model}}}\DIFaddendFL $$\\
 \caption{Unperturbed stream model properties: the left panel shows the parallel angle separations against parallel frequency separations for particles from the simulation (in black) and samples of the generative model (in red). The solid line shows the mean parallel frequency separation for bins in parallel angle separation. The top right panel shows the parallel frequency separation distributions and the bottom right panel shows the stripping time distributions (where the colour-coding is the same as for the left panel). \DIFaddbeginFL \DIFaddFL{Larger stripping times mean the particles were stripped longer ago.}\DIFaddendFL }
 \label{UnpertNEW}
 \end{figure}
@@ -787,7 +804,7 @@ the density in and near the gap in the simulation.
 
 The simulated stream in configuration space near the gap is compared
 to the mock stream in Figure~\ref{config_phasespace}. The mock stream
-very closely follows the simulated stream. \DIFdelbegin \DIFdel{The }\DIFdelend \DIFaddbegin \DIFadd{All quantities are plotted as a function of the unperturbed $x$ position. This exaggerates the size of the perturbations. The perturbation as a function of perturbed $x$ position is smaller and in this space the perturbed stream more closely follows the unperturbed stream track. The }\DIFaddend bottom of each panel
+very closely follows the simulated stream. \DIFdelbegin \DIFdel{The }\DIFdelend \DIFaddbegin \DIFadd{All quantities are plotted as a function of the unperturbed $x$ position. This exaggerates the size of the perturbations. The perturbation as a function of the perturbed $x$ position is smaller and in this space the perturbed stream more closely follows the unperturbed stream track. The }\DIFaddend bottom of each panel
 shows the difference between the phase--space coordinates in the
 perturbed and unperturbed simulation (black) and in the perturbed and
 unperturbed mock stream (red). These are computed by comparing the
@@ -800,14 +817,17 @@ subhalo impact is very well described by the generative model
 described in this section.
 
 \begin{figure}
-$$\includegraphics[width=\columnwidth]{{{plots/fig16_config_density}}}$$
+$$\DIFdelbeginFL %DIFDELCMD < \includegraphics[width=\columnwidth]{{{plots/fig16_config_density}}}%%%
+\DIFdelendFL \DIFaddbeginFL \includegraphics[width=\columnwidth]{{{plots/fig17_config_density}}}\DIFaddendFL $$
 \caption{Density in a mock stream generated from the generative model described in the text (red) compared to that in the simulation (black) near the gap. The density of the unperturbed simulation is displayed in grey. The density in the simulation is well matched in the generative model.}
 \label{config_density}
 \end{figure}
 
 \begin{figure*}
-$$\includegraphics[width=0.8\textwidth]{{{plots/fig17a_config_position}}}$$\\
-$$\includegraphics[width=0.8\textwidth]{{{plots/fig17b_config_velocity}}}$$
+$$\DIFdelbeginFL %DIFDELCMD < \includegraphics[width=0.8\textwidth]{{{plots/fig17a_config_position}}}%%%
+\DIFdelendFL \DIFaddbeginFL \includegraphics[width=0.8\textwidth]{{{plots/fig18a_config_position}}}\DIFaddendFL $$\\
+$$\DIFdelbeginFL %DIFDELCMD < \includegraphics[width=0.8\textwidth]{{{plots/fig17b_config_velocity}}}%%%
+\DIFdelendFL \DIFaddbeginFL \includegraphics[width=0.8\textwidth]{{{plots/fig18b_config_velocity}}}\DIFaddendFL $$
 \caption{Comparison of the simulated stream (black) and the mock stream from the generative model (red) in configuration space. The blue line shows the unperturbed stream track. The bottom of each panel compares the difference in the phase--space position of each particle due to the subhalo perturbation in the simulation and the mock stream. The phase--space positions and the differences are plotted as a function of unperturbed $x$ position to exaggerate the perturbations; as a function of perturbed $x$ position, the stream closely follows the unperturbed track. The overall structure of the stream and in particular the phase--space offsets due to the subhalo perturbation are successfully modelled in the mock stream.}
 \label{config_phasespace}
 \end{figure*}
@@ -817,9 +837,10 @@ We have presented a framework for modelling the formation of gaps due to the per
 
 We presented an $N$-body simulation of a cold stream formed from a progenitor on an eccentric orbit in a scale-free flattened axisymmetric logarithmic potential. The stream was impacted by a $10^8M_\odot$ dark-matter subhalo and a gap formed in the stream. We analysed the formation of the gap in angle-frequency space and showed how the stream at all future times could be modelled using our framework. We found that generically the angle perturbation due to a fly-by is only important on time-scales less than a radial period. At later times the frequency perturbations are much more important and are simply related to the velocity perturbations in scale-free potentials such that the structure of the gap at late times is controlled by $\bs{v}\cdot\delta\bs{v}^g$.
 
-We computed how the gap forms in the parallel angle (the angle along the stream) and showed that the distribution in this space can be simply related to the real-space properties of the gap. The evolution of the gap in angle-frequency space can be understood in the framework presented by \cite{ErkalBelokurov2015} and we verify that almost all the intuition developed in the circular orbit approach translates to results observed in the more realistic case. \DIFaddbegin \DIFadd{At times greater than approximately $10$ orbital periods of the progenitor orbit ($\sim6\Gyr$) after the impact, we find several exceptions to the \mbox{%DIFAUXCMD
+We computed how the gap forms in the parallel angle (the angle along the stream) and showed that the distribution in this space can be simply related to the real-space properties of the gap. The evolution of the gap in angle-frequency space can be understood in the framework presented by \cite{ErkalBelokurov2015} and we verify that almost all the intuition developed in the circular orbit approach translates to results observed in the more realistic \DIFdelbegin \DIFdel{case.
+}\DIFdelend \DIFaddbegin \DIFadd{eccentric orbit case. At times greater than approximately $10$ orbital periods of the progenitor orbit ($\sim6\Gyr$) after the impact, we find several exceptions to the \mbox{%DIFAUXCMD
 \cite{ErkalBelokurov2015} }%DIFAUXCMD
-picture: the density of the gap plateaus in time as stream material fills in the formed gap and the stream gap growth rate depends on the position along the stream the subhalo impact occurs with gaps furthest from the progenitor growing fastest. For times less than $10$ orbital periods of the progenitor orbit our results corroborate the \mbox{%DIFAUXCMD
+picture: the density of the gap plateaus in time as stream material fills in the growing gap and the stream gap growth rate depends on the position along the stream at which the subhalo impact occurs, with gaps furthest from the progenitor growing fastest. For times less than $10$ orbital periods of the progenitor orbit our results corroborate the \mbox{%DIFAUXCMD
 \cite{ErkalBelokurov2015} }%DIFAUXCMD
 picture.
 }\DIFaddend 
@@ -840,7 +861,11 @@ Whilst an underdensity in a stream is indicative of a subhalo fly-by, subhalo in
 
 In this paper we have analysed the effect of a single subhalo fly-by. \cite{YoonJohnstonHogg} have predicted that a stream such as Palomar-5 would only experience a few $10^7$-$10^8M_\odot$ subhalo impacts but that there are many more much lower mass impacts. We have shown that a clear gap forms for the high mass impacts but it would be interesting to investigate the properties of the stream that has experienced many small mass subhalo impacts. In this regime we begin probing the mass spectrum of dark matter subhaloes. \citet{CarlbergGD12013},\citet{NganCarlberg2014} and \citet{ngan_etal_2015} have discussed the effects of many small impacts in simulations but in order to constrain the mass spectrum we require full models of perturbed streams.
 
-The framework presented here is appropriate for when an interaction between the stream and a subhalo is short compared to the orbital time of the stream such that the impulse approximation is appropriate. Instead of a full perturbative analysis we were able to simply consider instantaneous changes to the stream properties. However, it is potentially a small starting step to developing a scheme to handle more general perturbations to streams. The assumption of a smooth analytic galaxy model is probably inappropriate, particularly over the timescales on which streams evolve. \cite{Bonaca2014} presented a study of analysing streams from the Via Lactea simulation under assumptions on the smoothness \DIFaddbegin \DIFadd{and evolution }\DIFaddend of the halo\DIFdelbegin \DIFdel{and estimated that }\DIFdelend \DIFaddbegin \DIFadd{. They found that very massive subhalo encounters gave rise to minor overestimates in the halo mass whilst the time evolution of the potential produced }\DIFaddend biases of order \DIFdelbegin \DIFdel{$50\percent$ in the Milky Way mass could arise by falsely modelling the dark halo with a smooth analytic potential}\DIFdelend \DIFaddbegin \DIFadd{$20\percent$ in the halo mass}\DIFaddend . Additionally, recent results suggest that the mass of the Large Magellanic Cloud is much larger than previously believed \citep{Kallivayalil2013, Penarrubia2015} \DIFaddbegin \DIFadd{which suggests that its potential must be included as a perturbation in the modelling of the Galaxy}\DIFaddend . However, a counter to this is that many of the observed streams are very simple cold structures suggesting that the approximation of a smooth halo for the Milky Way is valid. Nonetheless it \DIFdelbegin \DIFdel{may be inevitable that}\DIFdelend \DIFaddbegin \DIFadd{is inevitable that, as data quality increase, }\DIFaddend one has to include perturbations on top of a smooth model to fit the known streams in the Galaxy and the angle-action framework is ideal for such an endeavour. \DIFaddbegin \DIFadd{We have demonstrated how a very simple perturbation can be included on top of a smooth angle-action model. }\DIFaddend These variables were originally introduced to handle perturbative solutions to the equations of the motion in the Solar system so seem highly appropriate for handling perturbations on Galactic scales.
+The framework presented here is appropriate for when an interaction between the stream and a subhalo is short compared to the orbital time of the stream such that the impulse approximation is appropriate. Instead of a full perturbative analysis we were able to simply consider instantaneous changes to the stream properties. However, it is potentially a small starting step to developing a scheme to handle more general perturbations to streams. The assumption of a smooth analytic galaxy model is probably inappropriate, particularly over the timescales on which streams evolve. \cite{Bonaca2014} presented a study of analysing streams from the Via Lactea simulation under assumptions on the smoothness \DIFaddbegin \DIFadd{and evolution }\DIFaddend of the halo\DIFdelbegin \DIFdel{and estimated that }\DIFdelend \DIFaddbegin \DIFadd{. They found that very massive subhalo encounters gave rise to minor overestimates in the halo mass whilst the time evolution of the potential produced }\DIFaddend biases of order \DIFdelbegin \DIFdel{$50\percent$ in the Milky Way mass could arise by falsely modelling the dark halo with a smooth analytic potential}\DIFdelend \DIFaddbegin \DIFadd{$20\percent$ in the halo mass}\DIFaddend . Additionally, recent results suggest that the mass of the Large Magellanic Cloud is much larger than previously believed \DIFdelbegin \DIFdel{\mbox{%DIFAUXCMD
+\citep{Kallivayalil2013, Penarrubia2015}}%DIFAUXCMD
+}\DIFdelend \DIFaddbegin \DIFadd{\mbox{%DIFAUXCMD
+\citep{Kallivayalil2013, Penarrubia2016} }%DIFAUXCMD
+which suggests that its potential must be included as a perturbation in the modelling of the Galaxy}\DIFaddend . However, a counter to this is that many of the observed streams are very simple cold structures suggesting that the approximation of a smooth halo for the Milky Way is valid. Nonetheless it \DIFdelbegin \DIFdel{may be inevitable that}\DIFdelend \DIFaddbegin \DIFadd{is inevitable that, as data quality increase, }\DIFaddend one has to include perturbations on top of a smooth model to fit the known streams in the Galaxy and the angle-action framework is ideal for such an endeavour. \DIFaddbegin \DIFadd{We have demonstrated how a very simple perturbation can be included on top of a smooth angle-action model. }\DIFaddend These variables were originally introduced to handle perturbative solutions to the equations of the motion in the Solar system so seem highly appropriate for handling perturbations on Galactic scales.
 
 The results presented here made use of the \texttt{galpy} package \citep{galpy}: the various methods for computing the velocity kicks outlined in Section~\ref{Sect::Formalism} and the methods for producing a full perturbed stream model as detailed in Section~\ref{Sect::FULL} are all implemented in the package. Additionally, the code used to generate all the figures in this paper is available in a \texttt{github} repository at \href{https://github.com/jobovy/streamgap-aa}{https://github.com/jobovy/streamgap-aa}.
 
