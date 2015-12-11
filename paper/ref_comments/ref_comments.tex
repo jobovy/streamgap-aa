@@ -1,0 +1,580 @@
+\documentclass{article}
+\usepackage[left=1.5in, right=1in, top=1in, bottom=1in, includefoot, headheight=13.6pt]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{bmpsize}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{paralist}
+\usepackage{mathrsfs}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{soul}
+\usepackage{color}
+\usepackage{pifont}
+\title{Referee response: Dynamics of stream-subhalo interactions}
+\author{J. Sanders, J. Bovy, D. Erkal}
+\begin{document}
+\maketitle
+
+
+This paper lays out a formalism for modeling interactions between a tidal stream and a
+dark subhalo using action-angle variables (specifically frequencies and angles). The
+formalism builds on previous work by two of the authors who have developed methods
+for modeling streams in smooth analytic gravitational potentials using the same
+frequency-angle space, and advances it by deriving approximate formulae for the
+“kicks” exerted on stars in the stream by a passing subhalo, under several
+approximations examined in the paper. Unlike previous work, this method of modeling
+such interactions does not presume a stream on a quasi-circular orbit. The paper
+discusses several features of stream-subhalo interactions and demonstrates that the
+model presented can reproduce the main features of a gap opened in a simulated
+stream for the case of a Plummer-sphere perturber.
+
+
+The work presented is novel and should be a useful and important contribution to
+existing work on this topic. It should be published, but the presentation of the results in
+the paper is disorganized and unclear in quite a few places and this detracts from its
+potential usefulness. In many places the reader is left to infer the motivation for or
+conclusion of a subsection, which makes the paper difficult to follow. In multiple places
+interpretation of results is deferred to later in the paper rather than given in-place, which
+is always unsatisfying. The figures come out of order in the text, are inconsistently
+labeled and are often hard to read (mostly in cases when the authors attempt to
+squeeze too many tiny panels into one small figure). The paper therefore requires
+substantial revision before publication but I am confident that once this is done it will be
+a valuable and useful addition to the literature.
+In the list below I have tried to point out places where the exposition is confusing or a
+figure is difficult to interpret, and suggested some solutions based on what I inferred that
+the authors wished to communicate.
+
+
+{\color{red} We thank the referee for their comments. The referee has highlighted several places where we agree the text could do with clarification and we have made the alterations that are described below. As for the figures, we have made them more legible when required. The figures now appear in the correct order in the pdf.}
+
+\section{Introduction}
+
+\begin{enumerate}
+\item Par. 1
+“there is a spectrum of these subhalos”: Presumably you are referring to the mass
+spectrum; in fact both papers referenced make predictions for the power-law slope of
+the “mass spectrum” dN/dM but more recent work is finding that including baryons can
+change the shape of dN/dM. Going into more detail here about these predictions would
+help underline for the reader that the mass spectrum at the low-mass end is a key test
+of LCDM but also that what LCDM predicts is a topic of ongoing research—all of which
+makes the work in this paper more important.
+
+{\color{red} We have added two further references to the subhalo mass spectrum and reworded this sentence. We have also emphasised that, as you say, finding these low mass subhalos is a key test of LCDM and that warm dark matter simulations produce quite different spectra.}
+
+\item Par. 2
+“direct detection has proved fruitless”: this dismisses the fact that the latest results from
+direct detection experiments are indeed putting pressure on the parameter space of
+possible WIMP-like dark matter candidates via upper limits, which are not useless
+information. Please treat this subject with more nuance and include references.
+
+{\color{red} We have reworded this sentence and added some references}
+
+
+\item Par. 4
+“we know the underlying unperturbed stream model” - please clarify the ingredients of
+the “stream model”: they presumably include the gravitational potential of the host
+galaxy and the characteristics of the stream progenitor.
+
+{\color{red} Yes, the model also includes the potential. I have added this clarification.}
+
+\end{enumerate}
+\section{Section 2}
+\begin{enumerate}
+\item Par. 1
+This paragraph is a bit disorganized, and all the numbers at the end appear to come out
+of the blue, with the reader referred to later in the paper for any justification via “we will
+see”. I would suggest breaking this into two paragraphs, one that discusses the impulse
+approximation and why you think it’s still good enough, and one that discusses the
+straight-line approximation and why it’s not good enough.
+
+{\color{red} We have added references to Erkal \& Belokurov (2015) to motivate the discussion here.}
+
+
+\item In the discussion of the impulse approximation, it’s not clear where the minus sign
+comes from in the timing of the impact, which is defined as $t=-t_g$ but then immediately
+set to zero. One can always pick $t_g=0$ so this extra definition is confusing and doesn’t
+seem necessary -- you might as well just set it from the beginning.
+
+{\color{red} $t_g$ is important in Section 3 where the current time is $t=0$, the stripping time of each particle is $t=-t_s$ and the impact time is $t=-t_g$. I don't believe what we have written is confusing.}
+
+\item In the discussion of the straight-line approximation, the word “curvature” is used in some
+places to mean a change of direction in space, and in others to refer to a change in
+direction in velocity, adding to the confusion. Please be more precise with the
+terminology here. Some motivation for using $10r_s$ as the distance over which kicks are
+important would also improve the clarity of this discussion.
+
+{\color{red} I don't think this is true. In all cases the word `curvature' refers to spatial curvature. We have changed the expression `curvature of the motion' to `curvature of the orbit'. We have added a reference to Erkal \& Belokurov to motivate using $10r_s$ as the distance over which kicks are
+important. }
+
+\end{enumerate}
+\section{Section 2.1}
+\begin{enumerate}
+\item Here you lay out the notation for the interaction, which is fairly involved. A figure
+showing as much of the geometry as possible, with at least the most important vectors
+labeled, would be very helpful to the reader as a reference when following along with
+the calculation (I actually drew one myself in order to keep track of all the different
+subscripts).
+
+{\color{red} We have added the suggested figure.}
+
+\end{enumerate}
+\section{Section 2.2}
+\begin{enumerate}
+\item Par. 2: Please motivate the choice of parameters for the example interaction shown in
+the figure.
+
+{\color{red} We have added some references to motivate the parameter choices.}
+
+\item Figure 1: This figure and its caption are hard to parse and the panels are too small to
+read easily. This could be helped by e.g. using panel (a) (with a few more annotations)
+as the separate figure laying out the geometry, as suggested above, and/or by moving
+panel (e) to a separate figure—at the current size it is impossible to distinguish the
+different lines in the lower plot of this panel. It is also not clear if the “difference” panel
+shows relative or absolute differences. Please describe the different symbols/linestyles
+used at the beginning of the caption so the reader doesn’t have to search for them
+throughout the long text block.
+
+{\color{red} We have followed this suggestion and moved panel (a) to a separate figure. We have also rearranged the caption for clarity.}
+
+\item Par. 3: If I understand Figure 1 correctly the case being discussed here is the one
+represented by the blue dashed line in panel (b). It looks to me like the kick computed
+this way is smaller in amplitude than for the other cases, not larger - please clarify what
+you mean here.
+
+{\color{red} Clarified.}
+
+\item $v \cdot \delta v$ - it would help the reader’s intuition to point out here (as you do later on)
+that this quantity is $\delta H$ and mention how it’s related to e.g. the quantity $\Delta
+E/E_{char}$ that YJH plot in their Figure 4 (since it’s basically the same thing, maybe
+scaled differently). You mention that this quantity has the greatest effect on the stream
+but defer justification of this statement till later on; it would be clearer to motivate it here
+at least a little.
+
+{\color{red} We have added a reference to YJH and said $v \cdot \delta v$ is $\delta H$. We have also mentioned that the orbital frequencies are approximately functions of the energy alone (reference Binney \& Tremaine) to avoid the need to cast forwards.}
+
+
+\item To me the takeaway from this subsection seemed to be that the straight-line
+approximation is fine for calculating the kicks. Is this what you intended?
+
+{\color{red} Yes I would agree. We have added a concluding paragraph to this section.}
+
+\end{enumerate}
+
+\section{Section 2.3}
+\begin{enumerate}
+
+
+\item Eq. 10 - this truncation is actually steeper than what e.g. Hayashi et al. 2003 find for
+stripped subhalos, which means you may be underestimating the range of influence for
+interactions in this case. Is there a motivation for using the sech truncation?
+
+{\color{red} We chose the sech function for its simplicity and there was not physical motivation. We have added a reference to Hayashi.}
+
+\item Par. 2 - Please explain the choice of $\sqrt{3} r_s/2$ for impact parameter.
+
+{\color{red} The choice is arbitrary but it should be representative. We have not changed the text here.}
+
+\item Par. 3 - It is not clear what the reader is supposed to conclude from this section in terms
+of the choices made later to construct the generative model. The model described later
+on uses the analytic Plummer solution to calculate the kicks which seems to imply that
+the point here is to show that this is sufficient, while Figure 2 seems to show that
+Plummer significantly under-estimates the kicks from truncated NFW. Please clarify the
+conclusion you are making here.
+
+{\color{red} We have presented a discussion of the different kicks from different halo profiles and this obviously has bearings on the modelling that we proceed to carry out. Our simulation used a Plummer sphere as the perturber so we used the Plummer kicks in the modelling. However we are in a position to model a subhalo with an arbitrary profile and we have demonstrated the differences between different subhalo profiles. Future work is planned that explores what one can infer about the subhalo profile given a stream gap.}
+
+\end{enumerate}
+
+\section{Section 3}
+\begin{enumerate}
+\item Par. 3 - please clarify what you mean by “$\theta_R$ and $\theta_\phi-\phi$ are dependent”.
+The angles always have equation of motion $\theta = \theta_0 + \Omega t$, so how can
+$\theta_R$ depend on $\theta_\phi$?
+
+{\color{red} In the epicyclic case $\theta_\phi=\phi+f(\theta_R)$ (Binney \& Tremaine equation (3.265)) where $f(\theta_R)$ is a function of $\theta_R$. We have added an reference to the appropriate equation in Binney \& Tremaine.}
+
+\item Par. 4 - please give a sense of the estimated error in computing the
+actions/angles/frequencies using this method for the simulated stream you use in the
+paper.
+
+{\color{red} We have added a sentence giving the approximate error.}
+
+
+\item Par. 7 - “the stream is well approximately by an orbit”: should be “approximated”. A new
+paragraph should start after `later in Section 4.4.'; the start of this par would be clearer
+if combined with the definition of $\theta_\parallel$ later on.
+
+{\color{red} Fixed typo and added paragraph after `later in Section 4.4.'}
+
+\end{enumerate}
+
+\section{Section 4}
+\begin{enumerate}
+\item Par. 1 - Please summarize the parameters you use for the simulation in a table rather
+than just listing them inline.
+
+{\color{red} We have included a table.}
+
+\item Please justify the timing of the insertion and removal of the subhalo into the simulation. Do these times correspond to some physical distance of the subhalo from the stream?
+
+{\color{red} We have added a sentence stating the interaction time $\sim r_s/|w-v|}$ and that insertion time $\gg$ interaction time.}
+
+\item Par. 2 - “We then compute the...kicks from section 3 and compare to the [perturbed and
+unperturbed] simulations...”
+
+{\color{red} Added clarifying words}
+
+\end{enumerate}
+
+\section{Section 4.1}
+\begin{enumerate}
+\item Figure 4 - this figure is out of order, coming after figure 5 in the text. $\theta_\parallel$ is
+defined in the text but $\Omega_\parallel$ is not (presumably it is also $\vec{\Omega} \cdot
+\vec{n}$ but please be explicit). Please also give expressions for $\theta_\perp$ and
+$\Omega_\perp$ in the text (the intuitive description in the caption is helpful but not exact).
+Please also indicate somewhere the bin size you used to make the histograms.
+
+{\color{red} We cannot fix the figure order. We have added definitions and quoted bin sizes in the caption.}
+
+\item Par. 1 - It’s worth pointing out when discussing Figure 4 that it justifies your
+assumptions that the spreads in $\theta_\perp$ and $\Omega_\perp$ are indeed negligible,
+since you have to scale them by a factor of ~20 for the plots in the figure.
+
+{\color{red} We have pointed this out in the text.}
+
+\item “In action space... the exact geometry of the over- and under-densities... clearly depends
+on the nature of the stream track \dots” - Only one example is shown in Figures 4 and 5, so
+dependence on the stream \& subhalo properties is actually not clear to the reader.
+Please explain how you know this, or else just remove the discussion of the actions if
+you prefer, since they are not actually used in the model.
+
+{\color{red} We have removed the action distributions from the plots as they were duplicated in the appendix plot and so the discussion of the action distributions is now entirely within the appendix. Our statements are slightly speculative but it seems that the direction in action-space of the kicks depends on the velocity kick direction and the stream properties. We can see this from the approximate equations in the appendix. For instance, the change in the $z$-component of the angular momentum can be simply written down and its value depends sensitively on the kick direction and the position of the stream. This must be true for the other actions.}
+
+
+\item Figure 5 - Please label each axis individually and give units and tick labels.
+
+{\color{red} We have added labels.}
+
+\item Par. 2 - A few extra annotations on Figure 5 will greatly clarify this discussion for the
+reader, who may not be used to looking at diagrams like this. Pointing out an example
+of the structures from each stripping event you describe as “spurs”, and the regions in
+the plots at late times where perturbed material is overtaking the unperturbed stuff,
+would especially help. The differences in the gaps in frequency and angle referred to in
+the paragraph are also not obvious in the figure - showing projections onto the
+angle/frequency axis would make this clearer.
+
+{\color{red} We have improved this figure by highlighting the mentioned features but we have not included 1D projections onto the angle axis as these are shown in later plots.}
+
+\end{enumerate}
+
+\section{Section 4.2}
+\begin{enumerate}
+\item Par. 2 - Please remind the reader that we are still working in angle-frequency space
+here - “stream track” suggests position-velocity space to my mind.
+“integrating the simulation at 880 Myr after impact backwards” -> “integrating the
+simulation backwards from 880 Myr after impact”
+
+{\color{red} We have fixed both these things.}
+
+
+\item A new paragraph should start after “before differencing with the unperturbed snapshot.”,
+where you shift from discussing how you calculate things from the simulation to
+comparing the results.
+
+{\color{red} We have added a new paragraph.}
+
+\item Figures 6, 7, and 8 are out of order in the text.
+
+{\color{red} Nothing to be done.}
+
+\item Par. 3 - you state that the angle kicks may be less consistent because of the two
+reasons listed but actually go on to discuss a third possibility, that they are inaccurately
+computed by the code transforming the simulation into angle-frequency space. The
+other two reasons are not discussed. Please go into a bit more detail about the tests
+you did to determine the numerical error and why you think the other two possibilities
+could produce the discrepancy in the angles, when they do not affect the frequencies.
+
+{\color{red} We have added a few more words on the numerical tests. In our modelling the perpendicular angle information is not used to compute the kicks. This essentially amounts to ignoring the spatial extent of the stream. It appears the distribution in angles across the width of the stream is comparable to the angle kick so ignoring this information gives slightly wrong answers. The frequency kicks appear to be much less sensitive to the exact phase of the particles relative to the stream track and are essentially functions of the distance along the stream.}
+
+\item Figure 6 - it is very difficult to distinguish the points from the lines in this figure, while the
+different kick components are relatively easy to distinguish. Perhaps leave the points in
+color and overplot the approximation in black?
+
+{\color{red} We have followed this suggestion.}
+
+\end{enumerate}
+
+\section{Section 4.3}
+\begin{enumerate}
+\item Figures 7 and 8 have a lot of information, much of which is not referred to in the text.
+Figure 8 for example is the width of a single column but has 12 separate panels, while
+the total text devoted to discussing the figure is one paragraph in section 4.3. In these
+two figures you show the angles/frequencies in cylindrical coordinates rather than using
+the more concise parallel/perpendicular angle/frequency, which could reduce the
+number of panels in the figures and make them more readable. Is there a reason to
+examine the distributions in these coordinates? If not I would suggest boiling Fig. 7
+down to one panel (histogram in $\Omega_\parallel$) and Fig. 8 down to three
+($\theta_\parallel$ at t=0, 0.88, and 5 Gyr). You already know you’re not going to get the
+perpendicular components right because you ignore the stream thickness in this
+direction, but could optionally show this dimension to demonstrate how much of a
+difference this makes.
+
+{\color{red} The purpose of plotting $R$, $\phi$ and $z$ in these cases is this is the space in which the kicks have been applied and these figures demonstrate how successfully the simple impulse approximation works.  We have added two panels for the parallel and perpendicular frequency distributions to (what is now) Fig. 8.}
+
+\item In Figures 7 and 8 and their discussion, the label “Model” is too vague - you use it for
+something else (that is actually your model) later in Section 6. This section tests an
+approximation (computing analytic kicks and adding them to an unperturbed simulation)
+that you later use in your model. The label “unperturbed + analytic kicks” more
+accurately describes what you are showing. Likewise in Figure 8 the line labeled “diff” is
+not specific - difference between which two of the three histograms? Why not show the
+difference between unperturbed + kicks and perturbed?
+
+{\color{red} We have changed the term used in the label to that suggested and we have clarified what diff is showing. We have not plotted the difference between the unperturbed+kicks and the perturbed as this does not seem informative. }
+
+\end{enumerate}
+\section{Section 4.4}
+\begin{enumerate}
+\item It is striking that in Figure 8 the angle distributions seem so well matched using this
+approximation even though the angle kicks are not well matched. You implicitly
+acknowledge this since the next section talks about the relative magnitudes of the kicks
+in angles/actions/frequencies, and you eventually argue that the frequency kicks are
+more important at long times, but it would help the flow of the paper greatly to use this
+point to motivate the discussion in 4.4 if that is what you mean.
+
+{\color{red} We have acknowledged this point in the text and used it to lead on to the next subsection.}
+
+\item An estimate of the magnitude of the frequency kicks is given here but the others are
+deferred to the appendix. I agree this makes sense for the actions if you want to be
+complete (since you don’t use them in your model, they aren’t really necessary for the
+main results of this work) but you refer to the argument that the angle kicks are
+subsumed by the frequency kicks several places in the paper, and for this reason it
+makes sense to me to move at least the discussion of the magnitude of the angle kicks
+back into the main body of the paper.
+
+{\color{red} We have followed the suggestion of pulling the angle appendix into the main body.}
+
+\item Additionally, it would be useful to indicate what the orbital period is for your model (I
+calculate ~300 Myr?), and perhaps compare the angle distribution of the model with the
+perturbed at <1 period. All the panels in Fig. 8 except the first are after multiple
+periods.
+
+{\color{red} We have reported the orbital period in the section describing the simulation (Section 4) as $650\mathrm{Myr}$. As $880\mathrm{Myr}$ is comparable to this we don't see the need to plot any more snapshots.}
+\end{enumerate}
+
+\section{Section 4.5}
+\begin{enumerate}
+\item Par. 2 - the discussion of bandwidth is hard to interpret in the context of the results. Can
+you give a typical number of particles that are effectively within the smoothing kernel,
+and specify what kernel is used? It is also not clear what motivates the extra
+mass-dependence in the bandwidth or when this is used.
+
+{\color{red} The smoothing is necessary to average over the pericentric peak spurs otherwise the gap edges are awkward to find automatically. We use a Gaussian kernel and have added a statement in the text giving the number of particles within the kernel's standard deviation. Mass dependence is used for Section 5 so we have moved the relevant sentence to Section 5.}
+
+\item Fig. 10 - The best-fit power law is not that great a fit and not informative. Please show
+instead the scalings you discuss in the text that are predicted by Erkal \& Belokurov, and
+expand the time axis for the compression \& expansion phases so that the comparison
+you make in the text to the scaling relations can clearly be seen in the figure.
+
+{\color{red} The power-law demonstrates that on intermediate times the gap growth appears to go like $\sim t^{0.5}$. IN the absence of an initial angle kick the evolution of the gap size is entirely due to the frequency kicks and this best-fit power law can be considered as the impact of the frequency kicks over time. I don't think we are directly comparing to Erkal \& Belokurov here due to the different properties of our simulation so we don't think that it is worth altering the plot to allow for a more direct comparison.}
+
+
+\item Par. 3 - The behavior described in the text is impossible to see in Fig. 10. How does 400
+Myr compare with the prediction for the timescale over which the initial angle kick
+dominates. How can you tell this is what is happening? Does the predicted magnitude of
+the initial angle kick match the simulation? If so please mark this on Fig 10 too.
+
+{\color{red} The magnitude of the initial angle kick does not directly correspond to the initial gap size as discussed in Section 4.6. The initial gap size is entirely due to the initial angle kick as there has been no time for the frequency kick to act. The subsequent growth of the gap is due to the frequency kicks. When the gap size grows to of order twice the initial gap size then the frequency kicks have begun dominating the angle kicks. This approximately coincides with the point at which the power-law begins describing the evolution. We think this picture ties together logically.}
+
+\item Par. 4 - the discussion deferred to section 5.1 that is referred to here would be better
+placed in this section - section 5.1 deals with effects of varying the subhalo mass, but
+the asymptotic behavior of the gap depth is explained by the stream properties.
+
+{\color{red} We moved this discussion to the end of Section 4.7}
+
+\item Fig. 11 - the legend is incomplete (no definition for the solid red line except in the
+caption). This figure would perhaps be clearer as three stacked panels, since each line
+plotted has a different scale. The vertical line doesn’t look like it’s marking the peak
+density contrast as described (at least according to the solid red line). Is the second
+derivative computed via finite differencing? What is the level of numerical noise?
+
+{\color{red} We have made this plot into two panels. The vertical line was slightly off and has been fixed. We have also added Poisson error bars to the density contrast. The derivatives have been computed by finite differencing. We have increased the resolution used for the plot. We are not dominated by numerical noise as the derivatives are smooth.}
+
+\end{enumerate}
+
+\section{Section 4.6}
+\begin{enumerate}
+\item Par. 2 - This discussion is very hard to follow. The sentence that starts “As the angle
+kick depends...” is run-on, please rephrase. It is not explained how the angle kick
+depends on $\theta_\parallel$ except in the appendix under an approximation, so this
+statement is not obvious. Figure 7 referred to in this discussion shows histograms in
+frequencies, how does it show what is happening in $\Delta \theta_\parallel$?
+
+{\color{red} The reference was to the wrong figure so we have fixed this and also reworded the discussion.}
+
+\end{enumerate}
+
+\section{Section 4.7}
+\begin{enumerate}
+\item Par. 1 - Please state the reason for the change in numerical implementations of the
+transformation to and from action space. Since this paper is currently in prep, a little
+more information is needed about the expected performance of this method. How
+accurate do you expect the transformation to be for the case being considered?
+
+{\color{red} The Torus code is for mapping from action-angle space to configuration space. The paper is now on arXiv so we have updated the reference. We have briefly commented on the error.}
+
+
+\item Par. 2 - “the average azimuthal gap size correlates well” - actually it looks from Fig. 12
+like the parallel angle traces the maximal azimuthal angle gap size, not the mean. Why?
+
+{\color{red} We noticed this but it is not completely obvious why. Our feeling is that it is just a fluke particular to this simulation. The azimuthal angle gap size should correlate well with the $\theta_\phi$ gap size and it appears that the mean azimuthal angle gap size grows slower than its maximum. The parallel angle gap size grows at a rate greater than the $\theta_\phi$ gap size due to the particular orbit as it is a linear combination of the $\theta_i$ growth rates. We cannot comment on this any further.}
+
+
+\item Par. 3 - You state that the min density contrast falls slower than 1/t (the prediction from
+E\&B), but the reader cannot tell this from the bottom panel of Fig. 12 without a 1/t line
+for comparison.
+
+{\color{red} You can see from the plot that the density contrast does not decreases by less than a factor of two between $2.5\mathrm{Gyr}$ and $5\mathrm{Gyr}$ so it is falling slower than $1/t$.}
+
+\end{enumerate}
+
+\section{Section 5.1}
+\begin{enumerate}
+\item Eq. 23 - I could not find this relation in Diemand et al. 2008. Was it obtained by fitting
+Plummer spheres as you use in your model? If not what is the justification for using it?
+
+{\color{red} The relation was obtained by fitting a scaling relation to the publicly available halo catalogues. We have mentioned this in the text.}
+
+\item Figure 13 comes after 14 in the text.
+
+{\color{red} Fixed.}
+
+\item Par. 1 - why do you expect the gap to be deepest and fastest-growing at high mass?
+
+{\color{red} We have added a reference to Erkal \& Belokurov (2015).}
+
+\item Par. 2 - Figure 5 is used to justify assertions about the relative size of frequency kicks to
+the spread in frequencies in the parallel direction, but Fig. 5 shows the frequencies in
+azimuthal coordinates, so it is impossible to tell this from the figure without further
+guidance.
+
+{\color{red} It is not impossible as $\delta\Omega_\parallel$ is $\boldsymbol{n}\cdot\delta\boldsymbol{\Omega}$ where $\boldsymbol{n}$ is a unit vector and all components of $\delta\boldsymbol{\Omega}$ are of similar amplitude.}
+
+\item “If there are many particles upstream...” It is not clear what is meant by “upstream”. The
+approximation presumably kicks all the particles that have been released from the
+progenitor, does this mean those that have not yet been released? What does the
+stripping rate have to do with it?
+
+{\color{red} Upstream means closer to the progenitor. We have clarified this. The stripping rate is important as the gap can be filled by dynamically-hot stars that have not yet been released from the progenitor. If the future stripping rate is high there are more of these so the gap can fill in more effectively.}
+
+\item Fig. 14 - Presuming we are still looking at the trailing arm of the stream, why does the
+upper left panel look different than in Fig. 3? Is this a different snapshot? Please label
+the snapshot times for the top row of panels.
+
+{\color{red} It is the snapshot at impact time. Fig. 3 is after $880\mathrm{Myr}$. We have specified this in the caption.}
+
+\item In the middle row, the divergence of the differential density is attributed to low density in
+this region in the unperturbed simulation. How does this affect your calculation of the
+gap size in the lower row?
+
+{\color{red} It doesn't affect the calculation as the density divergence occurs far from the gap edge (i.e. the point where the density contrast crosses unity).}
+
+\end{enumerate}
+\section{Section 6}
+\begin{enumerate}
+\item Eq. 24 - it would be helpful to remind the reader here that Eq. 12 defines $\Delta \theta$
+and $\Delta \Omega$ in terms of $\theta$ and $\Omega$.
+
+{\color{red} We have added a reminder that equation (12) defines $\Delta\boldsymbol{\theta}$.}
+
+\item Par. 2 - in the discussion below Eq. 25 it is very hard to visualize everything that is
+described in the text. Please include a figure comparing the offset distributions in the
+model with those in your simulation. This will also be helpful in 6.1 to illustrate how the
+modifications help improve the agreement.
+
+{\color{red} The top right panel of Fig 15 shows the frequency offset. This demonstrates that the adjustments improve the frequency distribution.}
+
+\item Par. 3 \& 4 - There is no way to tell from the current text how many parameters are in the
+stream model or what they all are. Please explicitly list in a table the parameters
+describing the unperturbed stream model, the additional ones describing the perturbed
+model in this section, and the additional ones added in the modification described in 6.1.
+
+{\color{red} We have added a table listing all the parameters.}
+\end{enumerate}
+
+\section{Section 6.1}
+\begin{enumerate}
+\item Par. 1 - The reader is asked to believe that the modifications (and extra params)
+described in 6.1 are necessary but none of the figures show the unmodified model so
+it’s impossible to judge. Please include a figure (or maybe modify Fig. 15?) to illustrate
+what you mean here: how these modifications (which introduce new free parameters)
+improve the description of the stream and why they are necessary. What are the new
+free parameters introduced by the modification?
+
+{\color{red} Fig 15 shows clearly that the modifications improve the model. I agree that it is not clear that these are necessary in providing a better description of the stream density. However, the density of the stream is a strong function of the stripping rate so we found that making modifications to the stripping were necessary to even approximately reproduce the density. We would not have chosen to make the model unnecessarily more complex if it did not significantly alter the observables.Adding another model line to Fig 16 would not make the paper clearer.}
+
+\item Par. 2 - Please define $t_s$: what is the zero point, \& which way does it increase?
+
+{\color{red} $t_s$ is defined in Section 3 and mentioned again in the previous subsection so we don't see the need to redefine it here.}
+\end{enumerate}
+
+\section{Section 6.2}
+\begin{enumerate}
+\item Par. 1 - you refer to the “simple generative model” - is this the original one from Eq. 25
+or the modified one of Eq. 26?
+
+{\color{red} The modified one, which is not the same as just equation (26) as eq (26) is only the frequency part of the model. We have clarified which model we are using in the text.}
+
+\item Fig. 16. - how well does the density match in the unmodified case? How well is it
+determined numerically here? Do you really expect to have $10^5$ stars to generate the
+density profile? If you have fewer sampling points do you still need the modifications to
+the model?
+
+{\color{red} Not well. As stated above we will not add another line to Fig 16. It is a fair criticism that the number of particles in the stream is not realistic by current standards but this paper focuses on the modelling and we have not discussed the feasibility of the observations throughout so it seems odd to start here. We want to be able to compute the density profile to much better precision than we can measure it and so matching it in detail for a simulation is a necessary test of the framework.}
+
+\end{enumerate}
+\section{Section 7}
+\begin{enumerate}
+\item Par. 3 - “almost all” the intuition from circular orbits carries over - what are the
+exceptions?
+
+{\color{red} We have added some clarifying sentences.}
+
+\item Par. 4 - why do you expect the parallel angle gap to grow more slowly for lower mass
+subhalos?
+
+{\color{red} Added reference to Erkal \& Belokurov (2015)}
+
+\end{enumerate}
+
+
+\section{Section 7.1}
+\begin{enumerate}
+\item Par. 2 - Figure 5 is cited as evidence that subhalo perturbations cannot be confused
+with epicyclic overdensities. Where are the epicyclic overdensities in Figure 5? How can
+they be observationally distinguished?
+
+{\color{red} This was confused in the text and we have clarified it. Epicycles are naturally in the angle-frequency model and we have demonstrated that subhalos produce structures in angle-frequency space that are quite different to the unperturbed model so will produce different features in configuration space.}
+
+\item Par. 4 - The point being made in this paragraph is unclear. The biases in Bonaca et al
+were not attributed solely to lumpiness in the potential (it also evolves with time, for
+example, which wasn’t in the model used for the streams). How is the mass of the LMC
+related to the modeling discussed here?
+
+{\color{red} This paragraph is highlighting the fact that we need to go beyond simple models as there are a number of important effects which will alter the shapes of streams. We have presented a model which includes one such effect and it perhaps leads the way to include more complex perturbations. We have corrected the reference to Bonaca et al. (2014) and also added a few sentences to tie together the discussion.}
+
+\item The conclusion states that “the formalism we have presented promises to be the most
+useful tool” for the task of modeling perturbations caused by dark substructure. This is
+not demonstrated in the paper, where no comparison is made to any other method.
+Furthermore the authors do not demonstrate that their model can successfully recover
+the input parameters when fit to the simulation data, nor that it matches a simulated
+stream perturbed by a realistic (i.e. non-Plummer) subhalo, nor that it can do so given a
+realistic number of observed stars, with realistic errors and in reasonable time. It would
+be more fair to say this work is a useful first step towards such a tool.
+
+{\color{red} We have toned down the referenced sentence.}
+\end{enumerate}
+
+\end{document}
